@@ -1,0 +1,22 @@
+name: mts-trial-ui Build
+
+on:
+  pull_request:
+    paths-ignore:
+      - '**.md'
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build application
+    env:
+      GHCR: ghcr.io/ndph-arts
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Build & test
+        run: |
+          npm i --no-optional
+          npm run build --prod

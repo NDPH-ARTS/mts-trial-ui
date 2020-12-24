@@ -1,0 +1,114 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1610837624469' stop='1610837625692'>
+    <name>As a user: a trial has been launched with a configured name</name>
+    <title>As a user: a trial has been launched with a configured name</title>
+    <test-cases>
+        <test-case start='1610837624470' status='passed' stop='1610837624471'>
+            <name>Hook</name>
+            <title>Hook</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-87.0.4280.88'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1610837624472' status='broken' stop='1610837625683'>
+            <name>Given User navigates to the landing page URL</name>
+            <title>Given User navigates to the landing page URL</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-87.0.4280.88'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>unknown error: net::ERR_CONNECTION_REFUSED
+                  (Session info: chrome=87.0.4280.88)</message>
+                <stack-trace>unknown error: net::ERR_CONNECTION_REFUSED
+                  (Session info: chrome=87.0.4280.88)
+                    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+                    at LandingPage.open (/Users/markphipps/dev/arts/mts-trial-ui/e2e-tests/pages/landing.page.js:5:17)
+                    at World.&lt;anonymous> (/Users/markphipps/dev/arts/mts-trial-ui/e2e-tests/steps/landingPage.steps.js:11:8)</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1610837625684' status='pending' stop='1610837625684'>
+            <name>When the landing page displays the name of the trial</name>
+            <title>When the landing page displays the name of the trial</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-87.0.4280.88'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1610837625685' status='pending' stop='1610837625685'>
+            <name>Then the landing page provides an option to initiate login</name>
+            <title>Then the landing page provides an option to initiate login</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-87.0.4280.88'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1610837625689' status='pending' stop='1610837625690'>
+            <name>Then the user is on the authentication page</name>
+            <title>Then the user is on the authentication page</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-87.0.4280.88'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1610837625690' status='pending' stop='1610837625690'>
+            <name>And the user is able to logout of the landing page successfully</name>
+            <title>And the user is able to logout of the landing page successfully</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-87.0.4280.88'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1610837625691' status='passed' stop='1610837625691'>
+            <name>Hook</name>
+            <title>Hook</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-87.0.4280.88'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

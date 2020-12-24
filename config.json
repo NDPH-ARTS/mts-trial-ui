@@ -1,0 +1,28 @@
+{
+  "trial": [
+    {
+      "id": "test_1",
+      "trialName":"Trial 1",
+      "trialId":"prefix/1",
+      "defaultLocale": "en-gb",
+      "trialSites":[
+        {
+          "siteName": "(Root node)",
+          "siteType": "CCO"
+        }
+      ]
+    },
+    {
+      "id": "test_2",
+      "trialName":"Another Trial",
+      "trialId":"prefix/2",
+      "trialSites":[
+        {
+          "siteName": "(Root node)",
+          "siteType": "CCO"
+        }
+      ]
+    }
+
+  ]
+}
