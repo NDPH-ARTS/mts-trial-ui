@@ -1,3 +1,27 @@
-<h1>
-  {{title}}
-</h1>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+  </div>
+  <select #t (change)="this.switchLanguage(t.value)" data-width="fit" (value)="this.language">
+    <option value="en-gb">English</option>
+    <option value="fr-fr">French</option>
+    <option value="ja-jp">Japanese</option>
+  </select>
+    <span style="float: right; ">
+    <div *ngIf="this.authenticationService.isAuthenticated()">
+      <button color="primary"  (click)="logout()">{{ 'logout' | translate}}</button>
+    </div>
+  </span>
+</nav>
+
+
+<router-outlet></router-outlet>

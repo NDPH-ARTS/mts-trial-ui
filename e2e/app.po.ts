@@ -1,11 +1,11 @@
-import { browser, element, by } from 'protractor';
+import { browser, element, by, promise } from 'protractor';
 
 export class MtsTrialUiPage {
-  navigateTo() {
+  navigateTo(): promise.Promise<any> {
     return browser.get('/');
   }
 
-  getParagraphText() {
+  getParagraphText(): promise.Promise<string> {
     return element(by.css('app-root h1')).getText();
   }
 }
