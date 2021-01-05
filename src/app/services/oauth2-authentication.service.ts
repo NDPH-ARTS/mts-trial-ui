@@ -40,6 +40,9 @@ export class OAuth2AuthenticationService implements AuthenticationService {
   constructor(private oauthService: OAuthService) { }
 }
 
+@Injectable({
+  providedIn: 'root'
+})
 export abstract class AuthenticationService {
   abstract init(): void;
   abstract login(): void;
@@ -48,7 +51,7 @@ export abstract class AuthenticationService {
   abstract getUsername(): string;
 }
 
-export class MockAuthentiationService implements AuthenticationService {
+export class MockAuthenticationService implements AuthenticationService {
   init(): void {
   }
   login(): void {
@@ -59,6 +62,6 @@ export class MockAuthentiationService implements AuthenticationService {
     return true;
   }
   getUsername(): string {
-    return "";
+    return '';
   }
 }

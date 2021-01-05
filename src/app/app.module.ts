@@ -10,7 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AuthenticationService, OAuth2AuthenticationService } from './services/authentication.service';
+import { AuthenticationService, OAuth2AuthenticationService } from './services/oauth2-authentication.service';
 
 
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {

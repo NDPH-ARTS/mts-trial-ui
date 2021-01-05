@@ -4,8 +4,8 @@ import { OAuthEvent, OAuthService } from 'angular-oauth2-oidc';
 import { Observable, Subscription } from 'rxjs';
 import { authConfig } from './auth.config';
 import { TrialConfig } from './model/trial-config';
-import { AuthenticationService } from './services/authentication.service';
-import { TrialConfigService } from './services/trial-config.service';
+import { AuthenticationService } from './services/oauth2-authentication.service';
+import { TrialConfigService } from './services/http-trial-config-service';
 
 @Component({
   selector: 'app-root',

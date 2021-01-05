@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   translationApiRoot: 'http://localhost:81/translation/',
-  trialConfigApi: 'http://localhost:8085/trial/test_2',
+  trialConfigApi: 'http://localhost:8085/trial/test_1',
   tenantId: '99804659-431f-48fa-84c1-65c9609de05b',
   clientId: '901b377a-a4c0-4a72-b390-294cef5c0c74',
 };
