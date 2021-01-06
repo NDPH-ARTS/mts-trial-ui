@@ -11,12 +11,7 @@
       </li>
     </ul>
   </div>
-  <select #t (change)="this.switchLanguage(t.value)" data-width="fit" (value)="this.language">
-    <option value="en-gb">English</option>
-    <option value="fr-fr">French</option>
-    <option value="ja-jp">Japanese</option>
-  </select>
-    <span style="float: right; ">
+  <span style="float: right; ">
     <div *ngIf="this.authenticationService.isAuthenticated()">
       <button color="primary"  (click)="logout()">{{ 'logout' | translate}}</button>
     </div>

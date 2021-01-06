@@ -40,22 +40,4 @@ describe('AppComponent', () => {
 
     expect(spy).toHaveBeenCalled();
   });
-
-  it('should set the TranslateService default locale', () => {
-    const spy = spyOn(mockTranslateService, 'setDefaultLang');
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-
-    expect(spy).toHaveBeenCalledWith('en-gb');
-  });
-
-  it('should call TranslateService to change the current language', () => {
-    const spy = spyOn(mockTranslateService, 'use');
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-
-    app.switchLanguage('fr-fr');
-    expect(spy).toHaveBeenCalledWith('fr-fr');
-  });
-
 });
