@@ -1,5 +1,5 @@
 const fs = require('fs');
-const argv = require("yargs").argv;
+//const argv = require("yargs").argv;
 const wdioParallel = require('wdio-cucumber-parallel-execution');
 const { removeSync } = require('fs-extra');
 
@@ -19,22 +19,13 @@ exports.config = {
     specs: [
         featureFilePath
     ],
-    // Patterns to exclude.
-    exclude: [
-        // 'path/to/excluded/files'
-    ],
 
     capabilities: [{
-
-
         maxInstances: 5,
-        //
         browserName: 'chrome',
-
     }],
 
-    logLevel: 'info',
-
+    logLevel: 'silent',
     bail: 0,
 
     //baseUrl: 'http:',
@@ -48,21 +39,16 @@ exports.config = {
     //
     // Default request retries count
     connectionRetryCount: 3,
-
     services: ['selenium-standalone'],
-
     framework: 'cucumber',
 
     reporters: [
-        // 'spec'
 
-        //     // ...
-        //     ['allure', {
-        //         outputDir: 'allure-results',
-        //         disableWebdriverStepsReporting: true,
-        //         disableWebdriverScreenshotsReporting: true,
-        //     }]],
-        // // ...
+        ['allure', {
+            outputDir: 'allure-results',
+            disableWebdriverStepsReporting: true,
+            disableWebdriverScreenshotsReporting: true,
+        }],
 
         ['cucumberjs-json', {
             jsonFolder: jsonTmpDirectory,
@@ -70,7 +56,6 @@ exports.config = {
 
         }]],
 
-    //
     // If you are using Cucumber you need to specify the location of your step definitions.
     cucumberOpts: {
         require: ['e2e-tests/steps/*.js'],        // <string[]> (file/dir) require files before executing features

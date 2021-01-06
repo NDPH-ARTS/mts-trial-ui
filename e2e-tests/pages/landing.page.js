@@ -1,11 +1,18 @@
 
 class LandingPage {
 
-    open(path) {
-        browser.url(path);
+    open() {
+        browser.url('http://localhost:4200/');
     }
 
-    get pageHeader() { return $('//h1[text()="Another Trial"]'); }
-    get loginButton() { return $('//div//button[text()="Login"]'); }
+    get titleBar() { return $('//a[text()="Navbar"]') }
+    get loginButton() { return $('//div//button[text()="login"]') }
+
+
+    login() {
+        this.loginButton.click()
+    }
+
+
 }
 module.exports = LandingPage;
