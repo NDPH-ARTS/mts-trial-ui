@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "test": "npx wdio wdio.conf.js --parallel=false",
+    "test": "npx wdio  ./e2e-tests/conf/wdio.conf.js",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
