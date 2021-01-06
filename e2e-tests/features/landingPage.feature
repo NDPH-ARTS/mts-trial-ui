@@ -8,4 +8,4 @@ Feature: As a user
     Scenario: a trial has been launched with a configured name
         Given User navigates to the landing page URL
         When  the landing page displays the name of the trial
-#  Then the landing page provides an option to initiate login
+        Then the landing page provides an option to initiate login

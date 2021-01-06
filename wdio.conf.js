@@ -53,22 +53,22 @@ exports.config = {
 
     framework: 'cucumber',
 
-    reporters: [[
+    reporters: [
         // 'spec'
 
-        // ...
-        ['allure', {
-            outputDir: 'allure-results',
-            disableWebdriverStepsReporting: true,
-            disableWebdriverScreenshotsReporting: true,
+        //     // ...
+        //     ['allure', {
+        //         outputDir: 'allure-results',
+        //         disableWebdriverStepsReporting: true,
+        //         disableWebdriverScreenshotsReporting: true,
+        //     }]],
+        // // ...
+
+        ['cucumberjs-json', {
+            jsonFolder: jsonTmpDirectory,
+            language: 'en',
+
         }]],
-    // ...
-
-    ['cucumberjs-json', {
-        jsonFolder: jsonTmpDirectory,
-        language: 'en',
-
-    }]],
 
     //
     // If you are using Cucumber you need to specify the location of your step definitions.
