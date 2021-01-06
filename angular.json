@@ -129,5 +129,8 @@
       }
     }
   },
-  "defaultProject": "mts-trial-ui"
+  "defaultProject": "mts-trial-ui",
+  "cli": {
+    "analytics": "df3a37f0-29a2-4812-a315-109e081d3122"
+  }
 }
