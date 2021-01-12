@@ -32,6 +32,14 @@ module.exports = function (config) {
         { type: 'text-summary' }
       ]
     },
+    browsers: ['Chrome_without_security'],
+    // you can define custom flags
+    customLaunchers: {
+      Chrome_without_security: {
+        base: 'ChromeHeadless',
+        flags: ['--no-sandbox']
+      }
+    },
     reporters: ['progress', 'kjhtml'],
     port: 9876,
     colors: true,
