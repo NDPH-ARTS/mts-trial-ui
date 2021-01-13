@@ -12,11 +12,6 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthenticationService, OAuth2AuthenticationService } from './services/oauth2-authentication.service';
 
-
-export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
-  return new TranslateHttpLoader(http, environment.translationApiRoot, '');
-}
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,13 +20,6 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   imports: [
     BrowserModule,
     AppRoutingModule,
-    TranslateModule.forRoot({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: HttpLoaderFactory,
-        deps: [HttpClient]
-      },
-    }),
     HttpClientModule,
     OAuthModule.forRoot({
       resourceServer: {

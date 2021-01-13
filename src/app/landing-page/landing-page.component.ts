@@ -7,7 +7,7 @@ import { AuthenticationService } from '../services/oauth2-authentication.service
   styleUrls: ['./landing-page.component.sass']
 })
 export class LandingPageComponent {
-  trialName = 'Landing Page';
+  trialName = 'Test trial';
 
   constructor(public authenticationService: AuthenticationService) {
   }
