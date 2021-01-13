@@ -1,5 +1,5 @@
 import { AuthConfig } from 'angular-oauth2-oidc';
-import {environment} from '../environments/environment';
+import { environment } from '../environments/environment';
 
 export const authConfig: AuthConfig = {
   issuer: `https://login.microsoftonline.com/${environment.tenantId}/v2.0`,
@@ -8,5 +8,5 @@ export const authConfig: AuthConfig = {
   responseType: 'code',
   oidc: true,
   strictDiscoveryDocumentValidation: false,
-  scope: 'openid profile email offline_access api://mts-apps/read User.Read',
+  scope: 'openid profile email offline_access User.Read',
 };
