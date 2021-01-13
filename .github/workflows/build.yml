@@ -1,4 +1,4 @@
-name: Docker build and push
+name: mts-trial-ui Build
 
 on:
   pull_request:
