@@ -19,4 +19,4 @@ jobs:
       - name: Build & test
         run: |
           npm i --no-optional
-          npm run test-headless && npm run build --prod
+          npm run build --prod
