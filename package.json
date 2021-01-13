@@ -7,7 +7,8 @@
     "build": "ng build",
     "test": "npx wdio  ./e2e-tests/conf/wdio.conf.js",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "test-headless": "ng test --watch=false --browsers=Chrome_without_security"
   },
   "private": true,
   "dependencies": {
