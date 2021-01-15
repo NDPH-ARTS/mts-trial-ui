@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "test": "ng test",
+    "test": "npx wdio  ./e2e-tests/conf/wdio.conf.js",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "test-headless": "ng test --watch=false --browsers=Chrome_without_security"
@@ -25,6 +25,13 @@
     "@ng-bootstrap/ng-bootstrap": "^8.0.0",
     "@ngx-translate/core": "^13.0.0",
     "@ngx-translate/http-loader": "^6.0.0",
+    "@wdio/cli": "^6.11.3",
+    "@wdio/cucumber-framework": "^6.1.1",
+    "@wdio/jasmine-framework": "^6.0.4",
+    "@wdio/local-runner": "^6.0.5",
+    "@wdio/sauce-service": "^6.0.4",
+    "@wdio/sync": "^6.0.1",
+    "allure-commandline": "^2.13.8",
     "angular-oauth2-oidc": "^10.0.3",
     "bootstrap": "^4.5.3",
     "rxjs": "~6.6.0",
@@ -37,7 +44,11 @@
     "@angular/compiler-cli": "~11.0.5",
     "@types/jasmine": "~3.6.0",
     "@types/node": "^12.11.1",
+    "@wdio/allure-reporter": "^6.11.0",
+    "@wdio/selenium-standalone-service": "^6.11.0",
+    "@wdio/spec-reporter": "^6.11.0",
     "codelyzer": "^6.0.0",
+    "cucumber-html-reporter": "^5.3.0",
     "jasmine-core": "~3.6.0",
     "jasmine-spec-reporter": "~5.0.0",
     "karma": "~5.1.0",
@@ -45,9 +56,12 @@
     "karma-coverage": "~2.0.3",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "^1.5.0",
+    "node-emoji": "^1.10.0",
     "protractor": "~7.0.0",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
-    "typescript": "~4.0.2"
+    "typescript": "~4.0.2",
+    "wdio-cucumber-parallel-execution": "^3.6.14",
+    "wdio-cucumberjs-json-reporter": "^2.0.2"
   }
 }
