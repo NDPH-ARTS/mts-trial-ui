@@ -23,10 +23,6 @@
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
-**/allure-results/**
-**/tests/**
-as-a-user.json
-report.json
 
 
 
