@@ -32,10 +32,10 @@ module.exports = function (config) {
         { type: 'text-summary' }
       ]
     },
-    browsers: ['Chrome_without_security'],
+    browsers: ['Chrome_headless_no-sandbox'],
     // you can define custom flags
     customLaunchers: {
-      Chrome_without_security: {
+      Chrome_headless_no_sandbox: {
         base: 'ChromeHeadless',
         flags: ['--no-sandbox']
       }

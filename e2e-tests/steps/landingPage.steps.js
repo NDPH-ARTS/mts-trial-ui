@@ -13,12 +13,12 @@ defineStep('User navigates to the landing page URL', function () {
 
 defineStep('the landing page displays the name of the trial', function () {
     let titleElement = lp.titleBar
-    expect(titleElement.getText()).toEqual("Test trial")
+    expect(titleElement.getText()).toEqual("mts-trial-ui")
 });
 
 defineStep('the landing page provides an option to initiate login', function () {
     lp.login();
-    lp.enterCrendentials();
+    lp.enterCredentials();
 });
 
 defineStep('the user is on the authentication page', function () {

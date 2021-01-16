@@ -2,10 +2,10 @@
 class LandingPage {
 
     open() {
-        browser.url('http://localhost:4200/');
+        browser.url(process.env.BASE_URL);
     }
 
-    get titleBar() { return $('//h1[text()="Test trial"]') }
+    get titleBar() { return $('.page-header') }
     get loginButton() { return $('//div//button[text()="Login"]') }
     get userName() { return $('//input[@name="loginfmt"]') }
     get nextBtn() { return $('//div//input[@id="idSIButton9"]') }
@@ -21,7 +21,7 @@ class LandingPage {
         this.loginButton.click()
     }
 
-    enterCrendentials() {
+    enterCredentials() {
         this.userName.setValue('test-automation@mtsdevndph.onmicrosoft.com')
         this.nextBtn.click()
         this.password.setValue('Oxford909')

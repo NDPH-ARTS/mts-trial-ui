@@ -4,8 +4,8 @@
 
 export const environment = {
   production: true,
-  tenantId: '5d23383f-2acb-448e-8353-4b4573b82276',
-  clientId: 'f352ce15-0142-4dfa-8e18-801ee6391557',
+  issuer: '',
+  clientId: '',
 };
 /*
  * For easier debugging in development mode, you can import the following file

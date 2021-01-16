@@ -23,9 +23,8 @@
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
-**/allure-results/**
-**/tests/**
 
+**/allure-results/**
 
 # misc
 /.sass-cache
@@ -43,3 +42,7 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+**/reports/
+docker-log.txt
+tests/e2e-tests

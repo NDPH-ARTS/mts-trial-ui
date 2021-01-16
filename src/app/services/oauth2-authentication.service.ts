@@ -10,6 +10,7 @@ export class OAuth2AuthenticationService implements AuthenticationService {
   private oauthEvents: any;
 
   init(): void {
+    console.log(authConfig);
     this.oauthService.configure(authConfig);
     this.oauthService.setupAutomaticSilentRefresh();
     this.oauthService.loadDiscoveryDocumentAndTryLogin().catch(() => console.log('==== API ==============> loadDiscoveryDocumentAndLogin fetch failed'));
