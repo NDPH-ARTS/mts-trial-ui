@@ -23,6 +23,7 @@ describe('AppComponent', () => {
       providers: [
         { provide: AuthenticationService, useValue: mockAuthenticationService },
         { provide: TranslateService, useValue: mockTranslateService },
+
       ]
     }).compileComponents();
   });

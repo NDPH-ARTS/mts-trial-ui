@@ -4,8 +4,9 @@
 
 export const environment = {
   production: false,
-  tenantId: '5d23383f-2acb-448e-8353-4b4573b82276',
+  issuer: 'https://login.microsoftonline.com/5d23383f-2acb-448e-8353-4b4573b82276/v2.0',
   clientId: 'f352ce15-0142-4dfa-8e18-801ee6391557',
+  trialName: 'mts-trial-ui'
 };
 /*
  * For easier debugging in development mode, you can import the following file
@@ -14,4 +15,4 @@ export const environment = {
  * This import should be commented out in production mode because it will have a negative impact
  * on performance if an error is thrown.
  */
-//import 'zone.js/dist/zone-error';  // Included with Angular CLI.
+import 'zone.js/dist/zone-error';  // Included with Angular CLI.

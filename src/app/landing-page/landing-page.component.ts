@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ConfigurationService } from '../services/configuration-service';
 import { AuthenticationService } from '../services/oauth2-authentication.service';
 
 @Component({
@@ -7,9 +8,7 @@ import { AuthenticationService } from '../services/oauth2-authentication.service
   styleUrls: ['./landing-page.component.sass']
 })
 export class LandingPageComponent {
-  trialName = 'Test trial';
-
-  constructor(public authenticationService: AuthenticationService) {
+  constructor(public authenticationService: AuthenticationService, public configSerice: ConfigurationService) {
   }
 }
 
