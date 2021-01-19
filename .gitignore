@@ -25,6 +25,7 @@
 !.vscode/extensions.json
 
 **/allure-results/**
+allure-results/**
 
 # misc
 /.sass-cache
