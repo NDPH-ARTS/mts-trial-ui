@@ -1,0 +1,11 @@
+<div class="page-header"><h1>{{ this.configSerice.trialName }}</h1></div>
+
+<div *ngIf="this.authenticationService.isAuthenticated()">
+    <!-- {{'Welcome' | translate}}, {{this.authenticationService.getUsername()}} -->
+    Welcome, {{this.authenticationService.getUsername()}}
+
+</div>
+
+<div *ngIf="!this.authenticationService.isAuthenticated()">
+    <button mat-raised-button color="primary" (click)="this.authenticationService.login()">Login</button>
+</div>
