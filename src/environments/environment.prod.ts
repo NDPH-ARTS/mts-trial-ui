@@ -6,6 +6,7 @@ export const environment = {
   production: true,
   issuer: '',
   clientId: '',
+  trialName: '',
 };
 /*
  * For easier debugging in development mode, you can import the following file

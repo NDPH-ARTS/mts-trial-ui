@@ -32,7 +32,7 @@ exports.config = {
     //baseUrl: 'http:',
     //
     // Default timeout for all waitFor* commands.
-    waitforTimeout: 50000,
+    waitforTimeout: 5000,
     //
     // Default timeout in milliseconds for request
     // if browser driver or grid doesn't send response
@@ -40,16 +40,9 @@ exports.config = {
     //
     // Default request retries count
     connectionRetryCount: 3,
-    services: ['selenium-standalone'],
     framework: 'cucumber',
 
     reporters: [
-
-        ['allure', {
-            outputDir: 'allure-results',
-            disableWebdriverStepsReporting: true,
-            disableWebdriverScreenshotsReporting: true,
-        }],
 
         ['cucumberjs-json', {
             jsonFolder: jsonTmpDirectory,
@@ -74,48 +67,34 @@ exports.config = {
         ignoreUndefinedDefinitions: false, // <boolean> Enable this config to treat undefined definitions as warnings.
     },
 
-
-    onPrepare: () => {
-        // Remove the `tmp/` folder that holds the json report files
-        removeSync(jsonTmpDirectory);
-        if (!fs.existsSync(jsonTmpDirectory)) {
-            fs.mkdirSync(jsonTmpDirectory);
+    capabilities: [{
+        browserName: 'chrome',
+        'goog:chromeOptions': {
+            args: ['--headless', '--disable-gpu', '--no-sandbox'],
         }
+    }],
 
-    },
+    sync: true,
+    logLevel: 'debug',
 
-    onComplete: () => {
+    baseUrl: 'http://localhost:4200',
 
-        try {
-            let consolidatedJsonArray = wdioParallel.getConsolidatedData({
-                parallelExecutionReportDirectory: jsonTmpDirectory
-            });
-
-            let jsonFile = `${jsonTmpDirectory}report.json`;
-            fs.writeFileSync(jsonFile, JSON.stringify(consolidatedJsonArray));
-
-            var options = {
-                theme: 'bootstrap',
-                jsonFile: jsonFile,
-                output: `tests/reports/html/report-${currentTime}.html`,
-                reportSuiteAsScenarios: true,
-                scenarioTimestamp: true,
-                launchReport: false,
-                ignoreBadJsonFile: true
-            };
-
-            reporter.generate(options);
-        } catch (err) {
-            console.log('err', err);
+     services: [
+        'selenium-standalone',
+        'docker'
+    ],
+    dockerLogs: './',
+    dockerOptions: {
+        image: 'ui',
+        healthCheck: {
+            url: 'http://localhost:4200',
+            maxRetries: 5,
+            inspectInterval: 2000,
+            startDelay: 30000
+        },
+        options: {
+            p: ['4200:4200'],
+            e: ['BASE_URL', 'http://localhost:4200']
         }
-
-
     }
-    /**
-    * Gets executed when a refresh happens.
-    * @param {String} oldSessionId session ID of the old session
-    * @param {String} newSessionId session ID of the new session
-    */
-    //onReload: function(oldSessionId, newSessionId) {
-    //}
-}
+};
