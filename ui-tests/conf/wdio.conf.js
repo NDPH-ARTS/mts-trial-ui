@@ -6,8 +6,8 @@ const { removeSync } = require('fs-extra');
 // The below module is used for cucumber html report generation
 const reporter = require('cucumber-html-reporter');
 const currentTime = new Date().toJSON().replace(/:/g, "-");
-const sourceSpecDirectory = `e2e-tests/features`;
-const jsonTmpDirectory = `e2e-tests/reports/json/tmp/`;
+const sourceSpecDirectory = `ui-tests/features`;
+const jsonTmpDirectory = `ui-tests/reports/json/tmp/`;
 
 
 let featureFilePath = `${sourceSpecDirectory}/*.feature`;
@@ -25,7 +25,7 @@ exports.config = {
         browserName: 'chrome',
     }],
 
-    logLevel: 'silent',
+    logLevel: 'error',
     bail: 0,
 
     //baseUrl: 'http:',
@@ -44,6 +44,10 @@ exports.config = {
 
     reporters: [
 
+        ['spec', {
+
+        }],
+
         ['allure', {
             outputDir: 'allure-results',
             disableWebdriverStepsReporting: true,
@@ -58,7 +62,7 @@ exports.config = {
 
     // If you are using Cucumber you need to specify the location of your step definitions.
     cucumberOpts: {
-        require: ['e2e-tests/steps/*.js'],        // <string[]> (file/dir) require files before executing features
+        require: ['ui-tests/steps/*.js'],        // <string[]> (file/dir) require files before executing features
         backtrace: false,   // <boolean> show full backtrace for errors
         requireModule: [],  // <string[]> ("extension:module") require files with the given EXTENSION after requiring MODULE (repeatable)
         dryRun: false,      // <boolean> invoke formatters without executing steps
