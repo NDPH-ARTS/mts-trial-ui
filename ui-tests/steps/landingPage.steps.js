@@ -1,12 +1,14 @@
 const { defineStep } = require('cucumber')
-const fs = require('fs')
-const path = require('path')
-const Page = require('../pages/page.js')
+const landingPage = require('../pages/landingPage.page.js')
 
-defineStep('User launches the trial page URL', function () {
-    browser.deleteCookies()
-    Page.open()
+defineStep('the landing page displays the name of the trial', function () {
+    let titleElement = landingPage.titleBar
+    expect(titleElement.getText()).toEqual("mts-trial-ui")
 });
 
+defineStep('the landing page provides an option to initiate login', function () {
+    let loginButtonText = landingPage.loginButton
+    expect(loginButtonText.getText()).toEqual("Login")
+});
 
 
