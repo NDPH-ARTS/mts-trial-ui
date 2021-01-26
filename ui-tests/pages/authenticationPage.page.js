@@ -1,4 +1,6 @@
 
+const base64 = require('../utils/base64.js')
+
 class authenticationPage {
 
     get userName() { return $('//input[@name="loginfmt"]') }
@@ -13,10 +15,10 @@ class authenticationPage {
 
 
 
-    enterCredentials() {
-        this.userName.setValue('test-automation@mtsdevndph.onmicrosoft.com')
+    enterCredentials(usernameValue, passwordValue) {
+        this.userName.setValue(base64.decrypt(usernameValue))
         this.nextBtn.click()
-        this.password.setValue('Oxford909')
+        this.password.setValue(base64.decrypt(passwordValue))
         this.signIn.click()
         this.selectYes.click()
     }
@@ -26,8 +28,8 @@ class authenticationPage {
         this.selectAccountTologoutFrom.click()
     }
 
-    invalidCredentials() {
-        this.userName.setValue('automation@mtsdevndph.onmicrosoft.com')
+    invalidCredentials(usernameValue) {
+        this.userName.setValue(base64.decrypt(usernameValue))
         this.nextBtn.click()
     }
 }

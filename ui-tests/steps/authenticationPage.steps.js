@@ -2,9 +2,9 @@ const { defineStep } = require('cucumber')
 const landingPage = require('../pages/landingPage.page.js')
 const authenticationPage = require('../pages/authenticationPage.page.js')
 
-defineStep('a user is authenticated', function () {
+defineStep('a user is authenticated {string}, {string}', function (usernameValue, passwordValue) {
     landingPage.login();
-    authenticationPage.enterCredentials();
+    authenticationPage.enterCredentials(usernameValue, passwordValue);
 });
 
 defineStep('user navigates to the landing or welcome page', function () {
@@ -21,9 +21,9 @@ defineStep('User can succesfully logout of the session', function () {
     authenticationPage.logOut();
 });
 
-defineStep('User enters non-authenticated credentials', function () {
+defineStep('User enters non-authenticated credentials {string}', function (usernameValue) {
     landingPage.login();
-    authenticationPage.invalidCredentials();
+    authenticationPage.invalidCredentials(usernameValue);
 });
 
 
