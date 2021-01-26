@@ -1,5 +1,4 @@
 const fs = require('fs');
-//const argv = require("yargs").argv;
 const wdioParallel = require('wdio-cucumber-parallel-execution');
 const { removeSync } = require('fs-extra');
 
@@ -23,6 +22,21 @@ exports.config = {
     capabilities: [{
         maxInstances: 5,
         browserName: 'chrome',
+
+        maxInstances: 1,
+        browserName: 'MicrosoftEdge'
+
+    },
+
+    {
+        maxInstances: 1,
+        browserName: 'firefox'
+
+    },
+
+    {
+        maxInstances: 1,
+        browserName: 'safari',
     }],
 
     logLevel: 'error',
