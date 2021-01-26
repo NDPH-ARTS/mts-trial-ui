@@ -1,12 +1,6 @@
 
-class LandingPage {
+class authenticationPage {
 
-    open() {
-        browser.url(process.env.BASE_URL);
-    }
-
-    get titleBar() { return $('.page-header') }
-    get loginButton() { return $('//div//button[text()="Login"]') }
     get userName() { return $('//input[@name="loginfmt"]') }
     get nextBtn() { return $('//div//input[@id="idSIButton9"]') }
     get password() { return $('//input[@name="passwd"]') }
@@ -14,12 +8,10 @@ class LandingPage {
     get landingPageWelcomeMessage() { return $('//div[text()=" Welcome, Test Automation "]') }
     get selectYes() { return $('//input[@value="Yes"]') }
     get logOutButton() { return $('//div//button[text()="Logout"]') }
+    get selectAccountTologoutFrom() { return $('//div//small[text()="Signed in"]') }
     get errorMessage() { return $('//div[@id="usernameError"]') }
 
 
-    login() {
-        this.loginButton.click()
-    }
 
     enterCredentials() {
         this.userName.setValue('test-automation@mtsdevndph.onmicrosoft.com')
@@ -31,13 +23,13 @@ class LandingPage {
 
     logOut() {
         this.logOutButton.click()
+        this.selectAccountTologoutFrom.click()
     }
 
     invalidCredentials() {
         this.userName.setValue('automation@mtsdevndph.onmicrosoft.com')
         this.nextBtn.click()
     }
-
-
 }
-module.exports = LandingPage;
+
+module.exports = new authenticationPage();

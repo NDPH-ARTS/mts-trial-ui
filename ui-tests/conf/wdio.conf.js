@@ -1,13 +1,12 @@
 const fs = require('fs');
-//const argv = require("yargs").argv;
 const wdioParallel = require('wdio-cucumber-parallel-execution');
 const { removeSync } = require('fs-extra');
 
 // The below module is used for cucumber html report generation
 const reporter = require('cucumber-html-reporter');
 const currentTime = new Date().toJSON().replace(/:/g, "-");
-const sourceSpecDirectory = `e2e-tests/features`;
-const jsonTmpDirectory = `e2e-tests/reports/json/tmp/`;
+const sourceSpecDirectory = `ui-tests/features`;
+const jsonTmpDirectory = `ui-tests/reports/json/tmp/`;
 
 
 let featureFilePath = `${sourceSpecDirectory}/*.feature`;
@@ -23,13 +22,27 @@ exports.config = {
     capabilities: [{
         maxInstances: 5,
         browserName: 'chrome',
+
+        maxInstances: 1,
+        browserName: 'MicrosoftEdge'
+
+    },
+
+    {
+        maxInstances: 1,
+        browserName: 'firefox'
+
+    },
+
+    {
+        maxInstances: 1,
+        browserName: 'safari',
     }],
 
-    logLevel: 'silent',
+    logLevel: 'error',
     bail: 0,
 
-    //baseUrl: 'http:',
-    //
+
     // Default timeout for all waitFor* commands.
     waitforTimeout: 50000,
     //
@@ -43,6 +56,10 @@ exports.config = {
     framework: 'cucumber',
 
     reporters: [
+
+        ['spec', {
+
+        }],
 
         ['allure', {
             outputDir: 'allure-results',
@@ -58,7 +75,7 @@ exports.config = {
 
     // If you are using Cucumber you need to specify the location of your step definitions.
     cucumberOpts: {
-        require: ['e2e-tests/steps/*.js'],        // <string[]> (file/dir) require files before executing features
+        require: ['ui-tests/steps/*.js'],        // <string[]> (file/dir) require files before executing features
         backtrace: false,   // <boolean> show full backtrace for errors
         requireModule: [],  // <string[]> ("extension:module") require files with the given EXTENSION after requiring MODULE (repeatable)
         dryRun: false,      // <boolean> invoke formatters without executing steps
@@ -69,7 +86,7 @@ exports.config = {
         source: true,       // <boolean> hide source uris
         profile: [],        // <string[]> (name) specify the profile to use
         strict: false,      // <boolean> fail if there are any undefined or pending steps
-        tagExpression: '',  // <string> (expression) only execute the features or scenarios with tags matching the expression
+        tagExpression: '@smoketest',  // <string> (expression) only execute the features or scenarios with tags matching the expression
         timeout: 60000,     // <number> timeout for step definitions
         ignoreUndefinedDefinitions: false, // <boolean> Enable this config to treat undefined definitions as warnings.
     },
@@ -108,14 +125,5 @@ exports.config = {
         } catch (err) {
             console.log('err', err);
         }
-
-
     }
-    /**
-    * Gets executed when a refresh happens.
-    * @param {String} oldSessionId session ID of the old session
-    * @param {String} newSessionId session ID of the new session
-    */
-    //onReload: function(oldSessionId, newSessionId) {
-    //}
 }
