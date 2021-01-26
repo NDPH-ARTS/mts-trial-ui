@@ -1,4 +1,4 @@
-@landingPage @arts-195
+@smoketest @landingPage @arts-195
 
 Feature: As a user
     I want to login to the system

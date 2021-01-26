@@ -1,18 +1,19 @@
-# @authenticationPage @arts-196 @arts-92
+@smoketest @authenticationPage @arts-196 @arts-92 @arts-67 @dryRun
 
-# Feature: As an authenticated user
-#     I want to automatically see the welcome page when navigating to the landing page
-#     So that I am not guided to login again unnecessarily
+Feature: As an authenticated user
+    I want to automatically see the welcome page when navigating to the landing page
+    So that I am not guided to login again unnecessarily
 
-#     Background: Navigate to the trial page
-#         Given User launches the trial page URL
+    Background: Background name
+        Given User launches the trial page URL
 
-#     Scenario: View welcome page when navigating to the landing page
-#         Given a user is authenticated
-#         When they navigate to the landing page
-#         Then the welcome page is displayed
+    Scenario: View welcome page when navigating to the landing page
+        When a user is authenticated
+        And user navigates to the landing or welcome page
+        Then the welcome page message is displayed
+        And User can succesfully logout of the session
 
-#     Scenario: Non-authenticated used doesn't land on the welcome page
-#         When a user enters non-authenticated credentials
-#         Then an error message is shown
+    Scenario: Non-authenticated used doesn't land on the welcome page
+        When User enters non-authenticated credentials
+        Then User is shown an error message
 

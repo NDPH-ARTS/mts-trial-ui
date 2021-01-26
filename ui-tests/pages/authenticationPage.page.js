@@ -1,4 +1,3 @@
-import { page } from "../../pages/*.js";
 
 class authenticationPage {
 
@@ -9,7 +8,28 @@ class authenticationPage {
     get landingPageWelcomeMessage() { return $('//div[text()=" Welcome, Test Automation "]') }
     get selectYes() { return $('//input[@value="Yes"]') }
     get logOutButton() { return $('//div//button[text()="Logout"]') }
+    get selectAccountTologoutFrom() { return $('//div//small[text()="Signed in"]') }
     get errorMessage() { return $('//div[@id="usernameError"]') }
+
+
+
+    enterCredentials() {
+        this.userName.setValue('test-automation@mtsdevndph.onmicrosoft.com')
+        this.nextBtn.click()
+        this.password.setValue('Oxford909')
+        this.signIn.click()
+        this.selectYes.click()
+    }
+
+    logOut() {
+        this.logOutButton.click()
+        this.selectAccountTologoutFrom.click()
+    }
+
+    invalidCredentials() {
+        this.userName.setValue('automation@mtsdevndph.onmicrosoft.com')
+        this.nextBtn.click()
+    }
 }
 
-module.exports = authenticationPage;
+module.exports = new authenticationPage();

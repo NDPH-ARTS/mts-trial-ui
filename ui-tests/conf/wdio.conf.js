@@ -28,8 +28,7 @@ exports.config = {
     logLevel: 'error',
     bail: 0,
 
-    //baseUrl: 'http:',
-    //
+
     // Default timeout for all waitFor* commands.
     waitforTimeout: 50000,
     //
@@ -73,7 +72,7 @@ exports.config = {
         source: true,       // <boolean> hide source uris
         profile: [],        // <string[]> (name) specify the profile to use
         strict: false,      // <boolean> fail if there are any undefined or pending steps
-        tagExpression: '',  // <string> (expression) only execute the features or scenarios with tags matching the expression
+        tagExpression: '@smoketest',  // <string> (expression) only execute the features or scenarios with tags matching the expression
         timeout: 60000,     // <number> timeout for step definitions
         ignoreUndefinedDefinitions: false, // <boolean> Enable this config to treat undefined definitions as warnings.
     },
@@ -112,14 +111,5 @@ exports.config = {
         } catch (err) {
             console.log('err', err);
         }
-
-
     }
-    /**
-    * Gets executed when a refresh happens.
-    * @param {String} oldSessionId session ID of the old session
-    * @param {String} newSessionId session ID of the new session
-    */
-    //onReload: function(oldSessionId, newSessionId) {
-    //}
 }
