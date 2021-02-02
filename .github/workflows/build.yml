@@ -45,3 +45,10 @@ jobs:
           asset_path: ./mts-trial-ui.zip
           asset_name: mts-trial-ui.zip
           asset_content_type: application/zip
+      - name: Publish UI test Report
+        if: always()
+        uses: scacap/action-surefire-report@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          report_paths: 'results-*.xml'
+          fail_on_test_failures: true

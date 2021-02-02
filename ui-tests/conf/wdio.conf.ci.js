@@ -43,7 +43,12 @@ exports.config = {
     framework: 'cucumber',
 
     reporters: [
-
+        ['junit', {
+            outputDir: './',
+            outputFileFormat: function(options) { // optional
+                return `results-${options.cid}.xml`
+            }
+        }],
         ['cucumberjs-json', {
             jsonFolder: jsonTmpDirectory,
             language: 'en',

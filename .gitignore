@@ -46,4 +46,4 @@ Thumbs.db
 
 **/reports/
 docker-log.txt
-tests/e2e-tests
+results-*.xml
