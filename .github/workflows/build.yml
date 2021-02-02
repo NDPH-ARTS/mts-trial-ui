@@ -20,7 +20,7 @@ jobs:
         run: |
           npm i --no-optional
           npm run test-ci
-          ng serve &
+          npm run start-background
           sleep 20
           npm run ui-test-ci
           npm run build --prod
