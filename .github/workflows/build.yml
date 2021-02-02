@@ -20,6 +20,8 @@ jobs:
         run: |
           npm i --no-optional
           npm run test-ci
+          ng serve &
+          sleep 20
           npm run ui-test-ci
           npm run build --prod
           zip mts-trial-ui dist/mts-trial-ui
