@@ -29,7 +29,7 @@ defineStep('User enters non-authenticated credentials', function () {
 
 defineStep('User is shown an error message', function () {
     let errorMessageElement = authenticationPage.errorMessage
-    expect(errorMessageElement.getText()).toEqual("This username may be incorrect. Make sure that you typed it correctly. Otherwise, contact your admin.")
+    expect(errorMessageElement.getText()).toContain("This username may be incorrect")
 });
 
 
