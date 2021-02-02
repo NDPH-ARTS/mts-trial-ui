@@ -20,6 +20,7 @@ jobs:
         run: |
           npm i --no-optional
           npm run test-ci
+          npm run ui-test-ci
           npm run build --prod
           zip mts-trial-ui dist/mts-trial-ui
       - name: Create Release

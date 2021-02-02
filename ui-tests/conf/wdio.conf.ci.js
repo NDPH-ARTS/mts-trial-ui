@@ -6,8 +6,8 @@ const { removeSync } = require('fs-extra');
 // The below module is used for cucumber html report generation
 const reporter = require('cucumber-html-reporter');
 const currentTime = new Date().toJSON().replace(/:/g, "-");
-const sourceSpecDirectory = `e2e-tests/features`;
-const jsonTmpDirectory = `e2e-tests/reports/json/tmp/`;
+const sourceSpecDirectory = `ui-tests/features`;
+const jsonTmpDirectory = `ui-tests/reports/json/tmp/`;
 
 
 let featureFilePath = `${sourceSpecDirectory}/*.feature`;
@@ -26,13 +26,13 @@ exports.config = {
         },
       ],
 
-    // logLevel: 'silent',
+    logLevel: 'error',
     bail: 0,
 
     //baseUrl: 'http:',
     //
     // Default timeout for all waitFor* commands.
-    waitforTimeout: 5000,
+    waitforTimeout: 10000,
     //
     // Default timeout in milliseconds for request
     // if browser driver or grid doesn't send response
@@ -51,7 +51,7 @@ exports.config = {
 
     // If you are using Cucumber you need to specify the location of your step definitions.
     cucumberOpts: {
-        require: ['e2e-tests/steps/*.js'],        // <string[]> (file/dir) require files before executing features
+        require: ['ui-tests/steps/*.js'],        // <string[]> (file/dir) require files before executing features
         backtrace: false,   // <boolean> show full backtrace for errors
         requireModule: [],  // <string[]> ("extension:module") require files with the given EXTENSION after requiring MODULE (repeatable)
         dryRun: false,      // <boolean> invoke formatters without executing steps
@@ -69,9 +69,7 @@ exports.config = {
 
     capabilities: [{
         browserName: 'chrome',
-        'goog:chromeOptions': {
-            args: ['--headless', '--disable-gpu', '--no-sandbox'],
-        }
+
     }],
 
     sync: true,
@@ -79,22 +77,8 @@ exports.config = {
 
     baseUrl: 'http://localhost:4200',
 
-     services: [
+    services: [
         'selenium-standalone',
-        'docker'
     ],
-    dockerLogs: './',
-    dockerOptions: {
-        image: 'ui',
-        healthCheck: {
-            url: 'http://localhost:4200',
-            maxRetries: 5,
-            inspectInterval: 2000,
-            startDelay: 30000
-        },
-        options: {
-            p: ['4200:4200'],
-            e: ['BASE_URL', 'http://localhost:4200']
-        }
-    }
+
 };
