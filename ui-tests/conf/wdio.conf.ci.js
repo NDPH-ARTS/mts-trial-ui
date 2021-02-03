@@ -49,6 +49,7 @@ exports.config = {
                 return `results-${options.cid}.xml`
             }
         }],
+
         ['cucumberjs-json', {
             jsonFolder: jsonTmpDirectory,
             language: 'en',
