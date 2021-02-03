@@ -17,6 +17,7 @@ class authenticationPage {
         this.userName.setValue('test-automation@mtsdevndph.onmicrosoft.com')
         this.nextBtn.click()
         this.password.setValue('Oxford909')
+        browser.pause(3000)
         this.signIn.click()
         this.selectYes.click()
     }
