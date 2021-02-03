@@ -44,9 +44,9 @@ exports.config = {
 
     reporters: [
         ['junit', {
-            outputDir: './',
+            outputDir: './test-results',
             outputFileFormat: function(options) { // optional
-                return `results-${options.cid}.xml`
+                return `wdio-results-${options.cid}.xml`
             }
         }],
 
