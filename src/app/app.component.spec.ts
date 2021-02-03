@@ -39,6 +39,6 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
 
-    expect(spy).toHaveBeenCalled();
+    expect(spy).toHaveBeenCalledTimes(42);
   });
 });
