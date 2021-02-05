@@ -8,7 +8,7 @@ defineStep('User launches the trial page URL', function () {
 });
 
 defineStep('User runs accessibility report on the trial page', function () {
-    AccessibilityReports.generateAxeReportAs()
+    AccessibilityReports.generateAxeReport()
 });
 
 

@@ -7,7 +7,7 @@ const AXE_REPORT_FORMAT = 'csv'
 
 class AccessibilityReports {
 
-    generateAxeReportAs(reportFileName) {
+    generateAxeReport(reportFileName) {
         //check if directory exists
         if (!fs.existsSync(ACCESSIBILITYREPORTS)) {
             fs.mkdirSync(ACCESSIBILITYREPORTS);
