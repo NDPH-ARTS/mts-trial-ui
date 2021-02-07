@@ -2,17 +2,24 @@ const fs = require('fs')
 const axeCore = require('axe-core')
 const axeReports = require('axe-reports')
 const aXE = require('wdio-axe')
-const ACCESSIBILITYREPORTS = ('axereports')
+const ACCESSIBILITYREPORTS = 'axereports'
 const AXE_REPORT_FORMAT = 'csv'
 
 class AccessibilityReports {
 
-    generateAxeReport(reportFileName) {
+    generateAxeReport(pageName) {
+
+        let dt = new Date();
+        let datetimestr = dt.toString('ddMMYYYYHHmmss')
+        let reportFileName = pageName + '_' + datetimestr;
+
         //check if directory exists
         if (!fs.existsSync(ACCESSIBILITYREPORTS)) {
             fs.mkdirSync(ACCESSIBILITYREPORTS);
         }
-        let reportName = (ACCESSIBILITYREPORTS, reportFileName);
+        let reportName = ACCESSIBILITYREPORTS + '/' + reportFileName;
+        console.log('in axe reports reportFileName' + reportFileName)
+        console.log('in axe reports reportName' + reportName)
         const isCreating = !fs.existsSync(`${reportName}.${AXE_REPORT_FORMAT}`);
         browser.execute(axeCore.source); // run inside browser and get results
         const axeResults = browser.executeAsync(done => {

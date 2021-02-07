@@ -8,4 +8,4 @@ Feature: As an authenticated user
         Given User launches the trial page URL
 
     Scenario: View welcome page when navigating to the landing page
-        When User runs accessibility report on the trial page
+        When User runs accessibility report on the trial "landing page"
