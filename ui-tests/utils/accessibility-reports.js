@@ -18,8 +18,6 @@ class AccessibilityReports {
             fs.mkdirSync(ACCESSIBILITYREPORTS);
         }
         let reportName = ACCESSIBILITYREPORTS + '/' + reportFileName;
-        console.log('in axe reports reportFileName' + reportFileName)
-        console.log('in axe reports reportName' + reportName)
         const isCreating = !fs.existsSync(`${reportName}.${AXE_REPORT_FORMAT}`);
         browser.execute(axeCore.source); // run inside browser and get results
         const axeResults = browser.executeAsync(done => {
