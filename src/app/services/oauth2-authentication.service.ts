@@ -44,6 +44,10 @@ export class OAuth2AuthenticationService implements AuthenticationService {
     return '';
   }
 
+  getIDToken() : string {
+    return this.oauthService.getIdToken();
+  }
+
   constructor(private oauthService: OAuthService) { }
 }
 
@@ -57,6 +61,7 @@ export abstract class AuthenticationService {
   abstract isAuthenticated(): boolean;
   abstract getUsername(): string;
   abstract getOid(): string;
+  abstract getIDToken(): string;
 }
 
 export class MockAuthenticationService implements AuthenticationService {
@@ -73,6 +78,9 @@ export class MockAuthenticationService implements AuthenticationService {
     return '';
   }
   getOid(): string {
+    return '';
+  }
+  getIDToken(): string {
     return '';
   }
 }
