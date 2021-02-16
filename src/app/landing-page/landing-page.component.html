@@ -4,8 +4,20 @@
     <!-- {{'Welcome' | translate}}, {{this.authenticationService.getUsername()}} -->
     Welcome, {{this.authenticationService.getUsername()}}
 
+  <div *ngIf="profile; else noProfileYet">
+    <h1>Profile:</h1>
+    <h2>{{profile.givenName}}</h2>
+  </div>
+  <ng-template #noProfileYet>
+    <div><button (click)="displayProfile()">Display profile</button></div>
+  </ng-template>
+
 </div>
 
 <div *ngIf="!this.authenticationService.isAuthenticated()">
     <button mat-raised-button color="primary" (click)="this.authenticationService.login()">Login</button>
 </div>
+
+<br/>
+
+
