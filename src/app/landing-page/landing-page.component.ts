@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { ConfigurationService } from '../services/configuration-service';
 import { AuthenticationService } from '../services/oauth2-authentication.service';
-import { Profile } from '../Profile';
-import { ProfileService } from '../profile.service';
+import { Profile } from '../model/Profile';
+import { ProfileService } from '../services/profile.service';
 
 @Component({
   selector: 'app-landing-page',
@@ -15,8 +15,8 @@ export class LandingPageComponent {
 
   profile! : Profile;
 
-  displayProfile() : void {
-    this.profileService.getProfile()
+  displayProfile(oid: String) : void {
+    this.profileService.getProfile(oid)
       .subscribe (loadedProfile => this.profile=loadedProfile);
   }
 

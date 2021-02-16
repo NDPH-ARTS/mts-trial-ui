@@ -34,7 +34,13 @@ export class OAuth2AuthenticationService implements AuthenticationService {
     if (claims != null) {
       return claims.name;
     }
-
+    return '';
+  }
+  getOid(): string {
+    const claims: Claims = this.oauthService.getIdentityClaims() as Claims;
+    if (claims != null) {
+      return claims.oid;
+    }
     return '';
   }
 
@@ -50,6 +56,7 @@ export abstract class AuthenticationService {
   abstract logout(): void;
   abstract isAuthenticated(): boolean;
   abstract getUsername(): string;
+  abstract getOid(): string;
 }
 
 export class MockAuthenticationService implements AuthenticationService {
@@ -63,6 +70,9 @@ export class MockAuthenticationService implements AuthenticationService {
     return true;
   }
   getUsername(): string {
+    return '';
+  }
+  getOid(): string {
     return '';
   }
 }

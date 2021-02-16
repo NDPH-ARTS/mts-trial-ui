@@ -2,14 +2,20 @@
 
 <div *ngIf="this.authenticationService.isAuthenticated()">
     <!-- {{'Welcome' | translate}}, {{this.authenticationService.getUsername()}} -->
-    Welcome, {{this.authenticationService.getUsername()}}
+  <div>Info from token: username= {{this.authenticationService.getUsername()}} oid={{this.authenticationService.getOid()}}</div>
 
   <div *ngIf="profile; else noProfileYet">
-    <h1>Profile:</h1>
-    <h2>{{profile.givenName}}</h2>
+    <div>
+      Info from practitioner service:
+      givenName = {{profile.givenName}}
+      familyName = {{profile.familyName}}
+      prefix = {{profile.prefix}}
+      id = {{profile.id}}
+    </div>
+
   </div>
   <ng-template #noProfileYet>
-    <div><button (click)="displayProfile()">Display profile</button></div>
+    <div><button (click)="displayProfile(this.authenticationService.getOid())">Display profile</button></div>
   </ng-template>
 
 </div>
