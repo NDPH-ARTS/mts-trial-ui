@@ -13,11 +13,11 @@ export class LandingPageComponent {
   constructor(public authenticationService: AuthenticationService, public configSerice: ConfigurationService, private profileService: ProfileService) {
   }
 
-  profile! : Profile;
+  profiles : Profile[] = [];
 
   displayProfile(oid: String) : void {
-    this.profileService.getProfile(oid)
-      .subscribe (loadedProfile => this.profile=loadedProfile);
+    this.profileService.getProfiles(oid)
+      .subscribe (loadedProfiles => this.profiles=loadedProfiles);
   }
 
 }

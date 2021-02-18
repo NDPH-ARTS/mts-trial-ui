@@ -22,7 +22,7 @@ export class TokenSenderInterceptor implements HttpInterceptor {
 
       console.log("Interceptor added token to  " + authReq.url);
       console.log(authReq)
-      
+
       return next.handle(authReq);
 
     }else{
