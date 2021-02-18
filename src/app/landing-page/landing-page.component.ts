@@ -13,9 +13,16 @@ export class LandingPageComponent {
   constructor(public authenticationService: AuthenticationService, public configSerice: ConfigurationService, private profileService: ProfileService) {
   }
 
-  profiles : Profile[] = [];
+  profiles! : Profile[] ;
 
-  displayProfile(oid: String) : void {
+  ngDoCheck(){
+    if(this.authenticationService.isAuthenticated() && !this.profiles){
+      this.showProfile(this.authenticationService.getOid());
+    }
+  }
+
+
+  showProfile(oid: String) : void {
     this.profileService.getProfiles(oid)
       .subscribe (loadedProfiles => this.profiles=loadedProfiles);
   }

@@ -1,23 +1,19 @@
+<div class="page-header"><h1>{{ this.configSerice.trialName }}</h1></div>
 <div class="page-content">
   <div *ngIf="this.authenticationService.isAuthenticated()">
     <h1>Welcome</h1>
     <div>You are logged in.</div>
-    <h2>Your profile:</h2>
-    <div>Info from token: username= {{this.authenticationService.getUsername()}} oid={{this.authenticationService.getOid()}}</div>
 
     <div *ngFor="let profile of profiles">
       <div>
-        Info from practitioner service:
-        givenName = {{profile.givenName}}
-        familyName = {{profile.familyName}}
-        prefix = {{profile.prefix}}
-        id = {{profile.id}}
+        <h2>Profile:</h2>
+        <div>givenName = {{profile.givenName}}</div>
+        <div>familyName = {{profile.familyName}}</div>
+        <div>prefix = {{profile.prefix}}</div>
+        <div>practitioner id = {{profile.id}}</div>
+        <div>azure id = {{profile.userAccountId}}</div>
       </div>
     </div>
-
-    <div><button (click)="displayProfile(this.authenticationService.getOid())">Display profile</button></div>
-
-
   </div>
 
   <div *ngIf="!this.authenticationService.isAuthenticated()">

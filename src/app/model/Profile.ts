@@ -3,4 +3,5 @@ export interface Profile {
   givenName : String;
   familyName : String;
   prefix : String;
+  userAccountId : String;
 }
