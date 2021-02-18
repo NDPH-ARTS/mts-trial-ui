@@ -27,6 +27,8 @@
 **/allure-results/**
 allure-results/**
 
+**/visual regression results/**
+desktop-microsoftedge/**
 # misc
 /.sass-cache
 /connect.lock

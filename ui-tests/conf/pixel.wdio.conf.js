@@ -23,7 +23,7 @@ exports.config = {
                 blockOutStatusBar: true,
                 blockOutToolBar: true,
                 // NOTE: When you are testing a hybrid app please use this setting
-                isHybridApp: true,
+                // isHybridApp: true,
                 // Options for the tabbing image
                 tabbableOptions: {
                     circle: {
