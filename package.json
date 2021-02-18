@@ -7,7 +7,7 @@
     "build": "ng build",
     "ui-test": "npx wdio  ./ui-tests/conf/wdio.conf.js",
     "ui-test-ci": "npx wdio ./ui-tests/conf/wdio.conf.ci.js",
-    "ui-test-view": "npx wdio ./ui-tests/conf/pixel.wdio.conf.js",
+    "image-comparison-test": "npx wdio ./ui-tests/conf/pixel.wdio.conf.js",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "test": "ng test",

@@ -8,7 +8,7 @@ describe('Opening Home Page', () => {
         browser.saveScreen('examplePaged', { /* some options */ });
 
         // Save an element
-        // browser.saveElement($('#element-id'), 'firstButtonElement', { /* some options */ });
+        browser.saveElement($('#element-id'), 'firstButtonElement', { /* some options */ });
 
         // Save a full page screenshot
         browser.saveFullPageScreen('fullPage', { /* some options */ });

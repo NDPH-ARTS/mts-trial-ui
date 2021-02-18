@@ -2,7 +2,7 @@ const { join } = require('path');
 // wdio.conf.js
 exports.config = {
     specs: [
-        'ui-tests/uispecs/*.js'
+        'ui-tests/image-comparison-tests/*.js'
     ],
 
     capabilities: [{
@@ -15,7 +15,7 @@ exports.config = {
             // The options
             {
                 // Some options, see the docs for more
-                baselineFolder: join(process.cwd(), 'ui-tests/uispecs/'),
+                baselineFolder: join(process.cwd(), 'ui-tests/image-comparison-tests/'),
                 formatImageName: '{tag}-{logName}-{width}x{height}',
                 screenshotPath: join(process.cwd(), '.tmp/'),
                 savePerInstance: true,
