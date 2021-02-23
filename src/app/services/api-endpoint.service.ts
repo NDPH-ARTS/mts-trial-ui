@@ -17,9 +17,9 @@ export class ApiEndpointService {
 
   init(gatewayUrl: string): void {
     if (gatewayUrl != null && gatewayUrl.length > 0) {
-      this.serviceEndpoints.practitionerService = gatewayUrl + '/practitioner-service';
-      this.serviceEndpoints.roleService = gatewayUrl + '/role-service';
-      this.serviceEndpoints.siteService = gatewayUrl + '/site-service';
+      this.serviceEndpoints.practitionerService = gatewayUrl + '/practitioner';
+      this.serviceEndpoints.roleService = gatewayUrl + '/roles';
+      this.serviceEndpoints.siteService = gatewayUrl + '/sites';
     } else {
       environment.serviceUrls.forEach(e => {
         this.serviceEndpoints[e.service] = e.url;
