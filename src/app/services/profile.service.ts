@@ -9,7 +9,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 })
 export class ProfileService {
 
-  private profileUrl = 'http://localhost:8081/practitioner/profile'; // temp. Inject this in task 549
+  readonly profileUrl = 'http://localhost:8081/practitioner/profile'; // temp. Inject this in task 549
 
   constructor(private http: HttpClient) { }
 
@@ -29,5 +29,12 @@ export class ProfileService {
         `body was: ${error.error}`);
     }
     return EMPTY;
+  }
+}
+
+export class MockProfileService {
+  getProfiles(oid: String): Observable <Profile[]> {
+    let mockProfiles : Profile[] = [];
+    return of(mockProfiles);
   }
 }
