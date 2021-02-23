@@ -18,11 +18,11 @@ jobs:
         uses: actions/checkout@v2
       - name: Build & test
         run: |
-          # npm i --no-optional
-          # npm run test-ci
-          # npm run start-background
-          # sleep 20
-          # npm run ui-test-ci
+          npm i --no-optional
+          npm run test-ci
+          npm run start-background
+          sleep 20
+          npm run ui-test-ci
           npm run build --prod
           cd dist
           zip -r mts-trial-ui.zip mts-trial-ui
