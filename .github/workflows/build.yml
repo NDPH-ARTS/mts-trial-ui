@@ -23,7 +23,7 @@ jobs:
           npm run start-background
           sleep 20
           npm run ui-test-ci
-          npm run build --prod
+          npm run build -- --prod
           cd dist
           zip -r mts-trial-ui.zip mts-trial-ui
       - name: Create Release
