@@ -20,9 +20,9 @@
   <div *ngIf="!this.authenticationService.isAuthenticated()">
 
       <h1>Landing Page</h1>
-      <div class="login">
+      <div>
         You are not logged in.<br/>
-        <button mat-raised-button color="primary" (click)="this.authenticationService.login()">Login</button>
+        <button id="login_button" mat-raised-button color="primary" (click)="this.authenticationService.login()">Login</button>
       </div>
   </div>
 
