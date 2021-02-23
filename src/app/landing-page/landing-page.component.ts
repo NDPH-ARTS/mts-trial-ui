@@ -24,7 +24,7 @@ export class LandingPageComponent {
 
   showProfile(oid: String) : void {
     this.profileService.getProfiles(oid)
-      .subscribe (loadedProfiles => this.profiles=loadedProfiles);
+      .subscribe ((loadedProfiles:Profile[]) => this.profiles=loadedProfiles);
   }
 
 }
