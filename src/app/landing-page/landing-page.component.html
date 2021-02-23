@@ -4,12 +4,13 @@
     <h1>Welcome</h1>
     <div>You are logged in.</div>
 
+    <br/>
+    <div *ngIf="!profiles">Fetching your profile...</div>
+
     <div *ngFor="let profile of profiles">
       <div>
-        <h2>Profile:</h2>
-        <div>givenName = {{profile.givenName}}</div>
-        <div>familyName = {{profile.familyName}}</div>
-        <div>prefix = {{profile.prefix}}</div>
+        <h2>Hello:  {{profile.prefix}}  {{profile.givenName}} {{profile.familyName}}</h2>
+
         <div>practitioner id = {{profile.id}}</div>
         <div>azure id = {{profile.userAccountId}}</div>
       </div>
