@@ -24,7 +24,8 @@ jobs:
           sleep 20
           npm run ui-test-ci
           npm run build --prod
-          zip mts-trial-ui dist/mts-trial-ui
+          cd dist
+          zip -r mts-trial-ui.zip mts-trial-ui
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
