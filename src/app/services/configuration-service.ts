@@ -8,20 +8,25 @@ import { Claims } from '../model/claim';
   providedIn: 'root'
 })
 export class ConfigurationService {
+
   trialName = '--trial name--';
+  gatewayUrl = '--not-gateway--';
 
-  init(appRoot: ElementRef): void {
-    const trialNameAttribute = appRoot.nativeElement.getAttribute('trialName');
-
-    if (trialNameAttribute != null && trialNameAttribute.length > 0
-      && trialNameAttribute.indexOf('{{') !== 0) {
-      this.trialName = trialNameAttribute;
+  // get an attribute from the appRoot, defaulting to the property in env if none
+  private static retrieveAttr<T, K extends keyof T>(attrName: K, env: T, appRoot: ElementRef): T[K] {
+    const attrValue = appRoot.nativeElement.getAttribute(attrName);
+    if (attrValue != null && attrValue.length > 0
+      && attrValue.indexOf('{{') !== 0) {
+      return attrValue;
     } else {
-      this.trialName = environment.trialName;
+      return env[attrName];
     }
   }
 
-
+  init(appRoot: ElementRef): void {
+    this.trialName = ConfigurationService.retrieveAttr('trialName', environment, appRoot);
+    this.gatewayUrl = ConfigurationService.retrieveAttr('gatewayUrl', environment, appRoot);
+  }
 
   constructor() { }
 

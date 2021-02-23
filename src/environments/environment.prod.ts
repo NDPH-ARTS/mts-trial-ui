@@ -6,6 +6,8 @@ export const environment = {
   production: true,
   issuer: '',
   clientId: '',
+  gatewayUrl: '',
+  serviceUrls: [ ],
   trialName: ''
 };
 /*
