@@ -4,13 +4,14 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "start-background": "ng serve &",
     "build": "ng build",
     "ui-test": "npx wdio  ./ui-tests/conf/wdio.conf.js",
     "ui-test-ci": "npx wdio ./ui-tests/conf/wdio.conf.ci.js",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "test": "ng test",
-    "test-ci": "ng test --watch=false --browsers=Chrome_headless_no_sandbox"
+    "test-ci": "ng test --karmaConfig=karma.conf.ci.js"
   },
   "private": true,
   "dependencies": {
@@ -47,6 +48,7 @@
     "@types/jasmine": "~3.6.0",
     "@types/node": "^12.11.1",
     "@wdio/allure-reporter": "^6.11.0",
+    "@wdio/junit-reporter": "^6.11.0",
     "@wdio/selenium-standalone-service": "^6.11.0",
     "@wdio/spec-reporter": "^6.11.0",
     "chromedriver": "^87.0.5",
@@ -60,6 +62,7 @@
     "karma-coverage": "~2.0.3",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "^1.5.0",
+    "karma-junit-reporter": "^2.0.1",
     "node-emoji": "^1.10.0",
     "protractor": "~7.0.0",
     "ts-node": "~8.3.0",
