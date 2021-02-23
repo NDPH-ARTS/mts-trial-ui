@@ -13,8 +13,8 @@ export class ProfileService {
 
   constructor(private http: HttpClient) { }
 
-  getProfiles(oid: String): Observable <Profile[]> {
-    return this.http.get<Profile[]>(this.profileUrl + "?userIdentity=" + oid) // temp - sending this as a param to get working but after story 609 the profile endpoint will pick up the oid from the auth token
+  getProfiles(): Observable <Profile[]> {
+    return this.http.get<Profile[]>(this.profileUrl)
       .pipe(catchError(this.handleError));
   }
 
@@ -33,7 +33,7 @@ export class ProfileService {
 }
 
 export class MockProfileService {
-  getProfiles(oid: String): Observable <Profile[]> {
+  getProfiles(): Observable <Profile[]> {
     let mockProfiles : Profile[] = [];
     return of(mockProfiles);
   }

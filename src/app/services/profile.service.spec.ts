@@ -29,12 +29,12 @@ describe('ProfileService', () => {
         { id: 'dummy-staff-id', givenName: 'Dummy', familyName: 'Dummington', prefix: 'Mr', userAccountId : dummyOid  }
       ];
 
-      service.getProfiles(dummyOid).subscribe(profiles => {
+      service.getProfiles().subscribe(profiles => {
         expect(profiles.length).toBe(1);
         expect(profiles).toEqual(dummyProfiles);
       });
 
-      const req = httpMock.expectOne(`${service.profileUrl}?userIdentity=${dummyOid}`);
+      const req = httpMock.expectOne(`${service.profileUrl}`);
       expect(req.request.method).toBe("GET");
       req.flush(dummyProfiles);
     });

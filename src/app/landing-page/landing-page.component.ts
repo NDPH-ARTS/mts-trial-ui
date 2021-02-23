@@ -17,13 +17,12 @@ export class LandingPageComponent {
 
   ngDoCheck(){
     if(this.authenticationService.isAuthenticated() && !this.profiles){
-      this.showProfile(this.authenticationService.getOid());
+      this.showProfile();
     }
   }
 
-
-  showProfile(oid: String) : void {
-    this.profileService.getProfiles(oid)
+  showProfile() : void {
+    this.profileService.getProfiles()
       .subscribe ((loadedProfiles:Profile[]) => this.profiles=loadedProfiles);
   }
 
