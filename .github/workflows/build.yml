@@ -23,8 +23,9 @@ jobs:
           npm run start-background
           sleep 20
           npm run ui-test-ci
-          npm run build --prod
-          zip mts-trial-ui dist/mts-trial-ui
+          npm run build -- --prod
+          cd dist
+          zip -r mts-trial-ui.zip mts-trial-ui
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
@@ -42,7 +43,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./mts-trial-ui.zip
+          asset_path: ./dist/mts-trial-ui.zip
           asset_name: mts-trial-ui.zip
           asset_content_type: application/zip
       - name: Publish UI test Report
