@@ -14,17 +14,33 @@ export class LandingPageComponent {
   }
 
   profiles! : Profile[] ;
+  profilesState: State = State.init;
+  State = State;
+
 
   ngDoCheck(){
-    if(this.authenticationService.isAuthenticated() && !this.profiles){
-      this.showProfile();
+    if(this.authenticationService.isAuthenticated() && this.profilesState == State.init){
+      this.showProfiles();
     }
   }
 
-  showProfile() : void {
+  showProfiles() : void {
     this.profileService.getProfiles()
-      .subscribe ((loadedProfiles:Profile[]) => this.profiles=loadedProfiles);
+      .subscribe (
+        (loadedProfiles:Profile[]) => {
+          this.profiles=loadedProfiles;
+          this.profilesState= loadedProfiles.length == 0 ?  State.failed : State.success;
+        },
+      err => {
+        this.profilesState=State.failed;
+        }
+      );
   }
 
+}
+export enum State {
+  init,
+  success,
+  failed,
 }
 

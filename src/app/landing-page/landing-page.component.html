@@ -3,18 +3,25 @@
   <div *ngIf="this.authenticationService.isAuthenticated()">
     <h1>Welcome</h1>
     <div>You are logged in.</div>
-
     <br/>
-    <div *ngIf="!profiles">Fetching your profile...</div>
 
-    <div *ngFor="let profile of profiles">
-      <div>
-        <h2>Hello:  {{profile.prefix}}  {{profile.givenName}} {{profile.familyName}}</h2>
-
-        <div>practitioner id = {{profile.id}}</div>
-        <div>azure id = {{profile.userAccountId}}</div>
+    <div *ngIf="this.profilesState==State.success">
+      <div *ngFor="let profile of profiles">
+        <div>
+          <h2>Hello:  {{profile.prefix}}  {{profile.givenName}} {{profile.familyName}}</h2>
+          <div>practitioner id = {{profile.id}}</div>
+          <div>azure id = {{profile.userAccountId}}</div>
+        </div>
       </div>
     </div>
+
+
+    <div *ngIf="this.profilesState==State.init">Fetching your profile...</div>
+
+    <div *ngIf="this.profilesState==State.failed" class="error">
+      There was an error getting profile data.
+    </div>
+
   </div>
 
   <div *ngIf="!this.authenticationService.isAuthenticated()">

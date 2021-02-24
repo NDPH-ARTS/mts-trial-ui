@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {Profile} from "../model/Profile";
-import { Observable, of, EMPTY } from 'rxjs';
+import {Observable, of, EMPTY, throwError} from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
@@ -28,7 +28,7 @@ export class ProfileService {
         `Backend returned code ${error.status}, ` +
         `body was: ${error.error}`);
     }
-    return EMPTY;
+    return throwError("Error getting profile data.");
   }
 }
 
