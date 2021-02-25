@@ -9,8 +9,7 @@ import {ApiEndpointService} from "./api-endpoint.service";
   providedIn: 'root'
 })
 export class ProfileService {
-
-  //readonly profileUrl = 'http://localhost:8081/practitioner/profile'; // temp. Inject this in task 549
+  
   readonly profileUrl = this.endpoints.profileEndpoint;
 
   constructor(private http: HttpClient, private endpoints: ApiEndpointService) { }
