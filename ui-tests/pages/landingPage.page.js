@@ -1,8 +1,7 @@
 class landingPage {
 
     get titleBar() { return $('.page-header') }
-    get loginButton() { return $('//div//button[text()="Login"]') }
-
+    get loginButton() { return $('//button[@id="login_button"]') }
 
     login() {
         this.loginButton.click()
