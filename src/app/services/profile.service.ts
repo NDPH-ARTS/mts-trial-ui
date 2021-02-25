@@ -3,15 +3,16 @@ import {Profile} from "../model/Profile";
 import {Observable, of, EMPTY, throwError} from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import {ApiEndpointService} from "./api-endpoint.service";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProfileService {
+  
+  readonly profileUrl = this.endpoints.profileEndpoint;
 
-  readonly profileUrl = 'http://localhost:8081/practitioner/profile'; // temp. Inject this in task 549
-
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private endpoints: ApiEndpointService) { }
 
   getProfiles(): Observable <Profile[]> {
     return this.http.get<Profile[]>(this.profileUrl)

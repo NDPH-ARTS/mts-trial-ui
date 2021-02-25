@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment';
 import { authConfig } from './auth.config';
 import { ConfigurationService } from './services/configuration-service';
 import { AuthenticationService } from './services/oauth2-authentication.service';
+import { ApiEndpointService } from './services/api-endpoint.service';
 
 @Component({
   selector: 'app-root',
@@ -15,10 +16,15 @@ export class AppComponent {
   trialName = '';
 
   constructor(appRoot: ElementRef, public authenticationService: AuthenticationService,
-    public configurationService: ConfigurationService) {
+              public configurationService: ConfigurationService,
+              public apiEndopintService: ApiEndpointService) {
     this.configurationService.init(appRoot);
+    this.apiEndopintService.init(this.configurationService.gatewayUrl);
     this.authenticationService.init();
+    console.log('AppComponent constructor config', configurationService);
+    console.log('AppComponent constructor profileService', this.apiEndopintService.profileEndpoint);
   }
+
   private initAuthenticationConfig(appRoot: ElementRef<any>): void {
     const issuer = appRoot.nativeElement.getAttribute('issuer');
     const clientId = appRoot.nativeElement.getAttribute('clientId');
