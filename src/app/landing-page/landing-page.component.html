@@ -1,11 +1,40 @@
 <div class="page-header"><h1>{{ this.configSerice.trialName }}</h1></div>
+<div class="page-content">
+  <div *ngIf="this.authenticationService.isAuthenticated()">
+    <h1>Welcome</h1>
+    <div>You are logged in.</div>
+    <br/>
 
-<div *ngIf="this.authenticationService.isAuthenticated()">
-    <!-- {{'Welcome' | translate}}, {{this.authenticationService.getUsername()}} -->
-    Welcome, {{this.authenticationService.getUsername()}}
+    <div *ngIf="this.profilesState==State.success">
+      <div *ngFor="let profile of profiles">
+        <div>
+          <h2>Hello:  {{profile.prefix}}  {{profile.givenName}} {{profile.familyName}}</h2>
+          <div>practitioner id = {{profile.id}}</div>
+          <div>azure id = {{profile.userAccountId}}</div>
+        </div>
+      </div>
+    </div>
+
+
+    <div *ngIf="this.profilesState==State.init">Fetching your profile...</div>
+
+    <div *ngIf="this.profilesState==State.failed" class="error">
+      There was an error getting profile data.
+    </div>
+
+  </div>
+
+  <div *ngIf="!this.authenticationService.isAuthenticated()">
+
+      <h1>Landing Page</h1>
+      <div>
+        You are not logged in.<br/>
+        <button id="login_button" mat-raised-button color="primary" (click)="this.authenticationService.login()">Login</button>
+      </div>
+  </div>
+
+
 
 </div>
 
-<div *ngIf="!this.authenticationService.isAuthenticated()">
-    <button mat-raised-button color="primary" (click)="this.authenticationService.login()">Login</button>
-</div>
+
