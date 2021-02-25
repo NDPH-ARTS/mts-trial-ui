@@ -12,15 +12,15 @@ export const environment = {
   serviceUrls: [
     {
       service: 'practitionerService',
-      url: 'http://localhost:8081'
+      url: 'http://localhost:8081/practitioner'
     },
     {
       service: 'roleService',
-      url: 'http://localhost:8082'
+      url: 'http://localhost:8082/roles'
     },
     {
       service: 'siteService',
-      url: 'http://localhost:8083'
+      url: 'http://localhost:8083/sites'
     }
   ]
 };
