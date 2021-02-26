@@ -15,22 +15,10 @@ export class AppComponent {
   trialName = '';
 
   constructor(appRoot: ElementRef, public authenticationService: AuthenticationService,
-    public configurationService: ConfigurationService) {
+              public configurationService: ConfigurationService) {
     this.configurationService.init(appRoot);
-    this.authenticationService.init();
-  }
-  private initAuthenticationConfig(appRoot: ElementRef<any>): void {
-    const issuer = appRoot.nativeElement.getAttribute('issuer');
-    const clientId = appRoot.nativeElement.getAttribute('clientId');
+    this.authenticationService.init(appRoot);
 
-    //  We may be passed some config through the app-root element
-    if (issuer != null && issuer.length > 0 && issuer.indexOf('$') !== 0) {
-      console.log(`Initing auth service with app-root config - issuer: ${authConfig.issuer} client: ${authConfig.clientId}`);
-      authConfig.issuer = issuer;
-      authConfig.clientId = clientId;
-    } else {
-      console.log(`Initing auth service from angular env - issuer: ${environment.issuer} client: ${environment.clientId}`);
-    }
   }
 
   logout(): void {
