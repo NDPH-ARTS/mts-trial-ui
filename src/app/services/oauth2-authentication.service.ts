@@ -1,5 +1,6 @@
-import { Injectable } from '@angular/core';
+import { ElementRef, Injectable } from '@angular/core';
 import { OAuthService } from 'angular-oauth2-oidc';
+import { environment } from 'src/environments/environment';
 import { authConfig } from '../auth.config';
 import { Claims } from '../model/claim';
 
@@ -9,8 +10,19 @@ import { Claims } from '../model/claim';
 export class OAuth2AuthenticationService implements AuthenticationService {
   private oauthEvents: any;
 
-  init(): void {
-    console.log(authConfig);
+  init(appRoot: ElementRef): void {
+    const issuer = appRoot.nativeElement.getAttribute('issuer');
+    const clientId = appRoot.nativeElement.getAttribute('clientId');
+
+    //  We may be passed some config through the app-root element
+    if (issuer != null && issuer.length > 0 && issuer.indexOf('{{') !== 0) {
+      console.log(`Initing auth service with app-root config - issuer: ${authConfig.issuer} client: ${authConfig.clientId}`);
+      authConfig.issuer = issuer;
+      authConfig.clientId = clientId;
+    } else {
+      console.log(`Initing auth service from angular env - issuer: ${environment.issuer} client: ${environment.clientId}`);
+    }
+
     this.oauthService.configure(authConfig);
     this.oauthService.setupAutomaticSilentRefresh();
     this.oauthService.loadDiscoveryDocumentAndTryLogin().catch(() => console.log('==== API ==============> loadDiscoveryDocumentAndLogin fetch failed'));
@@ -48,7 +60,7 @@ export class OAuth2AuthenticationService implements AuthenticationService {
   providedIn: 'root'
 })
 export abstract class AuthenticationService {
-  abstract init(): void;
+  abstract init(appRoot: ElementRef): void;
   abstract login(): void;
   abstract logout(): void;
   abstract isAuthenticated(): boolean;
