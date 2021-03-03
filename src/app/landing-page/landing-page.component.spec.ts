@@ -3,7 +3,7 @@ import { TranslateFakeLoader, TranslateLoader, TranslateModule } from '@ngx-tran
 import { AuthenticationService, MockAuthenticationService } from '../services/oauth2-authentication.service';
 import { LandingPageComponent } from './landing-page.component';
 import { of } from 'rxjs';
-import {MockProfileService, ProfileService} from "../services/profile.service";
+import {MockProfileService, ProfileService} from '../services/profile.service';
 
 describe('LandingPageComponent', () => {
   let component: LandingPageComponent;
