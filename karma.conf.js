@@ -30,7 +30,7 @@ module.exports = function (config) {
       reporters: [
         { type: 'html' },
         { type: 'text-summary' }
-      ]
+      ],
     },
     browsers: ['Chrome_headless_no-sandbox'],
     // you can define custom flags
@@ -40,6 +40,7 @@ module.exports = function (config) {
         flags: ['--no-sandbox']
       }
     },
+    exclude: ["/**/*.mock.ts"],
     reporters: ['progress', 'kjhtml'],
     port: 9876,
     colors: true,

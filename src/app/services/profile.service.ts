@@ -11,6 +11,8 @@ import {ApiEndpointService} from './api-endpoint.service';
 export class ProfileService {
   readonly profileUrl = this.endpoints.profileEndpoint;
 
+  constructor(private http: HttpClient, private endpoints: ApiEndpointService) { }
+
   getProfiles(): Observable <Profile[]> {
     return this.http.get<Profile[]>(this.profileUrl)
       .pipe(catchError(this.handleError));
@@ -24,13 +26,5 @@ export class ProfileService {
     }
 
     return throwError('Error getting profile data.');
-  }
-
-  constructor(private http: HttpClient, private endpoints: ApiEndpointService) { }
-}
-
-export class MockProfileService {
-  getProfiles(): Observable <Profile[]> {
-    return of([]);
   }
 }

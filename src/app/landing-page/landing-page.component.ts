@@ -3,6 +3,7 @@ import { ConfigurationService } from '../services/configuration-service';
 import { AuthenticationService } from '../services/oauth2-authentication.service';
 import { Profile } from '../model/Profile';
 import { ProfileService } from '../services/profile.service';
+import { first } from 'rxjs/operators';
 
 @Component({
   selector: 'app-landing-page',
@@ -15,7 +16,7 @@ export class LandingPageComponent implements DoCheck {
   State = State;
 
   constructor(public authenticationService: AuthenticationService,
-              public configSerice: ConfigurationService,
+              public configService: ConfigurationService,
               private profileService: ProfileService) {
   }
 
@@ -27,7 +28,7 @@ export class LandingPageComponent implements DoCheck {
 
   showProfiles(): void {
     this.profileService.getProfiles()
-      .subscribe (
+      .pipe(first()).subscribe (
         (loadedProfiles: Profile[]) => {
           this.profiles = loadedProfiles;
           this.profilesState = loadedProfiles.length === 0 ?  State.failed : State.success;

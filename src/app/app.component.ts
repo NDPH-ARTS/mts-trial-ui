@@ -17,12 +17,12 @@ export class AppComponent {
 
   constructor(appRoot: ElementRef, public authenticationService: AuthenticationService,
               public configurationService: ConfigurationService,
-              public apiEndopintService: ApiEndpointService) {
+              public apiEndpointService: ApiEndpointService) {
     this.configurationService.init(appRoot);
-    this.apiEndopintService.init(this.configurationService.gatewayUrl);
-    this.authenticationService.init(appRoot);
+    this.apiEndpointService.init(this.configurationService.gatewayUrl);
+    this.authenticationService.init();
     console.log('AppComponent constructor config', configurationService);
-    console.log('AppComponent constructor profileService', this.apiEndopintService.profileEndpoint);
+    console.log('AppComponent constructor profileService', this.apiEndpointService.profileEndpoint);
   }
 
   logout(): void {

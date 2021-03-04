@@ -11,10 +11,7 @@ import { AuthenticationService, OAuth2AuthenticationService } from './services/o
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenSenderInterceptor } from './interceptors/TokenSenderInterceptor';
 
-export function storageFactory(): OAuthStorage {
-  return localStorage;
-}
-
+export const storageFactory = () => localStorage;
 @NgModule({
   declarations: [
     AppComponent,
