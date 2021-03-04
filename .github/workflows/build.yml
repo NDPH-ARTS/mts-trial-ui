@@ -19,10 +19,11 @@ jobs:
       - name: Build & test
         run: |
           npm i --no-optional
+          DETECT_CHROMEDRIVER_VERSION=true npm install chromedriver
           npm run test-ci
           npm run start-background
           sleep 20
-          npm run ui-test-ci
+           npm run ui-test-ci
           npm run build -- --prod
           cd dist
           zip -r mts-trial-ui.zip mts-trial-ui
