@@ -8,6 +8,7 @@
     "build": "ng build",
     "ui-test": "npx wdio  ./ui-tests/conf/wdio.conf.js",
     "ui-test-ci": "npx wdio ./ui-tests/conf/wdio.conf.ci.js",
+    "image-comparison-test": "npx wdio ./ui-tests/conf/pixel.wdio.conf.js",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "test": "ng test",
@@ -75,6 +76,7 @@
     "wdio-docker-service": "^3.1.0",
     "wdio-edgedriver-service": "^1.2.0",
     "wdio-firefox-profile-service": "^0.1.3",
-    "wdio-safaridriver-service": "0.0.1"
+    "wdio-safaridriver-service": "0.0.1",
+    "wdio-image-comparison-service": "^2.0.0"
   }
 }
