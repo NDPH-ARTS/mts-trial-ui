@@ -8,7 +8,7 @@ describe('Opening Home Page', () => {
         browser.saveScreen('examplePaged', { /* some options */ });
 
         // Save an element
-        //  browser.saveElement($('#element-id'), 'firstButtonElement', { /* some options */ });
+        browser.saveElement($('#element-id'), 'firstButtonElement', { /* some options */ });
 
         // Save a full page screenshot
         browser.saveFullPageScreen('fullPage', { /* some options */ });
@@ -22,7 +22,7 @@ describe('Opening Home Page', () => {
         expect(browser.checkScreen('examplePaged', { /* some options */ })).toEqual(0);
 
         // Check an element
-        // expect(browser.checkElement($('#element-id'), 'firstButtonElement', { /* some options */ })).toEqual(0);
+        expect(browser.checkElement($('#element-id'), 'firstButtonElement', { /* some options */ })).toEqual(0);
 
         // Check a full page screenshot
         expect(browser.checkFullPageScreen('fullPage', { /* some options */ })).toEqual(0);
