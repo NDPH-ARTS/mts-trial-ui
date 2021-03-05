@@ -22,8 +22,10 @@ jobs:
       - name: Build & test
         run: |
           npm i --no-optional
-          # DETECT_CHROMEDRIVER_VERSION=true npm install chromedriver -g
+          DETECT_CHROMEDRIVER_VERSION=true npm install chromedriver -g
           echo "$PATH"
+          which chromedriver
+          chromedriver -v
           # npm run test-ci
           # npm run start-background
           # sleep 20
