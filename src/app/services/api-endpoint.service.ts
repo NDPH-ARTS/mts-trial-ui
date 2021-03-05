@@ -12,8 +12,7 @@ export class ApiEndpointService {
     siteService: ''
   };
 
-  constructor() {
-  }
+  constructor() { }
 
   init(gatewayUrl: string): void {
     if (gatewayUrl != null && gatewayUrl.length > 0) {
