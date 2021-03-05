@@ -37,7 +37,6 @@
     "allure-commandline": "^2.13.8",
     "angular-oauth2-oidc": "^10.0.3",
     "bootstrap": "^4.5.3",
-    "chromedriver": "^89.0.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
