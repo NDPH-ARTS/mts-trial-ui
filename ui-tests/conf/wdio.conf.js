@@ -20,11 +20,11 @@ exports.config = {
     ],
 
     capabilities: [{
-        //     maxInstances: 5,
-        //     browserName: 'chrome',
+        maxInstances: 5,
+        browserName: 'chrome',
 
-        //     maxInstances: 1,
-        //     browserName: 'MicrosoftEdge'
+        maxInstances: 1,
+        browserName: 'MicrosoftEdge'
 
     },
 
@@ -35,8 +35,8 @@ exports.config = {
     },
 
     {
-        // maxInstances: 1,
-        // browserName: 'safari',
+        maxInstances: 1,
+        browserName: 'safari',
     }],
 
     logLevel: 'error',
