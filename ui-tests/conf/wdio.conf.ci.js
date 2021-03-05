@@ -22,7 +22,7 @@ exports.config = {
 
     capabilities: [
         {
-            browserName: 'chrome',
+            browserName: 'MicrosoftEdge',
         },
     ],
 
@@ -74,9 +74,17 @@ exports.config = {
     },
 
     capabilities: [{
+        maxInstances: 1,
         browserName: 'chrome',
+        acceptInsecureCerts: true,
         'goog:chromeOptions': {
-            args: ['--headless', '--disable-gpu', '--no-sandbox'],
+            args: [
+                '--no-sandbox',
+                '--disable-infobars',
+                '--headless',
+                '--disable-gpu',
+                '--window-size=1440,735'
+            ],
         }
     }],
 
