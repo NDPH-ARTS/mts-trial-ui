@@ -22,9 +22,9 @@ exports.config = {
 
     capabilities: [
         {
-          browserName: 'chrome',
+            browserName: 'chrome',
         },
-      ],
+    ],
 
     logLevel: 'error',
     bail: 0,
@@ -45,7 +45,7 @@ exports.config = {
     reporters: [
         ['junit', {
             outputDir: './test-results',
-            outputFileFormat: function(options) { // optional
+            outputFileFormat: function (options) { // optional
                 return `wdio-results-${options.cid}.xml`
             }
         }],
