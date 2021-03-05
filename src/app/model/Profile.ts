@@ -1,7 +1,7 @@
 export interface Profile {
-  id: String;
-  givenName : String;
-  familyName : String;
-  prefix : String;
-  userAccountId : String;
+  id: string;
+  givenName: string;
+  familyName: string;
+  prefix: string;
+  userAccountId: string;
 }

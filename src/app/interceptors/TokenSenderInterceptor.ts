@@ -4,7 +4,7 @@ import {
 } from '@angular/common/http';
 
 import { Observable } from 'rxjs';
-import {AuthenticationService} from "../services/oauth2-authentication.service";
+import {AuthenticationService} from '../services/oauth2-authentication.service';
 
 
 @Injectable()
@@ -15,16 +15,16 @@ export class TokenSenderInterceptor implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler):
     Observable<HttpEvent<any>> {
 
-    if(this.authenticationService.isAuthenticated()){
+    if (this.authenticationService.isAuthenticated()){
      const authReq = req.clone({
-        headers: req.headers.set('Authorization', 'Bearer '+ this.authenticationService.getIDToken())
+        headers: req.headers.set('Authorization', 'Bearer ' + this.authenticationService.getIDToken())
      });
 
-      console.log("Interceptor added token to  " + authReq.url);
-      return next.handle(authReq);
+     console.log('Interceptor added token to  ' + authReq.url);
+     return next.handle(authReq);
 
     }else{
-      console.log("Interceptor did not add token to " + req.url);
+      console.log('Interceptor did not add token to ' + req.url);
       return next.handle(req);
     }
 
