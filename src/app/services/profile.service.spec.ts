@@ -1,5 +1,5 @@
 import { TestBed } from '@angular/core/testing';
-import {HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing'
+import {HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import { ProfileService } from './profile.service';
 
@@ -34,9 +34,33 @@ describe('ProfileService', () => {
         expect(profiles).toEqual(dummyProfiles);
       });
 
-      const req = httpMock.expectOne(`${service.profileUrl}`);
-      expect(req.request.method).toBe("GET");
+      const req = httpMock.expectOne(service.profileUrl);
+      expect(req.request.method).toBe('GET');
       req.flush(dummyProfiles);
+    });
+
+    it('should handle errors calling the backend', () => {
+      const response = { status: 500, statusText: 'Server error' };
+
+      service.getProfiles().subscribe(() => {}, (e) => {
+        expect(e).toBe('Error getting profile data.');
+      });
+
+      const req = httpMock.expectOne(service.profileUrl);
+      expect(req.request.method).toBe('GET');
+      req.flush('', response);
+    });
+
+    it('should handle error events calling the backend', () => {
+      const response = { status: 500, statusText: 'Server error' };
+
+      service.getProfiles().subscribe(() => {}, (e) => {
+        expect(e).toBe('Error getting profile data.');
+      });
+
+      const req = httpMock.expectOne(service.profileUrl);
+      expect(req.request.method).toBe('GET');
+      req.error(new ErrorEvent('Badthings'));
     });
   });
 });

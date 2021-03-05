@@ -8,13 +8,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { AuthenticationService, OAuth2AuthenticationService } from './services/oauth2-authentication.service';
-import { HTTP_INTERCEPTORS } from "@angular/common/http";
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenSenderInterceptor } from './interceptors/TokenSenderInterceptor';
 
-export function storageFactory(): OAuthStorage {
-  return localStorage;
-}
-
+export const storageFactory = () => localStorage;
 @NgModule({
   declarations: [
     AppComponent,

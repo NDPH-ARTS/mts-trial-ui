@@ -53,3 +53,4 @@ Thumbs.db
 **/reports/
 test-results/
 docker-log.txt
+**/dist
