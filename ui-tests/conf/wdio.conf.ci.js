@@ -22,7 +22,7 @@ exports.config = {
 
     capabilities: [
         {
-            browserName: 'MicrosoftEdge',
+            browserName: 'chrome',
         },
     ],
 
