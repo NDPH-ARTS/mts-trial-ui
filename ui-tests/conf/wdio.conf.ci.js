@@ -93,8 +93,7 @@ exports.config = {
             },
     ],
     sync: true,
-    logLevel: 'debug',
-    path: "/wd/hub",
+    logLevel: 'error',
     baseUrl: 'http://localhost:4200',
 
     services: [
