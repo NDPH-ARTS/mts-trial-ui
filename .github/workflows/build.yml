@@ -19,8 +19,7 @@ jobs:
       - name: Build & test
         run: |
           npm i --no-optional
-          which chromedriver
-          DETECT_CHROMEDRIVER_VERSION=true npm install chromedriver
+          echo "{/home/runner/work/mts-trial-ui/mts-trial-ui/node_modules/chromedriver/lib/chromedriver/chromedriver}" >> $GITHUB_PATH
           # npm run test-ci
           # npm run start-background
           # sleep 20
