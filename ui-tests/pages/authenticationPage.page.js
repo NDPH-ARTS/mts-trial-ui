@@ -5,7 +5,7 @@ class authenticationPage {
     get nextBtn() { return $('//div//input[@id="idSIButton9"]') }
     get password() { return $('//input[@name="passwd"]') }
     get signIn() { return $('//input[@value="Sign in"]') }
-    get landingPageWelcomeMessage() { return $('//div[text()=" Welcome, Test Automation "]') }
+    get landingPageWelcomeMessage() { return $('//h1[text()="Welcome"]') }
     get selectYes() { return $('//input[@value="Yes"]') }
     get logOutButton() { return $('//div//button[text()="Logout"]') }
     get selectAccountTologoutFrom() { return $('//div//small[text()="Signed in"]') }
@@ -16,7 +16,7 @@ class authenticationPage {
     enterCredentials() {
         this.userName.setValue('test-automation@mtsdevndph.onmicrosoft.com')
         this.nextBtn.click()
-        this.password.setValue('Oxford909')
+        this.password.setValue('kjrUB5$_S.19dTTR')
         browser.pause(3000)
         this.signIn.click()
         this.selectYes.click()
