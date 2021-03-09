@@ -8,7 +8,7 @@ export const environment = {
   clientId: 'f352ce15-0142-4dfa-8e18-801ee6391557',
   trialName: 'mts-trial-ui',
   // either specify the gateway root or give the URLs  for the services individually
-  gatewayUrl: '',
+  gatewayUrl: 'https://as-kate477-sc-gateway-dev.azurewebsites.net/api', // Temporary - debugging Sameera's test env
   serviceUrls: [
     {
       service: 'practitionerService',
