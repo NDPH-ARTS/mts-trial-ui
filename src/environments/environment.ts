@@ -8,21 +8,7 @@ export const environment = {
   clientId: 'f352ce15-0142-4dfa-8e18-801ee6391557',
   trialName: 'mts-trial-ui',
   // either specify the gateway root or give the URLs  for the services individually
-  gatewayUrl: '',
-  serviceUrls: [
-    {
-      service: 'practitionerService',
-      url: 'http://localhost:8081/practitioner'
-    },
-    {
-      service: 'roleService',
-      url: 'http://localhost:8082/roles'
-    },
-    {
-      service: 'siteService',
-      url: 'http://localhost:8083/sites'
-    }
-  ]
+  gatewayUrl: 'https://as-liza48a-sc-gateway-dev.azurewebsites.net/api',
 };
 /*
  * For easier debugging in development mode, you can import the following file
