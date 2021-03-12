@@ -52,6 +52,6 @@ describe('ConfigurationService', () => {
     expect(service.issuer).toEqual(environment.issuer);
     expect(service.clientId).toEqual(environment.clientId);
     expect(service.trialName).toEqual('mts-trial-ui');
-    expect(service.gatewayUrl).toEqual('');
+    expect(service.gatewayUrl).toEqual(environment.gatewayUrl);
   });
 });

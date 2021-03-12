@@ -11,7 +11,7 @@ import { AuthenticationService, OAuth2AuthenticationService } from './services/o
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenSenderInterceptor } from './interceptors/TokenSenderInterceptor';
 import { SitesViewComponent } from './components/sites-view/sites-view.component';
-import { AssignedSitesPageComponent } from './administrable-sites-page/assigned-sites-page.component';
+import { AssignedSitesPageComponent } from './assigned-sites-page/assigned-sites-page.component';
 
 export const storageFactory = () => localStorage;
 @NgModule({
