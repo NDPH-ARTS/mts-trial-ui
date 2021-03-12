@@ -1,20 +1,37 @@
-import { Injectable } from '@angular/core';
-import {Profile} from '../model/Profile';
-import {Observable, of, EMPTY, throwError} from 'rxjs';
-import { catchError } from 'rxjs/operators';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Observable, of, throwError } from 'rxjs';
+import { catchError } from 'rxjs/operators';
+import { Site } from '../model/site';
 import { ConfigurationService } from './configuration-service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ProfileService {
-  readonly profileUrl = `${this.configurationService.gatewayUrl}/practitioner/profile`;
+export class SiteService {
+  readonly serviceUrl = `${this.configurationService.gatewayUrl}/sites`;
 
   constructor(private http: HttpClient, private configurationService: ConfigurationService) { }
 
-  getProfiles(): Observable <Profile[]> {
-    return this.http.get<Profile[]>(this.profileUrl)
+  getSites(): Observable <Site[]> {
+  //   const dummy = [
+  //     {
+  //     name: 'Site 21',
+  //     siteId: '21'
+  //   } as Site,
+  //     {
+  //     name: 'Bonny site',
+  //     siteId: '431'
+  //   } as Site,
+  //     {
+  //     name: 'Dont go here site',
+  //     siteId: '5'
+  //   } as Site,
+  // ];
+
+  //   return of(dummy);
+
+    return this.http.get<Site[]>(this.serviceUrl)
       .pipe(catchError(this.handleError));
   }
 
