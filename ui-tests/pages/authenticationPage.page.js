@@ -14,9 +14,9 @@ class authenticationPage {
 
 
     enterCredentials() {
-        this.userName.setValue('test-automation@mtsdevndph.onmicrosoft.com')
+        this.userName.setValue(process.env.AUTOMATION_USER_NAME)
         this.nextBtn.click()
-        this.password.setValue('kjrUB5$_S.19dTTR')
+        this.password.setValue(process.env.AUTOMATION_USER_PASSWORD)
         browser.pause(3000)
         this.signIn.click()
         this.selectYes.click()
