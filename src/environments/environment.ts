@@ -8,7 +8,7 @@ export const environment = {
   clientId: 'f352ce15-0142-4dfa-8e18-801ee6391557',
   trialName: 'mts-trial-ui',
   // either specify the gateway root or give the URLs  for the services individually
-  gatewayUrl: 'https://as-kate477-sc-gateway-dev.azurewebsites.net/api', // Temporary - debugging Sameera's test env
+  gatewayUrl: 'https://as-kate477-sc-gateway-dev.azurewebsites.net/api', // TECH DEBT pending story ARTS-382 and connected work. At the moment (9/3/21) Sameera has no end to end test environment, so to enable her to develop her UI tests we are pointing at an azure deployed backend.  Temp fix pending following story.
   serviceUrls: [
     {
       service: 'practitionerService',
