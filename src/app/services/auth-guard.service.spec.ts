@@ -30,4 +30,9 @@ describe('AuthGuardService', () => {
     expect(service.canActivate()).toBe(false);
     expect(spy).toHaveBeenCalled();
   });
+
+  it('should allow activation when the user is authenticated', () => {
+    const spy = spyOn(mockAuthenticationService, 'isAuthenticated').and.returnValue(true);
+    expect(service.canActivate()).toBe(true);
+  });
 });
