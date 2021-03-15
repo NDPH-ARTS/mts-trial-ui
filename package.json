@@ -58,7 +58,7 @@
     "@wdio/junit-reporter": "^6.11.0",
     "@wdio/selenium-standalone-service": "^6.11.0",
     "@wdio/spec-reporter": "^6.11.0",
-    "chromedriver": "^87.0.5",
+    "chromedriver": "^87.0.7",
     "codelyzer": "^6.0.0",
     "concurrently": "^5.3.0",
     "cucumber-html-reporter": "^5.3.0",

@@ -9,14 +9,12 @@ defineStep('a user is authenticated', function () {
 
 defineStep('user navigates to the landing or welcome page', function () {
     let titleElement = landingPage.titleBar
-    expect(titleElement.getText()).toEqual("mts-trial-ui")
+    expect(titleElement).toBeDisplayed()
 });
 
 defineStep('the welcome page message is displayed', function () {
-  // Temporarily disable this test - needs backend or mock backend in QA env
-  /*let welcomeMessageElement = authenticationPage.landingPageWelcomeMessage
-  expect(welcomeMessageElement.getText()).toEqual("Welcome, Test Automation")*/
-
+    let welcomeMessageElement = authenticationPage.landingPageWelcomeMessage
+    expect(welcomeMessageElement).toBeDisplayed()
 });
 
 defineStep('User can succesfully logout of the session', function () {
