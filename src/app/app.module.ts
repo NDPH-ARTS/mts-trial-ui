@@ -10,12 +10,16 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { AuthenticationService, OAuth2AuthenticationService } from './services/oauth2-authentication.service';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenSenderInterceptor } from './interceptors/TokenSenderInterceptor';
+import { SitesViewComponent } from './components/sites-view/sites-view.component';
+import { AssignedSitesPageComponent } from './assigned-sites-page/assigned-sites-page.component';
 
 export const storageFactory = () => localStorage;
 @NgModule({
   declarations: [
     AppComponent,
-    LandingPageComponent
+    LandingPageComponent,
+    AssignedSitesPageComponent,
+    SitesViewComponent,
   ],
   imports: [
     BrowserModule,
