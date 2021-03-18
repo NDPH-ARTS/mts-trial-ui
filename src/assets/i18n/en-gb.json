@@ -1,0 +1,13 @@
+{
+    "WELCOME": "Welcome",
+    "USER_LOGGED_IN": "You are logged in.",
+    "USER_NOT_LOGGED_IN": "You are not logged in.",
+    "HELLO": "Hello",
+    "LANDING": "Landing Page",
+    "HOME_LINK_TEXT": "Home",
+    "ASSIGNED_SITES_LINK": "My Assigned Sites",
+    "LOGOUT": "Log out",
+    "LOGIN": "Login",
+    "ASSIGNED_SITES_TITLE": "Assigned Sites"
+
+}
