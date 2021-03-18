@@ -17,6 +17,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Build & test
+        env:
+          AUTOMATION_USER_PASSWORD: ${{ secrets.AUTOMATION_USER_PASSWORD }}
+          AUTOMATION_USER_NAME: test-automation@mtsdevndph.onmicrosoft.com
         run: |
           npm i --no-optional
           npm run test-ci
