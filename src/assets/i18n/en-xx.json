@@ -1,12 +1,12 @@
 {
-    "WELCOME": "Wotcha geez",
-    "USER_LOGGED_IN": "Yer in, sunshine",
-    "USER_NOT_LOGGED_IN": "Don't know you!",
-    "HELLO": "Alright squire",
-    "LANDING": "Splat pad",
-    "HOME_LINK_TEXT": "Gan yem",
-    "ASSIGNED_SITES_LINK": "Bits wot i got",
-    "LOGOUT": "I'm outta here",
-    "LOGIN": "Lerrus in",
-    "ASSIGNED_SITES_TITLE": "Here am yer bits"
+    "WELCOME": "xWelcome",
+    "USER_LOGGED_IN": "xYou are logged in.",
+    "USER_NOT_LOGGED_IN": "xYou are not logged in.",
+    "HELLO": "xHello",
+    "LANDING": "xLanding page",
+    "HOME_LINK_TEXT": "xHome",
+    "ASSIGNED_SITES_LINK": "xAssigned Sites",
+    "LOGOUT": "xLogout",
+    "LOGIN": "xLogin",
+    "ASSIGNED_SITES_TITLE": "xAssigned Sites"
 }
