@@ -1,20 +1,22 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <img src="assets/branding/img/logo.png" width="200" height="40"/>
-  <a class="navbar-brand" href="#">ARTS</a>
+  <img src="assets/branding/img/logo.png" class="logo"/>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="landing">Home</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="assigned-sites">My Assigned Sites</a>
       </li>
     </ul>
   </div>
   <span style="float: right; ">
     <div *ngIf="this.authenticationService.isAuthenticated()">
-      <button color="primary"  (click)="logout()">Logout</button>
+      <button color="primary" class="btn btn-outline-primary"  (click)="logout()">Logout</button>
     </div>
   </span>
 </nav>

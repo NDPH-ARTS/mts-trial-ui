@@ -7,12 +7,6 @@ export const environment = {
   issuer: '',
   clientId: '',
   gatewayUrl: '',
-  serviceUrls: [
-    {
-      service: 'placeholderService',
-      url: 'http://placeholder'
-    }
-  ],
   trialName: ''
 };
 /*
