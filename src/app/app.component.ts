@@ -1,10 +1,6 @@
-import { ElementRef } from '@angular/core';
-import { Component } from '@angular/core';
-import { environment } from 'src/environments/environment';
-import { authConfig } from './auth.config';
+import { Component, ElementRef } from '@angular/core';
 import { ConfigurationService } from './services/configuration-service';
 import { AuthenticationService } from './services/oauth2-authentication.service';
-import { ApiEndpointService } from './services/api-endpoint.service';
 
 @Component({
   selector: 'app-root',
@@ -16,13 +12,10 @@ export class AppComponent {
   trialName = '';
 
   constructor(appRoot: ElementRef, public authenticationService: AuthenticationService,
-              public configurationService: ConfigurationService,
-              public apiEndpointService: ApiEndpointService) {
+              public configurationService: ConfigurationService) {
     this.configurationService.init(appRoot);
-    this.apiEndpointService.init(this.configurationService.gatewayUrl);
     this.authenticationService.init();
     console.log('AppComponent constructor config', configurationService);
-    console.log('AppComponent constructor profileService', this.apiEndpointService.profileEndpoint);
   }
 
   logout(): void {
