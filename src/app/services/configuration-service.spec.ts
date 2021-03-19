@@ -36,4 +36,22 @@ describe('ConfigurationService', () => {
       expect(service.trialName).toEqual(trialName);
       expect(service.gatewayUrl).toEqual(gateway);
     });
+
+  it('should initialise from environment when app root config is not present', () => {
+    const mockElement = { getAttribute: (atttribute: string) => atttribute};
+    spyOn(mockElement, 'getAttribute')
+      .withArgs('issuer').and.returnValue('{{issuer}}')
+      .withArgs('clientId').and.returnValue('')
+      .withArgs('trialName').and.returnValue('{{trialName}}')
+      .withArgs('gatewayUrl').and.returnValue('{{gatewayUrl}}');
+
+    const appRoot: ElementRef = new ElementRef(mockElement);
+
+    service.init(appRoot);
+
+    expect(service.issuer).toEqual(environment.issuer);
+    expect(service.clientId).toEqual(environment.clientId);
+    expect(service.trialName).toEqual('mts-trial-ui');
+    expect(service.gatewayUrl).toEqual(environment.gatewayUrl);
+  });
 });
