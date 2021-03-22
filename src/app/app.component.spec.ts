@@ -1,3 +1,4 @@
+import { ValueConverter } from '@angular/compiler/src/render3/view/template';
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
@@ -8,6 +9,7 @@ import { AuthenticationService } from './services/oauth2-authentication.service'
 
 describe('AppComponent', () => {
   const mockAuthenticationService = new MockAuthenticationService();
+  let storageSpy: jasmine.Spy;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -22,6 +24,7 @@ describe('AppComponent', () => {
         { provide: AuthenticationService, useValue: mockAuthenticationService },
       ]
     }).compileComponents();
+    storageSpy = spyOn(window.localStorage, 'setItem').and.callFake((k, v) => {});
   });
 
   it('should create the app', () => {
