@@ -1,5 +1,5 @@
 import { ElementRef, Injectable } from '@angular/core';
-import {AuthConfig, OAuthService} from 'angular-oauth2-oidc';
+import {AuthConfig, OAuthEvent, OAuthService} from 'angular-oauth2-oidc';
 import { environment } from 'src/environments/environment';
 import {authConfigESig, authConfigStandard} from '../auth.config';
 import { Claims } from '../model/claim';
@@ -15,11 +15,20 @@ export class OAuth2AuthenticationService implements AuthenticationService {
   public init(authConfig: AuthConfig): void {
     authConfig.issuer = this.configurationService.issuer;
     authConfig.clientId = this.configurationService.clientId;
-
     this.oauthService.configure(authConfig);
+    this.logTokenReceivedEvents()
     this.oauthService.setupAutomaticSilentRefresh();
     this.oauthService.loadDiscoveryDocumentAndTryLogin()
       .catch(() => console.log('OAuth2AuthenticationService: loadDiscoveryDocumentAndLogin fetch failed'));
+  }
+
+  logTokenReceivedEvents() : void {
+    this.oauthService.events.subscribe(({ type }: OAuthEvent) => {
+
+      if (type == "token_received") {
+        console.info("new auth token received: "+this.oauthService.getAccessToken());
+      }
+    });
   }
 
   login(): void {
