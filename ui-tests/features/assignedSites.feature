@@ -10,7 +10,6 @@ Feature: As a user
     Scenario: A bootstrap user can view all sites
         When a bootstrap user login to a specific trial
         And navigates to assigned sites tab from welcome page
-        #And the user lands on the assigned sites page
         Then the user should be able to view all the assigned sites
 
     Scenario: A regional user can view sites only within its region

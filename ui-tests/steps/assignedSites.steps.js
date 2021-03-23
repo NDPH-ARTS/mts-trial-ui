@@ -32,7 +32,6 @@ defineStep('navigates to assigned sites tab from welcome page', function () {
 
 defineStep('the user lands on the assigned sites page', function () {
     let title = assignedSitesPage.pageHeader
-    console.log('this is the page header' + title)
     expect(title).toBeDisplayed();
 });
 
@@ -44,11 +43,7 @@ defineStep('the user should be able to view all the assigned sites', function ()
     const pageData = yaml.safeLoad(
         fs.readFileSync(path.join(__dirname, 'data.yaml')),
     )
-    console.log(pageData);
     const sites = pageData.sites;
-    console.log(sites["bootstrap"]);
-
-    console.log('page columns' + pageColumns.length)
     assert.equal(pageColumns.length, sites["bootstrap"])
 });
 
@@ -60,11 +55,7 @@ defineStep('the user should be able to view all sites within that region', funct
     const pageData = yaml.safeLoad(
         fs.readFileSync(path.join(__dirname, 'data.yaml')),
     )
-    console.log(pageData);
     const sites = pageData.sites;
-    console.log(sites["regional"]);
-
-    console.log('page columns' + pageColumns.length)
     assert.equal(pageColumns.length, sites["regional"])
 });
 
@@ -76,10 +67,6 @@ defineStep('the user should only be able to view two sites within that country',
     const pageData = yaml.safeLoad(
         fs.readFileSync(path.join(__dirname, 'data.yaml')),
     )
-    console.log(pageData);
     const sites = pageData.sites;
-    console.log(sites["lcc"]);
-
-    console.log('page columns' + pageColumns.length)
     assert.equal(pageColumns.length, sites["lcc"])
 });
