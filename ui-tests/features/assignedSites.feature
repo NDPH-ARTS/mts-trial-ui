@@ -18,8 +18,8 @@ Feature: As a user
         And navigates to assigned sites tab from welcome page
         Then the user should be able to view all sites within that region
 
-# Scenario: An LCC user can view sites only within its country
-#     And User can succesfully logout of the session
-#     When an LCC user logs in to a specific trial
-#     And navigates to assigned sites tab from welcome page
-#     Then the user should only be able to view two sites within that country
+    Scenario: An LCC user can view sites only within its country
+        And User can succesfully logout of the session
+        When an LCC user logs in to a specific trial
+        And navigates to assigned sites tab from welcome page
+        Then the user should only be able to view two sites within that country
