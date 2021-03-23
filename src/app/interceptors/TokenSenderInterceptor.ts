@@ -20,7 +20,6 @@ export class TokenSenderInterceptor implements HttpInterceptor {
         headers: req.headers.set('Authorization', 'Bearer ' + this.authenticationService.getIDToken())
      });
 
-     console.log('Interceptor added token to  ' + authReq.url);
      return next.handle(authReq);
 
     }else{

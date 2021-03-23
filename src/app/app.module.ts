@@ -12,6 +12,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenSenderInterceptor } from './interceptors/TokenSenderInterceptor';
 import { SitesViewComponent } from './components/sites-view/sites-view.component';
 import { AssignedSitesPageComponent } from './assigned-sites-page/assigned-sites-page.component';
+import { EsigformComponent } from './esigform/esigform.component';
 
 export const storageFactory = () => localStorage;
 @NgModule({
@@ -20,6 +21,7 @@ export const storageFactory = () => localStorage;
     LandingPageComponent,
     AssignedSitesPageComponent,
     SitesViewComponent,
+    EsigformComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,7 @@
 import { Component, ElementRef } from '@angular/core';
 import { ConfigurationService } from './services/configuration-service';
 import { AuthenticationService } from './services/oauth2-authentication.service';
+import {authConfigStandard} from "./auth.config";
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,7 @@ export class AppComponent {
   constructor(appRoot: ElementRef, public authenticationService: AuthenticationService,
               public configurationService: ConfigurationService) {
     this.configurationService.init(appRoot);
-    this.authenticationService.init();
+    this.authenticationService.init(authConfigStandard);
     console.log('AppComponent constructor config', configurationService);
   }
 

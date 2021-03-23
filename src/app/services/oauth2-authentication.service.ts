@@ -1,7 +1,7 @@
 import { ElementRef, Injectable } from '@angular/core';
-import { OAuthService } from 'angular-oauth2-oidc';
+import {AuthConfig, OAuthService} from 'angular-oauth2-oidc';
 import { environment } from 'src/environments/environment';
-import { authConfig } from '../auth.config';
+import {authConfigESig, authConfigStandard} from '../auth.config';
 import { Claims } from '../model/claim';
 import { ConfigurationService } from './configuration-service';
 
@@ -12,7 +12,7 @@ export class OAuth2AuthenticationService implements AuthenticationService {
 
   constructor(private oauthService: OAuthService, private configurationService: ConfigurationService) {}
 
-  public init(): void {
+  public init(authConfig: AuthConfig): void {
     authConfig.issuer = this.configurationService.issuer;
     authConfig.clientId = this.configurationService.clientId;
 
@@ -23,6 +23,11 @@ export class OAuth2AuthenticationService implements AuthenticationService {
   }
 
   login(): void {
+    this.init(authConfigStandard);
+    this.oauthService.initCodeFlow();
+  }
+  loginEsigPoC(): void {
+    this.init(authConfigESig);
     this.oauthService.initCodeFlow();
   }
 
@@ -43,8 +48,9 @@ export class OAuth2AuthenticationService implements AuthenticationService {
   providedIn: 'root'
 })
 export abstract class AuthenticationService {
-  abstract init(): void;
+  abstract init(authConfig: AuthConfig): void;
   abstract login(): void;
+  abstract loginEsigPoC(): void;
   abstract logout(): void;
   abstract isAuthenticated(): boolean;
   abstract getIDToken(): string;
