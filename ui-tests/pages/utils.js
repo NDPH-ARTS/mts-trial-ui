@@ -1,3 +1,4 @@
+let assert = require('assert');
 class utils {
 
     presenceOfData(tablepath) {
@@ -6,8 +7,10 @@ class utils {
         let columnArray = []
         rows.forEach(row => {
             const columns = row.$$('td')
-            // console.log(columns[0].getText())
+            console.log(columns[0].getText())
+
             columnArray.push(columns[0].getText())
+
         })
         // console.log('columnArray ' + columnArray.length)
         return columnArray;

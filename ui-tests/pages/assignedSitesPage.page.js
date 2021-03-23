@@ -1,7 +1,7 @@
 class assignedSitesPage {
 
     get assignedSites() { return $('//a[@href="/assigned-sites"]') }
-    get pagehHeader() { return $('//div//div[@class="title"]//h2[text()="Assigned Sites"]') }
+    get pagehHeader() { return $('//app-assigned-sites//div//div//h2') }
     get region() { return $('//div//table//tr//td[text()="CCO"]') }
 
     assignedSitesTab() {

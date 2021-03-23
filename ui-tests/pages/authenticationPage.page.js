@@ -12,11 +12,28 @@ class authenticationPage {
     get errorMessage() { return $('//div[@id="usernameError"]') }
 
 
-
     enterCredentials() {
         this.userName.setValue(process.env.AUTOMATION_USER_NAME)
         this.nextBtn.click()
         this.password.setValue(process.env.AUTOMATION_USER_PASSWORD)
+        browser.pause(3000)
+        this.signIn.click()
+        this.selectYes.click()
+    }
+
+    bootstrapUserCredentials() {
+        this.userName.setValue(process.env.BOOTSTRAP_USER_NAME)
+        this.nextBtn.click()
+        this.password.setValue(process.env.BOOTSTRAP_USER_PASSWORD)
+        browser.pause(3000)
+        this.signIn.click()
+        this.selectYes.click()
+    }
+
+    qaWithCreateUserCredentials() {
+        this.userName.setValue(process.env.QA_WITH_CREATE_USER_PASSWORD)
+        this.nextBtn.click()
+        this.password.setValue(process.env.QA_WITH_CREATE_USER_NAME)
         browser.pause(3000)
         this.signIn.click()
         this.selectYes.click()

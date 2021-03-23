@@ -9,20 +9,18 @@ Feature: As a user
 
     Scenario: A bootstrap user can view all sites
         When a bootstrap user login to a specific trial
-        And navigates to My Assigned Sites tab from welcome page
-        #  And the user lands on the assigned sites page
+        And navigates to assigned sites tab from welcome page
+        #And the user lands on the assigned sites page
         Then the user should be able to view all the assigned sites
 
     Scenario: A regional user can view sites only within its region
         And User can succesfully logout of the session
         When a regional user login to a specific trial
-        And navigates to My Assigned Sites tab from welcome page
-    #  And more than one region exists for that trial
-    #  Then the user should be able to view all sites within that region
+        And navigates to assigned sites tab from welcome page
+        Then the user should be able to view all sites within that region
 
     Scenario: An LCC user can view sites only within its country
         And User can succesfully logout of the session
         When an LCC user logs in to a specific trial
-        And navigates to My Assigned Sites tab from welcome page
-#  And more than two lcc exists for that trial
-#  Then the user should only be able to view two sites within that country
+        And navigates to assigned sites tab from welcome page
+        Then the user should only be able to view two sites within that country
