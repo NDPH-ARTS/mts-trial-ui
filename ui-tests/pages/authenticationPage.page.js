@@ -18,6 +18,7 @@ class authenticationPage {
         this.password.setValue(process.env.AUTOMATION_USER_PASSWORD)
         browser.pause(3000)
         this.signIn.click()
+        browser.pause(3000)
         this.selectYes.click()
     }
 
@@ -27,6 +28,7 @@ class authenticationPage {
         this.password.setValue(process.env.BOOTSTRAP_USER_PASSWORD)
         browser.pause(3000)
         this.signIn.click()
+        browser.pause(3000)
         this.selectYes.click()
     }
 
@@ -36,15 +38,19 @@ class authenticationPage {
         this.password.setValue(process.env.QA_WITH_CREATE_USER_PASSWORD)
         browser.pause(3000)
         this.signIn.click()
+        browser.pause(3000)
         this.selectYes.click()
     }
 
     logOut() {
+        browser.pause(3000)
         this.logOutButton.click()
+        browser.pause(3000)
         this.selectAccountTologoutFrom.click()
     }
 
     invalidCredentials() {
+        browser.pause(3000)
         this.userName.setValue('automation@mtsdevndph.onmicrosoft.com')
         this.nextBtn.click()
     }
