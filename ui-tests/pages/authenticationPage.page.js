@@ -12,22 +12,45 @@ class authenticationPage {
     get errorMessage() { return $('//div[@id="usernameError"]') }
 
 
-
     enterCredentials() {
         this.userName.setValue(process.env.AUTOMATION_USER_NAME)
         this.nextBtn.click()
         this.password.setValue(process.env.AUTOMATION_USER_PASSWORD)
         browser.pause(3000)
         this.signIn.click()
+        browser.pause(3000)
+        this.selectYes.click()
+    }
+
+    bootstrapUserCredentials() {
+        this.userName.setValue(process.env.BOOTSTRAP_USER_NAME)
+        this.nextBtn.click()
+        this.password.setValue(process.env.BOOTSTRAP_USER_PASSWORD)
+        browser.pause(3000)
+        this.signIn.click()
+        browser.pause(3000)
+        this.selectYes.click()
+    }
+
+    qaWithCreateUserCredentials() {
+        this.userName.setValue(process.env.QA_WITH_CREATE_USER_NAME)
+        this.nextBtn.click()
+        this.password.setValue(process.env.QA_WITH_CREATE_USER_PASSWORD)
+        browser.pause(3000)
+        this.signIn.click()
+        browser.pause(3000)
         this.selectYes.click()
     }
 
     logOut() {
+        browser.pause(3000)
         this.logOutButton.click()
+        browser.pause(3000)
         this.selectAccountTologoutFrom.click()
     }
 
     invalidCredentials() {
+        browser.pause(3000)
         this.userName.setValue('automation@mtsdevndph.onmicrosoft.com')
         this.nextBtn.click()
     }
