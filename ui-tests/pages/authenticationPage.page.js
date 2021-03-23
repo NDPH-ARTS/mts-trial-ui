@@ -36,7 +36,7 @@ class authenticationPage {
         this.password.setValue(process.env.QA_WITH_CREATE_USER_PASSWORD)
         browser.pause(3000)
         this.signIn.click()
-        //  this.selectYes.click()
+        this.selectYes.click()
     }
 
     logOut() {
