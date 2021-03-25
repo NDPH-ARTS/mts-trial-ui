@@ -16,6 +16,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - name: Add path to chromedriver
+        run: |
+          echo "PATH=./node_modules/.bin:$PATH" >> $GITHUB_ENV        
       - name: Build & test
         env:
           AUTOMATION_USER_PASSWORD: ${{ secrets.AUTOMATION_USER_PASSWORD }}
@@ -26,37 +29,39 @@ jobs:
           QA_WITH_CREATE_USER_NAME: qa.with-create@mtsdevndph.onmicrosoft.com
         run: |
           npm i --no-optional
-          npm run test-ci
-          npm run start-background
-          sleep 20
-          npm run ui-test-ci
-          npm run build -- --prod
-          cd dist
-          zip -r mts-trial-ui.zip mts-trial-ui
-      - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
-          draft: true
-          prerelease: true
-      - name: Upload Release Asset
-        id: upload-release-asset
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./dist/mts-trial-ui.zip
-          asset_name: mts-trial-ui.zip
-          asset_content_type: application/zip
-      - name: Publish UI test Report
-        if: always()
-        uses: scacap/action-surefire-report@v1
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          report_paths: 'test-results/**/**.xml'
-          fail_on_test_failures: true
+          which chromedriver
+          
+          # npm run test-ci
+          # npm run start-background
+          # sleep 20
+          # npm run ui-test-ci
+          # npm run build -- --prod
+          # cd dist
+          # zip -r mts-trial-ui.zip mts-trial-ui
+      # - name: Create Release
+      #   id: create_release
+      #   uses: actions/create-release@v1
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #   with:
+      #     tag_name: ${{ github.ref }}
+      #     release_name: Release ${{ github.ref }}
+      #     draft: true
+      #     prerelease: true
+      # - name: Upload Release Asset
+      #   id: upload-release-asset
+      #   uses: actions/upload-release-asset@v1
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #   with:
+      #     upload_url: ${{ steps.create_release.outputs.upload_url }}
+      #     asset_path: ./dist/mts-trial-ui.zip
+      #     asset_name: mts-trial-ui.zip
+      #     asset_content_type: application/zip
+      # - name: Publish UI test Report
+      #   if: always()
+      #   uses: scacap/action-surefire-report@v1
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     report_paths: 'test-results/**/**.xml'
+      #     fail_on_test_failures: true
