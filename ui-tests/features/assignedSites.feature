@@ -1,3 +1,5 @@
+# author - Sameera Purini
+
 @smoketest @assignedSites @arts-48
 
 Feature: As a user
