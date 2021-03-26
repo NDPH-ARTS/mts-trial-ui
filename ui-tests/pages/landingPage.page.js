@@ -13,7 +13,7 @@ class landingPage {
         this.loginButton.click()
     }
 
-    setLolcale() {
+    setLocale() {
         this.defaultLocale.click()
         this.preferredLocale.click()
     }

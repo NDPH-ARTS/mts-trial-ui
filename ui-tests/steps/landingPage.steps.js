@@ -1,3 +1,4 @@
+/*  author - Sameera Purini */
 const { defineStep } = require('cucumber')
 const landingPage = require('../pages/landingPage.page.js')
 const authenticationPage = require('../pages/authenticationPage.page.js')
@@ -27,10 +28,10 @@ defineStep('user can reset to default locale', function () {
 });
 
 defineStep('user can change the locale from the preferences', function () {
-    landingPage.setLolcale()
+    landingPage.setLocale()
 });
 
-defineStep('the settings is confirmed by checking the button text update', function () {
+defineStep('the settings is confirmed by checking the button text {string} update', function (string) {
     let localeLogOut = authenticationPage.localeLogOutButton
     expect(localeLogOut.getText()).toEqual("xLogoutx")
 });
