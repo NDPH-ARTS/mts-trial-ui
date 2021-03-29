@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  issuer: 'https://login.microsoftonline.com/common/v2.0',
+  issuer: 'https://login.microsoftonline.com/5d23383f-2acb-448e-8353-4b4573b82276/v2.0',
   clientId: '59a2b30f-844b-4a69-b034-19e3d2d4d805',
   trialName: 'mts-trial-ui',
 
