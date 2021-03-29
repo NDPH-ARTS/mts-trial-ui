@@ -1,3 +1,5 @@
+/*  author - Sameera Purini */
+
 const { defineStep } = require('cucumber')
 const assignedSitesPage = require('../pages/assignedSitesPage.page.js')
 const landingPage = require('../pages/landingPage.page.js')

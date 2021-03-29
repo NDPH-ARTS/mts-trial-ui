@@ -1,3 +1,4 @@
+/*  author - Sameera Purini */
 
 class authenticationPage {
 
@@ -8,6 +9,7 @@ class authenticationPage {
     get landingPageWelcomeMessage() { return $('//h1[text()="Welcome"]') }
     get selectYes() { return $('//input[@value="Yes"]') }
     get logOutButton() { return $('//div//button[text()="Logout"]') }
+    get localeLogOutButton() { return $('//div//button[text()="xLogoutx"]') }
     get selectAccountTologoutFrom() { return $('//div//small[text()="Signed in"]') }
     get errorMessage() { return $('//div[@id="usernameError"]') }
 
