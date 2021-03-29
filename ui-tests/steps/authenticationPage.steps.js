@@ -7,16 +7,6 @@ defineStep('a user is authenticated', function () {
     authenticationPage.enterCredentials();
 });
 
-defineStep('user navigates to the landing or welcome page', function () {
-    let titleElement = landingPage.titleBar
-    expect(titleElement).toBeDisplayed()
-});
-
-defineStep('the welcome page message is displayed', function () {
-    let welcomeMessageElement = authenticationPage.landingPageWelcomeMessage
-    expect(welcomeMessageElement).toBeDisplayed()
-});
-
 defineStep('User can succesfully logout of the session', function () {
     authenticationPage.logOut();
 });
