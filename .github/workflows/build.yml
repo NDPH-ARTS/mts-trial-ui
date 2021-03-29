@@ -21,11 +21,11 @@ jobs:
           echo "PATH=./node_modules/.bin:$PATH" >> $GITHUB_ENV        
       - name: Build & test
         env:
-          AUTOMATION_USER_PASSWORD: '${{ secrets.AUTOMATION_USER_PASSWORD }}'
+          AUTOMATION_USER_PASSWORD: ${{ secrets.AUTOMATION_USER_PASSWORD }}
           AUTOMATION_USER_NAME: test-automation@mtsdevndph.onmicrosoft.com
-          BOOTSTRAP_USER_PASSWORD: '${{ secrets.BOOTSTRAP_USER_PASSWORD }}'
+          BOOTSTRAP_USER_PASSWORD: ${{ secrets.BOOTSTRAP_USER_PASSWORD }}
           BOOTSTRAP_USER_NAME: bootstrap@mtsdevndph.onmicrosoft.com
-          QA_WITH_CREATE_USER_PASSWORD: '${{ secrets.QA_WITH_CREATE_USER_PASSWORD }}'
+          QA_WITH_CREATE_USER_PASSWORD: ${{ secrets.QA_WITH_CREATE_USER_PASSWORD }}
           QA_WITH_CREATE_USER_NAME: qa.with-create@mtsdevndph.onmicrosoft.com
         run: |
           npm i --no-optional
