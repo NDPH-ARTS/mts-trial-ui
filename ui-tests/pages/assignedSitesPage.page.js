@@ -1,3 +1,5 @@
+/*  author - Sameera Purini */
+
 class assignedSitesPage {
 
     get assignedSites() { return $('//a[@href="/assigned-sites"]') }
