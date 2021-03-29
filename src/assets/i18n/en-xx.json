@@ -1,0 +1,13 @@
+{
+
+    "WELCOME": "xWelcome to the landing pagex",
+    "USER_LOGGED_IN": "xYou are logged in as mdp0x",
+    "USER_NOT_LOGGED_IN": "xYou are not logged as mdp0x.",
+    "HELLO": "xHello Hello Hellox",
+    "LANDING": "xLanding page Landing pagex",
+    "HOME_LINK_TEXT": "xHomex",
+    "ASSIGNED_SITES_LINK": "xAssigned Sitesx",
+    "LOGOUT": "xLogoutx",
+    "LOGIN": "xLoginx",
+    "ASSIGNED_SITES_TITLE": "xAssigned Sitesx"
+}
