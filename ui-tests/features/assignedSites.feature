@@ -1,5 +1,6 @@
 @smoketest @assignedSites @arts-48
-
+@ignore 
+ 
 Feature: As a user
     I want to login to the system
     so that I can carry out business functions for managing trial entities
