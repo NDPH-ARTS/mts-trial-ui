@@ -1,4 +1,6 @@
-@smoketest @landingPage @arts-195 @arts-477
+# author - Sameera Purini
+
+@smoketest @landingPage @arts-195 @arts-477 @arts-190
 
 Feature: As a user
     I want to login to the system
@@ -15,6 +17,23 @@ Feature: As a user
         When a user is authenticated
         And user navigates to the landing or welcome page
         Then the welcome page message displays staffs information
+
+    @arts-190
+    Scenario:  Welcome Page has the locale set to English
+        And a default locale is set for the trial
+        And user can change the locale from the preferences
+        Then user can reset to default locale
+
+    @arts-190
+    Scenario Outline: As a user I want to change my locale when working in my trial So that I can view my trial in my preferred locale
+        And User can succesfully logout of the session
+        When a regional user login to a specific trial
+        Then a default locale is set for the trial
+        And user can change the locale from the preferences
+        Then the settings is confirmed by checking the button text "<buttontext>" update
+        Examples:
+            | buttontext |
+            | xLogoutx   |
 
 
 

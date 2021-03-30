@@ -1,22 +1,28 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <img src="assets/branding/img/logo.png" class="logo"/>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" 
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" routerLink="landing">Home</a>
+        <a class="nav-link" routerLink="landing" translate="HOME_LINK_TEXT"></a>
       </li>
       <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" routerLink="assigned-sites">My Assigned Sites</a>
+        <a class="nav-link" routerLink="assigned-sites" translate="ASSIGNED_SITES_LINK"></a>
       </li>
     </ul>
   </div>
   <span style="float: right; ">
-    <div *ngIf="this.authenticationService.isAuthenticated()">
-      <button color="primary" class="btn btn-outline-primary"  (click)="logout()">Logout</button>
+    <div class="form-group form-inline">
+        <select name="currentLocale" [(ngModel)]="currentLocale" (ngModelChange)="onLocaleChange($event)" class="form-control form-control-sm mr-2">
+          <option *ngFor="let locale of locales" [ngValue]="locale.key">{{locale.name}}</option>
+        </select>
+        <div *ngIf="this.authenticationService.isAuthenticated()">
+          <button color="primary" class="btn btn-outline-primary"  (click)="logout()" translate="LOGOUT"></button>
+        </div>
     </div>
   </span>
 </nav>
