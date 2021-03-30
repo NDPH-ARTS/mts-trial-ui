@@ -1,3 +1,5 @@
+/*  author - Sameera Purini */
+
 const { defineStep } = require('cucumber')
 const landingPage = require('../pages/landingPage.page.js')
 const authenticationPage = require('../pages/authenticationPage.page.js')
