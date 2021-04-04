@@ -34,8 +34,8 @@ export class OAuth2AuthenticationService implements AuthenticationService {
     return this.oauthService.hasValidIdToken();
   }
 
-  getIDToken(): string {
-    return this.oauthService.getIdToken();
+  getAccessToken(): string {
+    return this.oauthService.getAccessToken();
   }
 }
 
@@ -47,5 +47,5 @@ export abstract class AuthenticationService {
   abstract login(): void;
   abstract logout(): void;
   abstract isAuthenticated(): boolean;
-  abstract getIDToken(): string;
+  abstract getAccessToken(): string;
 }
