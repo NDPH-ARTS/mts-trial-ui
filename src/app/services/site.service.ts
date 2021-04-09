@@ -35,7 +35,7 @@ export class SiteService {
       .pipe(catchError(this.handleError));
   }
 
-  getSiteWithId(id: string): Observable<Site> {
+  getSite(id: string): Observable<Site> {
     const uri = this.serviceUrl + '/' + id;
     return this.http.get<Site>(uri)
     .pipe(catchError(this.handleError));

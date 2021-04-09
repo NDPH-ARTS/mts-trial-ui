@@ -39,7 +39,7 @@ describe('AdminSitesPageComponent', () => {
     const sites: Site[] = [site];
 
     const adminSiteSpy = spyOn(siteService, 'getSitesByRole').withArgs('admin').and.returnValue(of(sites));
-    const siteWithIdSpy = spyOn(siteService, 'getSiteWithId').withArgs(site.siteId).and.returnValue(of({} as Site));
+    const siteWithIdSpy = spyOn(siteService, 'getSite').withArgs(site.siteId).and.returnValue(of({} as Site));
 
     component.ngOnInit();
 

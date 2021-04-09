@@ -17,7 +17,7 @@ export class AdminSitesPageComponent implements OnInit {
     this.siteService.getSitesByRole('admin').pipe(first()).subscribe((sites) => {
       sites.forEach(site => {
         if (site.parentSiteId != null) {
-          this.siteService.getSiteWithId(site.parentSiteId).subscribe((retSite: Site) => {
+          this.siteService.getSite(site.parentSiteId).subscribe((retSite: Site) => {
             site.parentSiteName = retSite.name;
           });
         }
