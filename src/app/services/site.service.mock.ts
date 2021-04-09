@@ -5,4 +5,12 @@ export class MockSiteService {
     getSites(): Observable <Site[]> {
       return of([]);
     }
-  }
+
+    getSitesByRole(role: string): Observable <Site[]> {
+      return of([]);
+    }
+
+    getSite(id: string): Observable <Site> {
+      return of({} as Site);
+    }
+}
