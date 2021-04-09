@@ -10,7 +10,7 @@ export class MockSiteService {
       return of([]);
     }
 
-    getSiteWithId(id: string): Observable <Site> {
+    getSite(id: string): Observable <Site> {
       return of({} as Site);
     }
 }

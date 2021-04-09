@@ -13,7 +13,7 @@
     "ASSIGNED_SITES_TITLE": "xAssigned Sitesx",
     "ADMIN_SITES_TITLE": "xAdmin Sitesx",
     "SITE_NAME": "xSite Namex",
-    "SITE_TYPE": "Yem",
-    "PARENT_SITE": "Me Fatha",
-    "LAST_UPDATED": "Boot noo"
+    "SITE_TYPE": "xSiteTypex",
+    "PARENT_SITE": "xParent Sitex",
+    "LAST_UPDATED": "xLast Updatedx"
 }
