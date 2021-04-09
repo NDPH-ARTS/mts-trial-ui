@@ -1,0 +1,33 @@
+<div class="container mt-4">
+    <div class="title">
+        <h2 translate="ADMIN_SITES_TITLE"></h2>
+    </div>
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>
+          <span translate="SITE_NAME"></span>
+        </th>
+        <th>
+          <span translate="SITE_TYPE"></span>
+        </th>
+        <th>
+          <span translate="PARENT_SITE"></span>
+        </th>
+        <th>
+          <span translate="LAST_UPDATED"></span>
+        </th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <tr *ngFor="let site of sites" >
+        <td>{{site.name}}</td>
+        <td>{{site.siteType}}</td>
+        <td>{{site.parentSiteName}}</td>
+        <td>{{site.lastUpdated | date:'medium'}}</td>
+      </tr>
+      </tbody>
+
+    </table>
+</div>

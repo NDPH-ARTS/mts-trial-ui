@@ -1,4 +1,4 @@
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
@@ -32,6 +32,18 @@ export class SiteService {
   //   return of(dummy);
 
     return this.http.get<Site[]>(this.serviceUrl)
+      .pipe(catchError(this.handleError));
+  }
+
+  getSiteWithId(id: string): Observable<Site> {
+    const uri = this.serviceUrl + '/' + id;
+    return this.http.get<Site>(uri)
+    .pipe(catchError(this.handleError));
+  }
+
+  getSitesByRole(role: string): Observable<Site[]> {
+    const params = new HttpParams().set('role', role);
+    return this.http.get<Site[]>(this.serviceUrl, {params})
       .pipe(catchError(this.handleError));
   }
 
