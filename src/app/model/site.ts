@@ -5,5 +5,6 @@ export interface Site {
     parentSiteId: string;
     parentSiteName: string;
     siteType: string;
+    description: string;
     lastUpdated: string;
 }

@@ -21,13 +21,83 @@
       </thead>
 
       <tbody>
-      <tr *ngFor="let site of sites" >
+      <tr *ngFor="let site of sites" (click)="openModal(site)">
         <td>{{site.name}}</td>
         <td>{{site.siteType}}</td>
         <td>{{site.parentSiteName}}</td>
         <td>{{site.lastUpdated | date:'medium'}}</td>
       </tr>
       </tbody>
-
     </table>
+
+    <div class="modal" id="siteModal" [style.display]="showModal ? 'block' : 'none'">
+      <div class="modal-dialog">
+        <div class="modal-content">
+
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h4 class="modal-title">Trial Site Details:</h4>
+          </div>
+
+          <!-- Modal body -->
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <span STYLE="font-weight:bold" translate="SITE_TYPE"></span>
+              </div>
+              <div class="col">
+                <span STYLE="font-weight:bold" translate="PARENT_SITE"></span>
+              </div>
+              <div class="col">
+                <span STYLE="font-weight:bold" translate="LAST_UPDATED"></span>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col">
+                <span>{{selectedSite.siteType}}</span>
+              </div>
+              <div class="col">
+                <span>{{selectedSite.parentSiteName}}</span>
+              </div>
+              <div class="col">
+                <span>{{selectedSite.lastUpdated | date:'medium'}}</span>
+              </div>
+            </div>
+
+              <div class="row mt-3">
+                <div class="col">
+                  <span STYLE="font-weight:bold">Site Name</span>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col">
+                  <span>{{selectedSite.name}}</span>
+                </div>
+              </div>
+
+              <div class="row mt-3">
+                <div class="col">
+                  <span STYLE="font-weight:bold">Site Decsription</span>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col">
+                  <span>{{selectedSite.description}}</span>
+                </div>
+              </div>
+
+            </div>
+
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <button type="button" class="btn" data-dismiss="modal" (click) = "hide()">Close</button>
+          </div>
+
+        </div>
+      </div>
+  </div>
+
 </div>
