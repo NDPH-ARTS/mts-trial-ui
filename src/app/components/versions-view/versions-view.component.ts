@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import VersionsData from '../../../environments/versions.json';
+import VersionsData from '../../../assets/versions.json';
 
 @Component({
   selector: 'app-versions-view',
