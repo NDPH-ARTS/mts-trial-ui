@@ -10,32 +10,16 @@
       </th>
     </tr>
 
-    <tr>
+
+    <tr *ngFor = "let serviceVersion of versions">
       <td>
-        site-service
+        {{serviceVersion.service}}
       </td>
       <td>
-        dummy
+        {{serviceVersion.version}}
       </td>
     </tr>
 
-    <tr>
-      <td>
-        role-service
-      </td>
-      <td>
-        dummy
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        etc
-      </td>
-      <td>
-        etc
-      </td>
-    </tr>
 
   </table>
 </div>

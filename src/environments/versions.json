@@ -1,0 +1,6 @@
+[
+  {
+    "service" : "dummy service",
+    "version" : "dummy version (this file is injected at build time)"
+  }
+]

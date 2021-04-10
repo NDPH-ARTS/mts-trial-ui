@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import VersionsData from '../../../environments/versions.json';
 
 @Component({
   selector: 'app-versions-view',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VersionsViewComponent implements OnInit {
 
-  constructor() { }
+  public versions : any;
+
+  constructor() {
+    this.versions = VersionsData;
+  }
 
   ngOnInit(): void {
   }
-
 }
+
