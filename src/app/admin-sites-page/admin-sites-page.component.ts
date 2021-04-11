@@ -35,7 +35,7 @@ export class AdminSitesPageComponent implements OnInit {
     this.showModal = true;
   }
 
-  hide(): void {
+  hideModal(): void {
     this.showModal = false;
   }
 }
