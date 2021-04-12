@@ -22,7 +22,7 @@
         {{serviceVersion.version}}
       </td>
       <td>
-        {{serviceVersion.timestamp}}
+        {{serviceVersion.timestamp * 1000 | date:'MMMM d, y, h:mm:ss a z'}}
       </td>
     </tr>
 
