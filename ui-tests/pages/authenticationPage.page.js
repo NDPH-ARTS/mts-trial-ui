@@ -18,9 +18,9 @@ class authenticationPage {
         this.userName.setValue(process.env.AUTOMATION_USER_NAME)
         this.nextBtn.click()
         this.password.setValue(process.env.AUTOMATION_USER_PASSWORD)
-        browser.pause(3000)
+        browser.pause(6000)
         this.signIn.click()
-        browser.pause(3000)
+        browser.pause(6000)
         this.selectYes.click()
     }
 
