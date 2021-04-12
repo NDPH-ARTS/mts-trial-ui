@@ -3,10 +3,10 @@ import VersionsData from '../../../assets/versions.json';
 
 @Component({
   selector: 'app-versions-view',
-  templateUrl: './versions-view.component.html',
-  styleUrls: ['./versions-view.component.sass']
+  templateUrl: './about-view.component.html',
+  styleUrls: ['./about-view.component.sass']
 })
-export class VersionsViewComponent implements OnInit {
+export class AboutViewComponent implements OnInit {
 
   public versions : any;
 
