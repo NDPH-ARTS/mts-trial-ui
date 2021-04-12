@@ -1,14 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AboutViewComponent } from './about-view.component';
+import {HttpClientTestingModule} from '@angular/common/http/testing';
 
-describe('VersionsViewComponent', () => {
+describe('AboutViewComponent', () => {
   let component: AboutViewComponent;
   let fixture: ComponentFixture<AboutViewComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AboutViewComponent ]
+      declarations: [ AboutViewComponent ],
+      imports: [HttpClientTestingModule]
     })
     .compileComponents();
   });
