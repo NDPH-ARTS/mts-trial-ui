@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import VersionsData from '../../../assets/versions.json';
+import { HttpClient } from "@angular/common/http";
 
 @Component({
   selector: 'app-versions-view',
@@ -10,11 +10,13 @@ export class AboutViewComponent implements OnInit {
 
   public versions : any;
 
-  constructor() {
-    this.versions = VersionsData;
-  }
+  constructor(private httpClient: HttpClient) {}
 
-  ngOnInit(): void {
+  ngOnInit(){
+    this.httpClient.get('assets/versions.json').subscribe(data =>{
+      console.log(data);
+      this.versions = data;
+    })
   }
 }
 
