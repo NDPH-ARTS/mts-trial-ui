@@ -25,24 +25,24 @@ exports.config = {
         maxInstances: 5,
         browserName: 'chrome',
 
-    },
+        // },
 
 
-    {
-        maxInstances: 1,
-        browserName: 'MicrosoftEdge'
+        // {
+        //     maxInstances: 1,
+        //     browserName: 'MicrosoftEdge'
 
-    },
+        // },
 
-    {
-        maxInstances: 1,
-        browserName: 'firefox'
+        // {
+        //     maxInstances: 1,
+        //     browserName: 'firefox'
 
-    },
+        // },
 
-    {
-        maxInstances: 1,
-        browserName: 'safari',
+        // {
+        //     maxInstances: 1,
+        //     browserName: 'safari',
     }],
 
     logLevel: 'error',
@@ -92,7 +92,7 @@ exports.config = {
         source: true,       // <boolean> hide source uris
         profile: [],        // <string[]> (name) specify the profile to use
         strict: false,      // <boolean> fail if there are any undefined or pending steps
-        tagExpression: '@smoketest',  // <string> (expression) only execute the features or scenarios with tags matching the expression
+        tagExpression: '@arts-48',  // <string> (expression) only execute the features or scenarios with tags matching the expression
         timeout: 60000,     // <number> timeout for step definitions
         ignoreUndefinedDefinitions: false, // <boolean> Enable this config to treat undefined definitions as warnings.
     },
