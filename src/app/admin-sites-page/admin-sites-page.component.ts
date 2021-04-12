@@ -10,8 +10,8 @@ import {Site} from '../model/site';
 })
 export class AdminSitesPageComponent implements OnInit {
   sites: any;
-  selectedSite: Site;
-  showModal: boolean;
+  selectedSite: any;
+  showModal: any;
 
   constructor(private siteService: SiteService) { }
 
