@@ -10,10 +10,14 @@ import {Site} from '../model/site';
 })
 export class AdminSitesPageComponent implements OnInit {
   sites: any;
+  selectedSite: any;
+  showModal: any;
 
   constructor(private siteService: SiteService) { }
 
   ngOnInit(): void {
+    this.showModal = false;
+    this.selectedSite = {};
     this.siteService.getSitesByRole('admin').pipe(first()).subscribe((sites) => {
       sites.forEach(site => {
         if (site.parentSiteId != null) {
@@ -24,5 +28,14 @@ export class AdminSitesPageComponent implements OnInit {
       });
       this.sites = sites.sort();
     });
+  }
+
+  openModal(site: Site): void {
+    this.selectedSite = site;
+    this.showModal = true;
+  }
+
+  hideModal(): void {
+    this.showModal = false;
   }
 }
