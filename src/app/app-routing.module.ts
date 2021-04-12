@@ -6,7 +6,7 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import {
   AuthGuardService as AuthGuard
 } from './services/auth-guard.service';
-import {AboutViewComponent} from "./components/about-view/about-view.component";
+import {AboutViewComponent} from './components/about-view/about-view.component';
 
 
 const routes: Routes = [
