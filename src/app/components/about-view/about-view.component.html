@@ -8,34 +8,24 @@
       <th>
         Version
       </th>
+      <th>
+        Timestamp
+      </th>
     </tr>
 
-    <tr>
-      <td>
-        site-service
-      </td>
-      <td>
-        dummy
-      </td>
-    </tr>
 
-    <tr>
+    <tr *ngFor = "let serviceVersion of versions">
       <td>
-        role-service
+        {{serviceVersion.service}}
       </td>
       <td>
-        dummy
+        {{serviceVersion.version}}
+      </td>
+      <td>
+        {{serviceVersion.timestamp * 1000 | date:'MMMM d, y, h:mm:ss a z'}}
       </td>
     </tr>
 
-    <tr>
-      <td>
-        etc
-      </td>
-      <td>
-        etc
-      </td>
-    </tr>
 
   </table>
 </div>

@@ -17,7 +17,7 @@ export class TokenSenderInterceptor implements HttpInterceptor {
 
     if (this.authenticationService.isAuthenticated()){
      const authReq = req.clone({
-        headers: req.headers.set('Authorization', 'Bearer ' + this.authenticationService.getIDToken())
+        headers: req.headers.set('Authorization', 'Bearer ' + this.authenticationService.getAccessToken())
      });
 
      console.log('Interceptor added token to  ' + authReq.url);
