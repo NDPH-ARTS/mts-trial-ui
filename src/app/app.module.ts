@@ -16,6 +16,7 @@ import { AdminSitesPageComponent } from './admin-sites-page/admin-sites-page.com
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { FormsModule } from '@angular/forms';
+import { AboutViewComponent } from './components/about-view/about-view.component';
 
 export const httpLoaderFactory = (http: HttpClient) => new TranslateHttpLoader(http);
 export const storageFactory = () => localStorage;
@@ -26,6 +27,7 @@ export const storageFactory = () => localStorage;
     AssignedSitesPageComponent,
     AdminSitesPageComponent,
     SitesViewComponent,
+    AboutViewComponent,
   ],
   imports: [
     BrowserModule,
