@@ -6,39 +6,18 @@ Feature: As a user
 
     Background: Navigate to the trial page
         Given User launches the trial page URL
-        When I navigate to About screen
+        When User navigates to About screen
 
-    Scenario Outline: User can view the services version on ABOUT screen in a logged out state
-        Then I can view the version number against the sevice name "microservice" "version"
-        And I can also see the timestamp of the deployment "timestamp"
+    Scenario Outline: User can view the services version on ABOUT screen
+        Then I can view the version number against the service name "<Service>", "<Version>"
+        And I can view the time stamp of the build deployed
         Examples:
-            | microservice         | version | timestamp |
-            | role-service         | 1.0     | 09:10:05  |
-            | site-service         | 1.0     | 09:10:05  |
-            | practitioner service | 1.0     | 09:10:05  |
-            | config service       | 1.0     | 09:10:05  |
+            | Service              | Version                                            |
+            | site_service         | main-latest                                        |
+            | practitioner_service | main-latest                                        |
+            | init_service         | main-latest                                        |
+            | gateway_service      | main-latest                                        |
+            | discovery_service    | main-latest                                        |
+            | config_server        | main-latest                                        |
+            | UI                   | https://github.com/NDPH-ARTS/mts-trial-ui/releases |
 
-
-    Scenario Outline: User can view the services version on ABOUT screen in a logged In state
-        When a user is authenticated
-        Then I can view the microservice version
-        And I can also see the timestamp of the deployment
-        Examples:
-            | microservice         | version | timestamp |
-            | role service         | 1.0     | 09:10:05  |
-            | site service         | 1.0     | 09:10:05  |
-            | practitioner service | 1.0     | 09:10:05  |
-            | config service       | 1.0     | 09:10:05  |
-
-
-# Scenario Outline: User can view the UI version on ABOUT screen in a logged out state
-#     Then I can view the UI version
-#     Examples:
-#         | UI         | version |
-#         | UI version | 1.0     |
-
-# Scenario Outline: User can view the UI version on ABOUT screen in a logged In state
-#     Then I can view the UI version
-#     Examples:
-#         | UI         | version |
-#         | UI version | 1.0     |

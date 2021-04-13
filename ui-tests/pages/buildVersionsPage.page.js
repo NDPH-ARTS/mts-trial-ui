@@ -2,15 +2,15 @@
 
 class buildVersionsPage {
 
-    get pagehHeader() { return $('//h1') }
-    get service() { return $('//div//table//tr//td[text()="CCO"]') }
-    get serviceVersion() { return $('') }
-    get timeStamp() { return $('') }
+    static getServiceRowText = service => {
+        return `//table//tr//td[text()=${service}]`
+    }
 
-    assignedSitesTab() {
-        browser.pause(3000)
-        this.assignedSites.click();
-        browser.pause(3000)
+    get aboutButton() { return $('//a[@href="/about"]') }
+    get timeStamp() { return $('//div//table//tr//th[3]') }
+
+    about() {
+        this.aboutButton.click()
     }
 }
 module.exports = new buildVersionsPage();
