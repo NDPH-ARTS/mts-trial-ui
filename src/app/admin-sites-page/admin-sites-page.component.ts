@@ -26,7 +26,7 @@ export class AdminSitesPageComponent implements OnInit {
           });
         }
       });
-      this.sites = sites.sort();
+      this.sites = sites.sort((a, b) => a.name.localeCompare(b.name));
     });
   }
 
