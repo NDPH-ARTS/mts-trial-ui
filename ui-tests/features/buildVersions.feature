@@ -12,12 +12,7 @@ Feature: As a user
         Then I can view the version number against the service name "<Service>", "<Version>"
         And I can view the time stamp of the build deployed
         Examples:
-            | Service              | Version                                            |
-            | site_service         | main-latest                                        |
-            | practitioner_service | main-latest                                        |
-            | init_service         | main-latest                                        |
-            | gateway_service      | main-latest                                        |
-            | discovery_service    | main-latest                                        |
-            | config_server        | main-latest                                        |
-            | UI                   | https://github.com/NDPH-ARTS/mts-trial-ui/releases |
+            | Service       | Version       |
+            | dummy service | dummy service |
+
 
