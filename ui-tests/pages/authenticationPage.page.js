@@ -18,7 +18,7 @@ class authenticationPage {
         this.userName.setValue(process.env.AUTOMATION_USER_NAME)
         this.nextBtn.click()
         this.password.setValue(process.env.AUTOMATION_USER_PASSWORD)
-        browser.pause(6000)
+        browser.pause(9000)
         this.signIn.click()
         browser.pause(9000)
         this.selectYes.click()
@@ -28,9 +28,9 @@ class authenticationPage {
         this.userName.setValue(process.env.BOOTSTRAP_USER_NAME)
         this.nextBtn.click()
         this.password.setValue(process.env.BOOTSTRAP_USER_PASSWORD)
-        browser.pause(3000)
+        browser.pause(9000)
         this.signIn.click()
-        browser.pause(3000)
+        browser.pause(9000)
         this.selectYes.click()
     }
 
@@ -45,9 +45,9 @@ class authenticationPage {
     }
 
     logOut() {
-        browser.pause(6000)
+        browser.pause(9000)
         this.logOutButton.click()
-        browser.pause(6000)
+        browser.pause(9000)
         this.selectAccountTologoutFrom.click()
     }
 

@@ -15,5 +15,7 @@
     "SITE_NAME": "Site Name",
     "SITE_TYPE": "Site Type",
     "PARENT_SITE": "Parent Site",
-    "LAST_UPDATED": "Last Updated"
+    "LAST_UPDATED": "Last Updated",
+    "STATUS": "Status",
+    "DESCRIPTION": "Description"
 }

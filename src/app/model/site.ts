@@ -7,4 +7,5 @@ export interface Site {
     siteType: string;
     description: string;
     lastUpdated: string;
+    status: string;
 }
