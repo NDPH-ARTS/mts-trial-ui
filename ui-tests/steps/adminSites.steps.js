@@ -21,3 +21,18 @@ defineStep('I can see the last updated date', function () {
     let lastUpdatedElem = adminSitesPage.lastUpdated
     expect(lastUpdatedElem).toBeDisplayed()
 });
+
+defineStep('I click on the modal popup', function () {
+    adminSitesPage.popUp()
+});
+
+defineStep('I can view the site description field', function () {
+    let sitedescElem = adminSitesPage.siteDescription
+    expect(sitedescElem).toBeDisplayed()
+});
+
+defineStep('I will check for the presence of site status', function () {
+    let sitestatusElem = adminSitesPage.siteStatus
+    expect(sitestatusElem).toBeDisplayed()
+});
+
