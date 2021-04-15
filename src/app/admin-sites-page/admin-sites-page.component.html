@@ -22,10 +22,10 @@
 
       <tbody>
       <tr *ngFor="let site of sites" (click)="openModal(site)">
-        <td>{{site.name}}</td>
-        <td>{{site.siteType}}</td>
-        <td>{{site.parentSiteName}}</td>
-        <td>{{site.lastUpdated | date:'medium'}}</td>
+        <td id="siteName">{{site.name}}</td>
+        <td id="siteType">{{site.siteType}}</td>
+        <td id="siteParentName">{{site.parentSiteName}}</td>
+        <td id="siteLastUpdtd">{{site.lastUpdated | date:'medium'}}</td>
       </tr>
       </tbody>
     </table>
@@ -41,12 +41,12 @@
 
           <!-- Modal body -->
           <div class="container">
-            <div class="row">
+            <div class="row mt-3">
               <div class="col">
                 <span STYLE="font-weight:bold" translate="SITE_TYPE"></span>
               </div>
               <div class="col">
-                <span STYLE="font-weight:bold" translate="PARENT_SITE"></span>
+                <span STYLE="font-weight:bold" translate="STATUS"></span>
               </div>
               <div class="col">
                 <span STYLE="font-weight:bold" translate="LAST_UPDATED"></span>
@@ -58,7 +58,7 @@
                 <span>{{selectedSite.siteType}}</span>
               </div>
               <div class="col">
-                <span>{{selectedSite.parentSiteName}}</span>
+                <span>{{selectedSite.status}}</span>
               </div>
               <div class="col">
                 <span>{{selectedSite.lastUpdated | date:'medium'}}</span>
@@ -67,7 +67,13 @@
 
               <div class="row mt-3">
                 <div class="col">
-                  <span STYLE="font-weight:bold">Site Name</span>
+                  <span STYLE="font-weight:bold" translate="SITE_NAME"></span>
+                </div>
+                <div class="col">
+                  <span STYLE="font-weight:bold" translate="PARENT_SITE"></span>
+                </div>
+                <div class="col">
+                  <span STYLE="font-weight:bold"></span>
                 </div>
               </div>
 
@@ -75,11 +81,17 @@
                 <div class="col">
                   <span>{{selectedSite.name}}</span>
                 </div>
+                <div class="col">
+                  <span>{{selectedSite.parentSiteName}}</span>
+                </div>
+                <div class="col">
+                  <span></span>
+                </div>
               </div>
 
               <div class="row mt-3">
                 <div class="col">
-                  <span STYLE="font-weight:bold">Site Decsription</span>
+                  <span STYLE="font-weight:bold" translate="DESCRIPTION"></span>
                 </div>
               </div>
 
