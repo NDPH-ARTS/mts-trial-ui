@@ -38,8 +38,16 @@ class authenticationPage {
         this.nextBtn.click()
         this.password.setValue(process.env.BOOTSTRAP_USER_PASSWORD)
         browser.pause(3000)
+
+        it('should detect when element is clickable', () => {
+          const elem = $('//input[@value="Sign in"]')
+          elem.waitForDisplayed({ timeout: 6000 });
+        });
         this.signIn.click()
-        browser.pause(3000)
+        it('should detect when element is clickable', () => {
+          const elem = $('//input[@value="Yes"]')
+          elem.waitForDisplayed({ timeout: 6000 });
+        });
         this.selectYes.click()
     }
 
@@ -47,14 +55,24 @@ class authenticationPage {
         this.userName.setValue(process.env.QA_WITH_CREATE_USER_NAME)
         this.nextBtn.click()
         this.password.setValue(process.env.QA_WITH_CREATE_USER_PASSWORD)
-        browser.pause(3000)
+        it('should detect when element is clickable', () => {
+          const elem = $('//input[@value="Sign in"]')
+          elem.waitForDisplayed({ timeout: 6000 });
+        });
         this.signIn.click()
-        browser.pause(3000)
+        it('should detect when element is clickable', () => {
+          const elem = $('//input[@value="Yes"]')
+          elem.waitForDisplayed({ timeout: 6000 });
+        });
         this.selectYes.click()
     }
 
     logOut() {
         browser.pause(6000)
+        it('should detect when element is clickable', () => {
+          const elem = $('//input[@value="Logout"]')
+          elem.waitForDisplayed({ timeout: 6000 });
+        });
         this.logOutButton.click()
         browser.pause(6000)
         this.selectAccountTologoutFrom.click()
