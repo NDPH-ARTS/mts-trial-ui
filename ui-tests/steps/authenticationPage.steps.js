@@ -3,10 +3,10 @@
 const { defineStep } = require('cucumber')
 const landingPage = require('../pages/landingPage.page.js')
 const authenticationPage = require('../pages/authenticationPage.page.js')
-// sameera
+
 defineStep('a user is authenticated', function () {
     landingPage.login();
-    authenticationPage.enterCredentials();
+    authenticationPage.bootstrapUserCredentials();
 });
 
 defineStep('user navigates to the landing or welcome page', function () {
