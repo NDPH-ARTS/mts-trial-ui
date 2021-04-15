@@ -19,9 +19,18 @@ class authenticationPage {
         this.nextBtn.click()
         this.password.setValue(process.env.AUTOMATION_USER_PASSWORD)
         browser.pause(6000)
+        it('should detect when element is clickable', () => {
+          const elem = $('//input[@value="Sign in"]')
+          elem.waitForDisplayed({ timeout: 6000 });
+        });
         this.signIn.click()
-        browser.pause(9000)
+        it('should detect when element is clickable', () => {
+          const elem = $('//input[@value="Yes"]')
+          elem.waitForDisplayed({ timeout: 6000 });
+        });
         this.selectYes.click()
+
+
     }
 
     bootstrapUserCredentials() {

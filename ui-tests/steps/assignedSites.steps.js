@@ -12,21 +12,18 @@ let assert = require('assert');
 
 defineStep('a bootstrap user login to a specific trial', function () {
     browser.deleteCookies()
-    browser.deleteSession()
     landingPage.login();
     authenticationPage.bootstrapUserCredentials();
 });
 
 defineStep('a regional user login to a specific trial', function () {
     browser.deleteCookies()
-    browser.deleteSession()
     landingPage.login();
     authenticationPage.bootstrapUserCredentials();
 });
 
 defineStep('an LCC user logs in to a specific trial', function () {
     browser.deleteCookies()
-    browser.deleteSession()
     landingPage.login();
     authenticationPage.qaWithCreateUserCredentials();
 });
