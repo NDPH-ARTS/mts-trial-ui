@@ -19,7 +19,7 @@ defineStep('a bootstrap user login to a specific trial', function () {
 defineStep('a regional user login to a specific trial', function () {
     browser.deleteCookies()
     landingPage.login();
-    authenticationPage.enterCredentials();
+    authenticationPage.bootstrapUserCredentials();
 });
 
 defineStep('an LCC user logs in to a specific trial', function () {
