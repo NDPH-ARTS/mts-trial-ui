@@ -34,8 +34,4 @@ Feature: As a user
         Examples:
             | buttontext |
             | xLogoutx   |
-
-
-
-
-
+            
