@@ -13,10 +13,3 @@ Feature: As a user
         When a bootstrap user login to a specific trial
         And navigates to assigned sites tab from welcome page
         Then the user should be able to view all the assigned sites
-
-# Scenario: A regional user can view sites only within its region
-#     And User can succesfully logout of the session
-#     When a regional user login to a specific trial
-#     And navigates to assigned sites tab from welcome page
-#     Then the user should be able to view all sites within that region
-
