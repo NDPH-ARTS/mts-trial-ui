@@ -1,5 +1,4 @@
 # author - Sameera Purini
-@smoketest @authenticationPage @arts-196 @arts-92 @arts-67
 Feature: As an authenticated user
     I want to automatically see the welcome page when navigating to the landing page
     So that I am not guided to login again unnecessarily
