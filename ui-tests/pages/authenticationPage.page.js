@@ -42,6 +42,7 @@ class authenticationPage {
         this.signIn.click()
         browser.pause(3000)
         this.selectYes.click()
+        browser.pause(10000)
     }
 
     logOut() {
