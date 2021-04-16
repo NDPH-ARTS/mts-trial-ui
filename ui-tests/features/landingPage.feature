@@ -23,6 +23,17 @@ Feature: As a user
         And a default locale is set for the trial
         And user can change the locale from the preferences
         Then user can reset to default locale
+        
+    @arts-190
+    Scenario Outline: As a user I want to change my locale when working in my trial So that I can view my trial in my preferred locale
+        And User can succesfully logout of the session
+        When a regional user login to a specific trial
+        Then a default locale is set for the trial
+        And user can change the locale from the preferences
+        Then the settings is confirmed by checking the button text "<buttontext>" update
+        Examples:
+            | buttontext |
+            | xLogoutx   |
 
 
 
