@@ -45,9 +45,9 @@ class authenticationPage {
     }
 
     logOut() {
-        browser.pause(9000)
+        browser.pause(6000)
         this.logOutButton.click()
-        browser.pause(9000)
+        browser.pause(6000)
         this.selectAccountTologoutFrom.click()
     }
 
