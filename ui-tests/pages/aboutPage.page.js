@@ -1,6 +1,6 @@
 /*  author - Sameera Purini */
 
-class buildVersionsPage {
+class aboutPage {
 
     static getServiceRowText = service => {
         return `//table//tr//td[text()=${service}]`
@@ -13,4 +13,4 @@ class buildVersionsPage {
         this.aboutButton.click()
     }
 }
-module.exports = new buildVersionsPage();
+module.exports = new aboutPage();

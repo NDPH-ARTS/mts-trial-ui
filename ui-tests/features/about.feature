@@ -1,4 +1,4 @@
-@smoketest @VersionPage @arts-760
+@smoketest @aboutPage @arts-760
 
 Feature: As a user
     I want to know what versions of MTS services are currently being used

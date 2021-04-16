@@ -16,15 +16,10 @@ Feature: As a trial administrator user
         And I can see the last updated date
         Then I click on the modal popup
         And I can view the site description field
-        #  Then I will check for the presence of site status
+        Then I will check for the presence of site status
         Examples:
             | SiteName | SiteType | ParentSite |
             | CCO      | CCO      |            |
-
-   # Scenario: hghvmhvmjv
-      #  When a bootstrap user login to a specific trial
-      #  And User chooses to view the Trial Sites Administration list
-       # Then The list view displays the following columns "<SiteName>", "<SiteType>", "<ParentSite>"
 
 
 

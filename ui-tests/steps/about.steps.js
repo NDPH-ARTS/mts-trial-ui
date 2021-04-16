@@ -1,7 +1,7 @@
 /*  author - Sameera Purini */
 
 const { defineStep } = require('cucumber')
-const buildVersionsPage = require('../pages/buildVersionsPage.page.js')
+const buildVersionsPage = require('../pages/aboutPage.page.js')
 const utils = require('../pages/utils.js')
 
 defineStep('User navigates to About screen', function () {
