@@ -20,9 +20,7 @@ Feature: As a user
         Then the welcome page message displays staffs information
 
     Scenario Outline: As a user I want to change my locale when working in my trial So that I can view my trial in my preferred locale
-        # Given User launches the trial page URL
-        # When a regional user login to a specific trial
-        Then a default locale is set for the trial
+        When a default locale is set for the trial
         And user can change the locale from the preferences
         Then the settings is confirmed by checking the button text "<buttontext>" update
         Examples:

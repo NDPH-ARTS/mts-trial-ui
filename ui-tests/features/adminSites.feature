@@ -1,6 +1,6 @@
 # author - Sameera Purini
 
-@smoketest @adminSites @arts-774
+@smoketest @adminSites @arts-774 @arts-76
 
 Feature: As a trial administrator user
     I want to see a list of the trial sites I have permission to administer in my trial
