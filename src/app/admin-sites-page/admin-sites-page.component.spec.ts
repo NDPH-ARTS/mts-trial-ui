@@ -36,7 +36,8 @@ describe('AdminSitesPageComponent', () => {
   it('should fetch admin sites on init', () => {
 
     const site: Site =
-      {name: '', alias: '', siteId: '123', parentSiteId: '', parentSiteName: '', siteType: '', description: '', lastUpdated: ''};
+      {name: '', alias: '', siteId: '123', parentSiteId: '', parentSiteName: '', siteType: '', description: '',
+        lastUpdated: '', status: ''};
     const sites: Site[] = [site];
 
     const adminSiteSpy = spyOn(siteService, 'getSitesByRole').withArgs('admin').and.returnValue(of(sites));

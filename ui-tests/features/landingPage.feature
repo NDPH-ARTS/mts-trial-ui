@@ -36,4 +36,3 @@ Feature: As a user
             | xLogoutx   |
 
 
-

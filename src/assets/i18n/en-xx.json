@@ -16,5 +16,7 @@
     "SITE_NAME": "xSite Namex",
     "SITE_TYPE": "xSiteTypex",
     "PARENT_SITE": "xParent Sitex",
-    "LAST_UPDATED": "xLast Updatedx"
+    "LAST_UPDATED": "xLast Updatedx",
+    "STATUS": "xStatusx",
+    "DESCRIPTION": "xDescriptionx"
 }
