@@ -3,8 +3,8 @@
 @smoketest @assignedSites @arts-48
 
 Feature: As a user
-    I want to login to the system
-    so that I can carry out business functions for managing trial entities
+    I want to see a list of the trial sites I have been assigned to in my trial
+    So that I can understand which trial sites I can access
 
     Background: Navigate to the trial page
         Given User launches the trial page URL

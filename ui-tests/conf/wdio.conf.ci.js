@@ -26,7 +26,7 @@ exports.config = {
     //baseUrl: 'http:',
     //
     // Default timeout for all waitFor* commands.
-    waitforTimeout: 10000,
+    waitforTimeout: 60000,
     //
     // Default timeout in milliseconds for request
     // if browser driver or grid doesn't send response
@@ -34,12 +34,13 @@ exports.config = {
     //
     // Default request retries count
     connectionRetryCount: 3,
+    retries: 3,
     framework: 'cucumber',
 
     reporters: [
         ['junit', {
             outputDir: './test-results',
-            outputFileFormat: function(options) { // optional
+            outputFileFormat: function (options) { // optional
                 return `wdio-results-${options.cid}.xml`
             }
         }],
@@ -69,28 +70,28 @@ exports.config = {
 
     capabilities: [
         // {
-            // browserName: 'chrome',
-            // 'goog:chromeOptions': {
-            //     args: ['--headless', '--disable-gpu', '--no-sandbox'],
-            // }
-            {
-                // maxInstances can get overwritten per capability. So if you have an in house Selenium
-                // grid with only 5 firefox instance available you can make sure that not more than
-                // 5 instance gets started at a time.
-                maxInstances: 5,
-                browserName: 'firefox',
-                'moz:firefoxOptions': {
-                  // flag to activate Firefox headless mode (see https://github.com/mozilla/geckodriver/blob/master/README.md#firefox-capabilities for more details about moz:firefoxOptions)
-                  args: ['-headless']
-                },
-                // If outputDir is provided WebdriverIO can capture driver session logs
-                // it is possible to configure which logTypes to exclude.
-                // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
-                excludeDriverLogs: ['bugreport', 'server'],
-                //
-                // Parameter to ignore some or all Puppeteer default arguments
-                // ignoreDefaultArgs: ['-foreground'], // set value to true to ignore all default arguments
+        // browserName: 'chrome',
+        // 'goog:chromeOptions': {
+        //     args: ['--headless', '--disable-gpu', '--no-sandbox'],
+        // }
+        {
+            // maxInstances can get overwritten per capability. So if you have an in house Selenium
+            // grid with only 5 firefox instance available you can make sure that not more than
+            // 5 instance gets started at a time.
+            maxInstances: 5,
+            browserName: 'firefox',
+            'moz:firefoxOptions': {
+                // flag to activate Firefox headless mode (see https://github.com/mozilla/geckodriver/blob/master/README.md#firefox-capabilities for more details about moz:firefoxOptions)
+                args: ['-headless']
             },
+            // If outputDir is provided WebdriverIO can capture driver session logs
+            // it is possible to configure which logTypes to exclude.
+            // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
+            excludeDriverLogs: ['bugreport', 'server'],
+            //
+            // Parameter to ignore some or all Puppeteer default arguments
+            // ignoreDefaultArgs: ['-foreground'], // set value to true to ignore all default arguments
+        },
     ],
     sync: true,
     logLevel: 'error',

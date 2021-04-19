@@ -10,6 +10,7 @@ class adminSitesPage {
 
     adminSitesTab() {
         this.myadminSites.click();
+        browser.pause(10000)
     }
 
     popUp() {
