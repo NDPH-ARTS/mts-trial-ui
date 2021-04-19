@@ -23,17 +23,6 @@ defineStep('User can succesfully logout of the session', function () {
     authenticationPage.logOut();
 });
 
-defineStep('User enters non-authenticated credentials', function () {
-    landingPage.login();
-    authenticationPage.invalidCredentials();
-});
-
-
-defineStep('User is shown an error message', function () {
-    let errorMessageElement = authenticationPage.errorMessage
-    expect(errorMessageElement.getText()).toContain("This username may be incorrect")
-});
-
 
 
 
