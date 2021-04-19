@@ -9,7 +9,10 @@ Feature: As a user
     Background: Navigate to the trial page
         Given User launches the trial page URL
 
-    Scenario: A bootstrap user can view all sites
+    Scenario Outline: A bootstrap user can view all sites
         When a bootstrap user login to a specific trial
         And navigates to assigned sites tab from welcome page
-        Then the user should be able to view all the assigned sites
+        Then the user should be able to view all the "<assignedSites>"
+        Examples:
+            | assignedSites                                                   |
+            | CCO,EUROPE,ENGLAND,SCOTLAND,GLASGOW,NEWCASTLE,SUNDERLAND,LONDON |
