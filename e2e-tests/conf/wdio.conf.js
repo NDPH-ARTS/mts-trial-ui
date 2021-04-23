@@ -25,24 +25,24 @@ exports.config = {
         maxInstances: 5,
         browserName: 'chrome',
 
-        // },
+    },
 
 
-        // {
-        //     maxInstances: 1,
-        //     browserName: 'MicrosoftEdge'
+    {
+        maxInstances: 1,
+        browserName: 'MicrosoftEdge'
 
-        // },
+    },
 
-        // {
-        //     maxInstances: 1,
-        //     browserName: 'firefox'
+    {
+        maxInstances: 1,
+        browserName: 'firefox'
 
-        // },
+    },
 
-        // {
-        //     maxInstances: 1,
-        //     browserName: 'safari',
+    {
+        maxInstances: 1,
+        browserName: 'safari',
     }],
 
     logLevel: 'error',
