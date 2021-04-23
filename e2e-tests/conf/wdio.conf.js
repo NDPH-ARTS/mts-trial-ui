@@ -5,8 +5,8 @@ const { removeSync } = require('fs-extra');
 // The below module is used for cucumber html report generation
 const reporter = require('cucumber-html-reporter');
 const currentTime = new Date().toJSON().replace(/:/g, "-");
-const sourceSpecDirectory = `ui-tests/features`;
-const jsonTmpDirectory = `ui-tests/reports/json/tmp/`;
+const sourceSpecDirectory = `e2e-tests/features`;
+const jsonTmpDirectory = `e2e-tests/reports/json/tmp/`;
 
 
 let featureFilePath = `${sourceSpecDirectory}/*.feature`;
@@ -25,24 +25,24 @@ exports.config = {
         maxInstances: 5,
         browserName: 'chrome',
 
-    },
+        // },
 
 
-    {
-        maxInstances: 1,
-        browserName: 'MicrosoftEdge'
+        // {
+        //     maxInstances: 1,
+        //     browserName: 'MicrosoftEdge'
 
-    },
+        // },
 
-    {
-        maxInstances: 1,
-        browserName: 'firefox'
+        // {
+        //     maxInstances: 1,
+        //     browserName: 'firefox'
 
-    },
+        // },
 
-    {
-        maxInstances: 1,
-        browserName: 'safari',
+        // {
+        //     maxInstances: 1,
+        //     browserName: 'safari',
     }],
 
     logLevel: 'error',
@@ -81,7 +81,7 @@ exports.config = {
 
     // If you are using Cucumber you need to specify the location of your step definitions.
     cucumberOpts: {
-        require: ['ui-tests/steps/*.js'],        // <string[]> (file/dir) require files before executing features
+        require: ['e2e-tests/steps/*.js'],        // <string[]> (file/dir) require files before executing features
         backtrace: false,   // <boolean> show full backtrace for errors
         requireModule: [],  // <string[]> ("extension:module") require files with the given EXTENSION after requiring MODULE (repeatable)
         dryRun: false,      // <boolean> invoke formatters without executing steps

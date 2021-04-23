@@ -20,8 +20,9 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 ## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Run `npm run e2e-tests` to execute the end-to-end tests via [Wdio](https://webdriver.io/).
 Before running the tests make sure you are serving the app via `ng serve`.
+Further information on writing the e2e tests can be found in the confluence page, https://ndph-arts.atlassian.net/wiki/spaces/ARTS/pages/114720777/e2e+Automation
 
 ## Further help
 
