@@ -32,11 +32,4 @@ describe('SitesViewComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-
-  it('should call the site service', () => {
-    const sites = [{} as Site];
-
-    spyOn(siteService, 'getSites').and.returnValue(of(sites));
-    expect()
-  });
 });
