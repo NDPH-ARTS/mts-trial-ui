@@ -15,4 +15,5 @@ Feature: As a user
         Then the user should be able to view all the "<assignedSites>"
         Examples:
             | assignedSites |
+            #  | CCO,EUROPE,ENGLAND,SCOTLAND,GLASGOW,NEWCASTLE,SUNDERLAND,LONDON |
             | CCO           |
