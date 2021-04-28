@@ -14,5 +14,5 @@ Feature: As a user
         And navigates to assigned sites tab from welcome page
         Then the user should be able to view all the "<assignedSites>"
         Examples:
-            | assignedSites                                                   |
-            | CCO,EUROPE,ENGLAND,SCOTLAND,GLASGOW,NEWCASTLE,SUNDERLAND,LONDON |
+            | assignedSites |
+            | CCO           |
