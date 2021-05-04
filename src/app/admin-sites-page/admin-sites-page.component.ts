@@ -19,13 +19,6 @@ export class AdminSitesPageComponent implements OnInit {
     this.showModal = false;
     this.selectedSite = {};
     this.siteService.getSitesByRole('admin').pipe(first()).subscribe((sites) => {
-      sites.forEach(site => {
-        if (site.parentSiteId !== null) {
-          this.siteService.getSite(site.parentSiteId).subscribe((retSite: Site) => {
-            site.parentSiteName = retSite.name;
-          });
-        }
-      });
       this.sites = sites.sort((a, b) => a.name.localeCompare(b.name));
     });
   }
