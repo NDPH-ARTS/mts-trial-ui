@@ -30,7 +30,7 @@ class authenticationPage {
         this.password.setValue(process.env.BOOTSTRAP_USER_PASSWORD)
         browser.pause(3000)
         this.signIn.click()
-        browser.pause(3000)
+        browser.pause(13000)
         this.selectYes.click()
     }
 
@@ -40,7 +40,7 @@ class authenticationPage {
         this.password.setValue(process.env.QA_WITH_CREATE_USER_PASSWORD)
         browser.pause(3000)
         this.signIn.click()
-        browser.pause(3000)
+        browser.pause(13000)
         this.selectYes.click()
         browser.pause(10000)
     }
