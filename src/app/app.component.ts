@@ -15,6 +15,56 @@ export class AppComponent {
   currentLocale = 'en-gb';
   defaultLocale = 'en-gb';
 
+  appitems = [
+    {
+      label: 'Home',
+      link: '/landing',
+      faIcon: 'fas fa-home'
+    },
+    {
+      label: 'Admin',
+      link: '/landing',
+      faIcon: 'fas fa-user-cog'
+    },
+    {
+      label: 'Sites',
+      faIcon: 'fas fa-sitemap',
+      items: [
+        {
+          label: 'Assigned Sites',
+          link: '/assigned-sites',
+          icon: 'favorite'
+        },
+        {
+          label: 'Admin Sites',
+          link: '/admin-sites',
+          icon: 'favorite_border'
+        }
+      ]
+    },
+    {
+      label: 'About',
+      link: '/about',
+      faIcon: 'fas fa-info'
+    },
+    {
+      label: 'Item 4',
+      link: '/item-4',
+      icon: 'star_rate',
+      hidden: true
+    }
+  ];
+
+  config = {
+    paddingAtStart: true,
+    classname: 'my-custom-class',
+    listBackgroundColor: 'rgb(208, 241, 239)',
+    fontColor: 'rgb(8, 54, 71)',
+    backgroundColor: 'rgb(208, 241, 239)',
+    selectedListFontColor: 'red',
+  };
+
+
   constructor(appRoot: ElementRef, public authenticationService: AuthenticationService,
               public configurationService: ConfigurationService,
               public translateService: TranslateService) {

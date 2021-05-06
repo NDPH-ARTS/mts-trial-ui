@@ -17,6 +17,7 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { FormsModule } from '@angular/forms';
 import { AboutViewComponent } from './components/about-view/about-view.component';
+import { NgMaterialMultilevelMenuModule, MultilevelMenuService } from 'ng-material-multilevel-menu';
 
 export const httpLoaderFactory = (http: HttpClient) => new TranslateHttpLoader(http);
 export const storageFactory = () => localStorage;
@@ -49,11 +50,13 @@ export const storageFactory = () => localStorage;
     }),
     NgbModule,
     BrowserAnimationsModule,
+    NgMaterialMultilevelMenuModule,
   ],
   providers: [
     { provide: OAuthStorage, useFactory: storageFactory },
     { provide: AuthenticationService, useClass: OAuth2AuthenticationService },
-    { provide: HTTP_INTERCEPTORS, useClass: TokenSenderInterceptor, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: TokenSenderInterceptor, multi: true },
+    { provide: MultilevelMenuService }
   ],
   bootstrap: [AppComponent]
 })

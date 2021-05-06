@@ -1,27 +1,39 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <img src="assets/branding/img/logo.png" class="logo"/>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+<div class="container">
+  <div *ngIf="this.authenticationService.isAuthenticated()">
+  <div class="menu">
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" routerLink="landing" translate="HOME_LINK_TEXT"></a>
-      </li>
-      <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" routerLink="assigned-sites" translate="ASSIGNED_SITES_LINK"></a>
-      </li>
-      <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" routerLink="admin-sites" translate="ADMIN_SITES_LINK"></a>
-      </li>
-      <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" routerLink="about" translate="ABOUT_LINK"></a>
-      </li>
-    </ul>
+    <ng-material-multilevel-menu
+      [configuration]='config'
+      [items]='appitems'>
+    </ng-material-multilevel-menu>
+
   </div>
-  <span style="float: right; ">
+  </div>
+  <div class="modules">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <img src="assets/branding/img/logo.png" class="logo"/>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="landing" translate="HOME_LINK_TEXT"></a>
+          </li>
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="assigned-sites" translate="ASSIGNED_SITES_LINK"></a>
+          </li>
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="admin-sites" translate="ADMIN_SITES_LINK"></a>
+          </li>
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="about" translate="ABOUT_LINK"></a>
+          </li>
+        </ul>
+      </div>
+      <span style="float: right; ">
     <div class="form-group form-inline">
         <select name="currentLocale" [(ngModel)]="currentLocale" (ngModelChange)="onLocaleChange($event)" class="form-control form-control-sm mr-2">
           <option *ngFor="let locale of locales" [ngValue]="locale.key">{{locale.name}}</option>
@@ -31,7 +43,11 @@
         </div>
     </div>
   </span>
-</nav>
+    </nav>
 
 
-<router-outlet></router-outlet>
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+
