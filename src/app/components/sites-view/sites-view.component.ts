@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Site } from 'src/app/model/site';
+import {SiteName} from '../../model/siteName';
 
 @Component({
   selector: 'app-sites-view',
@@ -7,7 +8,7 @@ import { Site } from 'src/app/model/site';
   styleUrls: ['./sites-view.component.sass']
 })
 export class SitesViewComponent {
-  @Input() sites: Site[] = [];
+  @Input() sites: SiteName[] = [];
 
   constructor() { }
 }
