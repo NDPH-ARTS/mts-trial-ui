@@ -4,6 +4,7 @@ import { Observable, of, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { Site } from '../model/site';
 import { ConfigurationService } from './configuration-service';
+import { SiteName } from '../model/siteName';
 
 @Injectable({
   providedIn: 'root'
@@ -44,6 +45,11 @@ export class SiteService {
   getSitesByRole(role: string): Observable<Site[]> {
     const params = new HttpParams().set('role', role);
     return this.http.get<Site[]>(this.serviceUrl, {params})
+      .pipe(catchError(this.handleError));
+  }
+
+  getAssignedSites(): Observable <SiteName[]> {
+    return this.http.get<SiteName[]>(this.serviceUrl + '/' + 'assigned')
       .pipe(catchError(this.handleError));
   }
 

@@ -33,7 +33,7 @@ describe('AssignedSitesPageComponent', () => {
   });
 
   it('should fetch assigned sites on init', () => {
-    const spy = spyOn(siteService, 'getSites').and.returnValue(of([]));
+    const spy = spyOn(siteService, 'getAssignedSites').and.returnValue(of([]));
 
     component.ngOnInit();
 
