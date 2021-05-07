@@ -9,7 +9,9 @@ class adminSitesPage {
     get siteStatus() { return $('//div//span[text()="Status"]') }
 
     adminSitesTab() {
+        browser.pause(3000)
         this.myadminSites.click();
+        browser.pause(3000)
     }
 
     popUp() {
