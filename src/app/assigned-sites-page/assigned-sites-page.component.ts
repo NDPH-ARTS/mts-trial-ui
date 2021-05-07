@@ -13,8 +13,8 @@ export class AssignedSitesPageComponent implements OnInit {
   constructor(private siteService: SiteService) { }
 
   ngOnInit(): void {
-    this.siteService.getSites().pipe(first()).subscribe((sites) => {
-      this.sites = sites.sort();
+    this.siteService.getAssignedSites().pipe(first()).subscribe((sites) => {
+      this.sites = sites.sort((a, b) => a.siteName.localeCompare(b.siteName));
     });
   }
 }
