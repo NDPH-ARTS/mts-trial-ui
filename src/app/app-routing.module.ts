@@ -7,12 +7,14 @@ import {
   AuthGuardService as AuthGuard
 } from './services/auth-guard.service';
 import {AboutViewComponent} from './components/about-view/about-view.component';
+import {AdminRolesPageComponent} from './admin-roles-page/admin-roles-page.component';
 
 
 const routes: Routes = [
   { path: 'landing', component: LandingPageComponent },
   { path: 'assigned-sites', component: AssignedSitesPageComponent, canActivate: [AuthGuard] },
   { path: 'admin-sites', component: AdminSitesPageComponent, canActivate: [AuthGuard] },
+  { path: 'admin-roles', component: AdminRolesPageComponent, canActivate: [AuthGuard] },
   { path: 'about', component: AboutViewComponent },
   { path: '**', redirectTo: 'landing'}
 ];

@@ -12,11 +12,14 @@
     "LOGOUT": "xLogoutx",
     "LOGIN": "xLoginx",
     "ASSIGNED_SITES_TITLE": "xAssigned Sitesx",
+    "ADMIN_ROLES_TITLE": "xSite - Roles - Permissionsx",
     "ADMIN_SITES_TITLE": "xAdmin Sitesx",
     "SITE_NAME": "xSite Namex",
     "SITE_TYPE": "xSiteTypex",
     "PARENT_SITE": "xParent Sitex",
     "LAST_UPDATED": "xLast Updatedx",
     "STATUS": "xStatusx",
-    "DESCRIPTION": "xDescriptionx"
+    "DESCRIPTION": "xDescriptionx",
+    "ROLE": "xRolex",
+    "PERMISSIONS": "xPermissionsx"
 }

@@ -1,0 +1,26 @@
+<style>
+
+</style>
+<div class="container mt-4">
+    <div class="title">
+        <h2 translate="ADMIN_ROLES_TITLE"></h2>
+    </div>
+    <table class="table table-borderless table-hover table-sm">
+      <thead>
+      <tr>
+        <th><span translate="SITE_NAME"></span></th>
+        <th><span translate="ROLE"></span></th>
+        <th><span translate="PERMISSIONS"></span></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let roleAssignment of roleAssignments">
+        <td id="siteName">{{getSiteName(roleAssignment.siteId)}}</td>
+        <td id="roles">{{getRole(roleAssignment.roleId).id}}</td>
+        <td *ngFor="let permission of getRole(roleAssignment.roleId).permissions">
+            <li class="list-unstyled">{{permission.id}}</li>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+</div>

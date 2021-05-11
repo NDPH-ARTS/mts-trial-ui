@@ -18,6 +18,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { FormsModule } from '@angular/forms';
 import { AboutViewComponent } from './components/about-view/about-view.component';
 import { NgMaterialMultilevelMenuModule, MultilevelMenuService } from 'ng-material-multilevel-menu';
+import {AdminRolesPageComponent} from './admin-roles-page/admin-roles-page.component';
 
 export const httpLoaderFactory = (http: HttpClient) => new TranslateHttpLoader(http);
 export const storageFactory = () => localStorage;
@@ -27,6 +28,7 @@ export const storageFactory = () => localStorage;
     LandingPageComponent,
     AssignedSitesPageComponent,
     AdminSitesPageComponent,
+    AdminRolesPageComponent,
     SitesViewComponent,
     AboutViewComponent,
   ],

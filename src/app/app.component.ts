@@ -23,8 +23,19 @@ export class AppComponent {
     },
     {
       label: 'Admin',
-      link: '/landing',
-      faIcon: 'fas fa-user-cog'
+      faIcon: 'fas fa-user-cog',
+      items: [
+        {
+          label: 'Home',
+          link: '/landing',
+          icon: 'favorite'
+        },
+        {
+          label: 'My Roles',
+          link: '/admin-roles',
+          icon: 'favorite_border'
+        }
+      ]
     },
     {
       label: 'Sites',

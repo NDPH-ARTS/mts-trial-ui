@@ -12,10 +12,13 @@
     "LOGIN": "Login",
     "ASSIGNED_SITES_TITLE": "Assigned Sites",
     "ADMIN_SITES_TITLE": "Admin Sites",
+    "ADMIN_ROLES_TITLE": "Site - Roles - Permissions",
     "SITE_NAME": "Site Name",
     "SITE_TYPE": "Site Type",
     "PARENT_SITE": "Parent Site",
     "LAST_UPDATED": "Last Updated",
     "STATUS": "Status",
-    "DESCRIPTION": "Description"
+    "DESCRIPTION": "Description",
+    "ROLE": "Role",
+    "PERMISSIONS": "Permissions"
 }
