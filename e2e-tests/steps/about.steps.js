@@ -5,14 +5,17 @@ const buildVersionsPage = require('../pages/aboutPage.page.js')
 const utils = require('../pages/utils.js')
 
 defineStep('User navigates to About screen', function () {
-    buildVersionsPage.about()
+    buildVersionsPage.clickAbout()
 });
 
-defineStep('I can view the version number against the service name {string}, {string}', function (service, version) {
-    const serviceColumn = $('//table/tr//td[text()=" ' + service + ' "]')
-    const versionColumn = $('//table/tr//td[contains(text(),"' + version + '")]')
-    expect(serviceColumn.getText()).toEqual(service)
-    expect(versionColumn.getText()).toContain(version)
+defineStep('I can view the version number against the service name {string}, {string}, {string}', function (index, service, version) {
+
+    let serviceNameCell = buildVersionsPage.serviceNameCell(index);
+    expect(serviceNameCell.getText()).toContain(service);
+
+    let serviceVersionCell = buildVersionsPage.serviceVersionCell(index);
+    expect(serviceVersionCell.getText()).toContain(version);
+
 });
 
 defineStep('I can view the time stamp of the build deployed', function () {

@@ -2,23 +2,23 @@
   <h1>Microservice versions in this deployment</h1>
   <table>
     <tr>
-      <th>
+      <th id="serviceHeader">
         Service
       </th>
-      <th>
+      <th id="versionHeader">
         Version
       </th>
-      <th>
+      <th id="timestampHeader">
         Timestamp
       </th>
     </tr>
 
 
-    <tr *ngFor = "let serviceVersion of versions">
-      <td>
+    <tr *ngFor = "let serviceVersion of versions; let i = index" >
+      <td id="{{'serviceNameCell_'+i}}">
         {{serviceVersion.service}}
       </td>
-      <td>
+      <td id="{{'serviceVersionCell_'+i}}">
         {{serviceVersion.version}}
       </td>
       <td>
