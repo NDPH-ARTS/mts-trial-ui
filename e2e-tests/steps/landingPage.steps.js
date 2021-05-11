@@ -4,8 +4,8 @@ const landingPage = require('../pages/landingPage.page.js')
 const authenticationPage = require('../pages/authenticationPage.page.js')
 
 defineStep('the landing page displays the name of the trial', function () {
-    let titleElement = landingPage.titleBar
-    expect(titleElement).toBeDisplayed()
+    let trialNameElem = landingPage.trialNameElem
+    expect(trialNameElem).toBeDisplayed()
 });
 
 defineStep('the landing page provides an option to initiate login', function () {

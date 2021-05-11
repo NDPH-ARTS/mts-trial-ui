@@ -2,7 +2,7 @@
 
 class landingPage {
 
-    get titleBar() { return $('.page-header') }
+    get trialNameElem() { return $('//h1[@id="trialName"]') }
     get staffsName() { return $('//h2[text()]') }
     get loginButton() { return $('//button[@id="login_button"]') }
     get defaultLocale() { return $('//span//div//select[@name="currentLocale"]//option[text()="English (UK)"]') }

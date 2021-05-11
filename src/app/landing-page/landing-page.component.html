@@ -1,4 +1,4 @@
-<div class="page-header"><h1>{{ this.configService.trialName }}</h1></div>
+<div class="page-header"><h1 id="trialName">{{ this.configService.trialName }}</h1></div>
 <div class="page-content">
   <div *ngIf="this.authenticationService.isAuthenticated()">
     <h1>{{ 'WELCOME' | translate }}</h1>
