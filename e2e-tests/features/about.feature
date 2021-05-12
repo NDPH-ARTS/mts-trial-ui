@@ -9,10 +9,10 @@ Feature: As a user
         When User navigates to About screen
 
     Scenario Outline: User can view the services version on ABOUT screen
-        Then I can view the version number against the service name "<Index>", "<Service>", "<Version>"
+        Then I can view the version number against the service name "<Service>", "<Version>"
         And I can view the time stamp of the build deployed
         Examples:
-            | Index | Service       | Version       |
-            | 0     | dummy service | dummy version |
+            | Service       | Version       |
+            | dummy service | dummy version |
 
 

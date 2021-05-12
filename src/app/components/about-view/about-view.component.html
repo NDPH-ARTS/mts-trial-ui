@@ -14,11 +14,11 @@
     </tr>
 
 
-    <tr *ngFor = "let serviceVersion of versions; let i = index" >
-      <td id="{{'serviceNameCell_'+i}}">
+    <tr *ngFor = "let serviceVersion of versions">
+      <td>
         {{serviceVersion.service}}
       </td>
-      <td id="{{'serviceVersionCell_'+i}}">
+      <td>
         {{serviceVersion.version}}
       </td>
       <td>

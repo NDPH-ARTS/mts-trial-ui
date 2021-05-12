@@ -8,13 +8,13 @@ defineStep('User navigates to About screen', function () {
     buildVersionsPage.clickAbout()
 });
 
-defineStep('I can view the version number against the service name {string}, {string}, {string}', function (index, service, version) {
+defineStep('I can view the version number against the service name {string}, {string}', function (service, version) {
 
-    let serviceNameCell = buildVersionsPage.serviceNameCell(index);
-    expect(serviceNameCell.getText()).toContain(service);
+    let serviceData = $('//td[contains(text(),"' + service + '")]')
+    let versionData = $('//td[contains(text(),"' + version + '")]')
 
-    let serviceVersionCell = buildVersionsPage.serviceVersionCell(index);
-    expect(serviceVersionCell.getText()).toContain(version);
+    expect(serviceData).toBeDisplayed()
+    expect(versionData).toBeDisplayed()
 
 });
 
