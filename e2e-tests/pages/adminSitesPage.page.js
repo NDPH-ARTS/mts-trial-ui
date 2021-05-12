@@ -6,8 +6,8 @@ class adminSitesPage {
     get lastUpdatedHeader() { return $('//th[@id="siteLastUpdatedHeader"]') }
     get firstSiteRow() { return $('//tr[@id="siteRow_0"]') }
 
-    get siteDescription() { return $('//div//span[text()="Description"]') }
-    get siteStatus() { return $('//div//span[text()="Status"]') }
+    get siteDescription() { return $('//span[@id="siteDescriptionLabel"]') }
+    get siteStatus() { return $('//span[@id="siteStatusLabel"]') }
 
     adminSitesTab() {
         browser.pause(3000)
