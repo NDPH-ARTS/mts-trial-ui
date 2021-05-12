@@ -2,19 +2,20 @@
 
 class authenticationPage {
 
-    // NB These 5 elements are on the Azure Oauth service - we don't control these pages so can't add IDs
+    // NB These 6 elements are on the Azure Oauth service pages - we don't control these pages so can't add IDs
     get userName() { return $('//input[@name="loginfmt"]') }
     get nextBtn() { return $('//input[@id="idSIButton9"]') }
     get password() { return $('//input[@name="passwd"]') }
     get signIn() { return $('//input[@value="Sign in"]') }
     get selectYes() { return $('//input[@value="Yes"]') }
+    get selectAccountTologoutFrom() { return $('//small[text()="Signed in"]') }
 
 
     get landingPageWelcomeMessage() { return $('//h1[@id="welcomeMessage"]') }
+    get logOutButton() { return $('//button[@id="logout"]') }
+    get logOutButtonWithLocaleText() { return $('//button[text()="xLogoutx"]') }
 
-    get logOutButton() { return $('//div//button[text()="Logout"]') }
-    get localeLogOutButton() { return $('//div//button[text()="xLogoutx"]') }
-    get selectAccountTologoutFrom() { return $('//div//small[text()="Signed in"]') }
+
 
     bootstrapUserCredentials() {
         this.userName.setValue(process.env.BOOTSTRAP_USER_NAME)

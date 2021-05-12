@@ -27,7 +27,7 @@
   <div *ngIf="!this.authenticationService.isAuthenticated()">
       <h1 translate="LANDING"></h1>
       <div translate="USER_NOT_LOGGED_IN"><br/>
-        <button id="login_button" class="btn btn-primary" (click)="this.authenticationService.login()">{{'LOGIN' | translate}}</button>
+        <button id="login" class="btn btn-primary" (click)="this.authenticationService.login()">{{'LOGIN' | translate}}</button>
       </div>
   </div>
 </div>

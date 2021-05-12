@@ -19,7 +19,7 @@ defineStep('the welcome page message is displayed', function () {
     expect(welcomeMessageElement).toBeDisplayed()
 });
 
-defineStep('User can succesfully logout of the session', function () {
+defineStep('User can succesfully logout of the session', function () { // this step is not in a scenario?
     authenticationPage.logOut();
 });
 

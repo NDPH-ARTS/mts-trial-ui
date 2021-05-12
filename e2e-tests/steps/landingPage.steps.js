@@ -19,8 +19,9 @@ defineStep('the welcome page message displays staffs information', function () {
 });
 
 defineStep('a default locale is set for the trial', function () {
-    let locale = landingPage.defaultLocale
-    expect(locale).toBeDisplayed()
+    let localeEng = landingPage.defaultLocale
+    expect(localeEng).toBeDisplayed()
+    expect(localeEng).toBeSelected()
 });
 
 defineStep('user can reset to default locale', function () {
@@ -32,7 +33,7 @@ defineStep('user can change the locale from the preferences', function () {
 });
 
 defineStep('the settings is confirmed by checking the button text {string} update', function (string) {
-    let localeLogOut = authenticationPage.localeLogOutButton
+    let localeLogOut = authenticationPage.logOutButtonWithLocaleText
     expect(localeLogOut.getText()).toEqual("xLogoutx")
 });
 

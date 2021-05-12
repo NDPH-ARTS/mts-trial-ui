@@ -35,11 +35,11 @@
       </div>
       <span style="float: right; ">
     <div class="form-group form-inline">
-        <select name="currentLocale" [(ngModel)]="currentLocale" (ngModelChange)="onLocaleChange($event)" class="form-control form-control-sm mr-2">
-          <option *ngFor="let locale of locales" [ngValue]="locale.key">{{locale.name}}</option>
+        <select id="currentLocale" name="currentLocale" [(ngModel)]="currentLocale" (ngModelChange)="onLocaleChange($event)" class="form-control form-control-sm mr-2">
+          <option *ngFor="let locale of locales" [ngValue]="locale.key" id="{{locale.key}}">{{locale.name}}</option>
         </select>
         <div *ngIf="this.authenticationService.isAuthenticated()">
-          <button color="primary" class="btn btn-outline-primary"  (click)="logout()" translate="LOGOUT"></button>
+          <button id="logout" color="primary" class="btn btn-outline-primary"  (click)="logout()" translate="LOGOUT"></button>
         </div>
     </div>
   </span>
