@@ -3,7 +3,7 @@
 class landingPage {
 
     get trialNameElem() { return $('//h1[@id="trialName"]') }
-    get staffsName() { return $('//h2[text()]') }
+    get staffsName() { return $('//h2[@id="staffsName"]') }
     get loginButton() { return $('//button[@id="login_button"]') }
     get defaultLocale() { return $('//span//div//select[@name="currentLocale"]//option[text()="English (UK)"]') }
     get preferredLocale() { return $('//span//div//select[@name="currentLocale"]//option[@value="1: en-xx"]') }
