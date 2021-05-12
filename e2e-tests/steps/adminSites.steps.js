@@ -2,6 +2,7 @@
 
 const { defineStep } = require('cucumber')
 const adminSitesPage = require('../pages/adminSitesPage.page.js')
+const assert = require("assert");
 
 
 defineStep('User chooses to view the Trial Sites Administration list', function () {
@@ -18,11 +19,12 @@ defineStep('The list view displays the following data {string}, {string}, {strin
 });
 
 defineStep('I can see the last updated date', function () {
-    let lastUpdatedElem = adminSitesPage.lastUpdated
-    expect(lastUpdatedElem).toBeDisplayed()
+    let lastUpdatedHeader = adminSitesPage.lastUpdatedHeader
+    expect(lastUpdatedHeader).toBeDisplayed()
+
 });
 
-defineStep('I click on the modal popup', function () {
+defineStep('I click on the first row to trigger a modal popup', function () {
     adminSitesPage.popUp()
 });
 
