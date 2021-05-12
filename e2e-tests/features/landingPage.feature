@@ -15,9 +15,9 @@ Feature: As a user
 
     Scenario:  Welcome Page displays the user’s Staff name
         When a user is authenticated
-        Then the welcome page displays the name of the trial
+        Then user navigates to the landing or welcome page
         And the welcome page message is displayed
-        And the welcome page message displays staffs information
+        Then the welcome page message displays staffs information
 
     Scenario Outline: As a user I want to change my locale when working in my trial So that I can view my trial in my preferred locale
         When a default locale is set for the trial

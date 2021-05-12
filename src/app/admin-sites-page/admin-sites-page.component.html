@@ -21,7 +21,7 @@
       </thead>
 
       <tbody>
-      <tr *ngFor="let site of sites; let i = index" (click)="openModal(site)" id="{{'siteRow_'+i}}">
+      <tr *ngFor="let site of sites" (click)="openModal(site)" >
         <td>{{site.name}}</td>
         <td>{{site.siteType}}</td>
         <td>{{site.parentSiteName}}</td>

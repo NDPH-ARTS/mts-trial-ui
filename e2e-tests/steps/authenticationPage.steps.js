@@ -9,8 +9,8 @@ defineStep('a user is authenticated', function () {
     authenticationPage.bootstrapUserCredentials();
 });
 
-defineStep('the welcome page displays the name of the trial', function () {
-    let titleElement = landingPage.trialNameElem
+defineStep('user navigates to the landing or welcome page', function () {
+    let titleElement = landingPage.titleElement
     expect(titleElement).toBeDisplayed()
 });
 
