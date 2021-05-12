@@ -4,7 +4,7 @@ class adminSitesPage {
 
     get myadminSites() { return $('//a[@href="/admin-sites"]') }
     get lastUpdatedHeader() { return $('//th[@id="siteLastUpdatedHeader"]') }
-    get firstSiteRow() { return $('//tr[@id="siteRow_0"]') }
+    get modal() { return $('//tr//td') }
 
     get siteDescription() { return $('//span[@id="siteDescriptionLabel"]') }
     get siteStatus() { return $('//span[@id="siteStatusLabel"]') }
@@ -16,7 +16,7 @@ class adminSitesPage {
     }
 
     popUp() {
-        this.firstSiteRow.click();
+        this.modal.click();
     }
 
 

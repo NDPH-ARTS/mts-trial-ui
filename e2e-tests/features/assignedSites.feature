@@ -12,8 +12,7 @@ Feature: As a user
     Scenario Outline: A bootstrap user can view all sites
         When a bootstrap user login to a specific trial
         And navigates to assigned sites tab from welcome page
-        Then the user lands on the assigned sites page
-        And the user should be able to view all the "<assignedSites>"
+        Then the user should be able to view all the "<assignedSites>"
         Examples:
             | assignedSites |
             #  | CCO,EUROPE,ENGLAND,SCOTLAND,GLASGOW,NEWCASTLE,SUNDERLAND,LONDON |

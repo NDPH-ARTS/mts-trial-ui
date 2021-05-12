@@ -6,7 +6,7 @@ class aboutPage {
   get aboutButton() { return $('//a[@href="/about"]') }
   get timeStamp() { return $('//th[@id="timestampHeader"]') }
 
-  clickAbout() {
+  about() {
     this.aboutButton.click()
   }
 }
