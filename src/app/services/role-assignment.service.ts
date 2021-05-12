@@ -9,13 +9,13 @@ import {RoleAssignment} from '../model/roleAssignment';
   providedIn: 'root'
 })
 export class RoleAssignmentService {
-  readonly roleAssignmentUrl = `${this.configurationService.gatewayUrl}/practitioner/roles`;
+  readonly serviceUrl = `${this.configurationService.gatewayUrl}/practitioner/roles`;
 
   constructor(private http: HttpClient, private configurationService: ConfigurationService) { }
 
   getRoleAssignments(userId: string): Observable <RoleAssignment[]> {
     const params = new HttpParams().set('userIdentity', userId);
-    return this.http.get<RoleAssignment[]>(this.roleAssignmentUrl, { params })
+    return this.http.get<RoleAssignment[]>(this.serviceUrl, { params })
       .pipe(catchError(this.handleError));
   }
 

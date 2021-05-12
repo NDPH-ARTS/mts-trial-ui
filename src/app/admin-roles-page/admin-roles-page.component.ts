@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {first, mergeAll, mergeMap, share, switchMap, tap, concatMap, map, take} from 'rxjs/operators';
-import { forkJoin, from } from 'rxjs'
+import {first, take} from 'rxjs/operators';
 import { RoleService } from '../services/role.service';
 import { SiteService } from '../services/site.service';
 import {Role} from '../model/role';
@@ -27,24 +26,27 @@ export class AdminRolesPageComponent implements OnInit {
     this.getRoles();
   }
 
-  private getRoleAssignments(): void {
-    this.profileService.getProfiles().pipe(take(1)).subscribe ((profiles: Profile[]) => {
-      this.roleAssignmentService.getRoleAssignments(profiles[0].userAccountId).pipe
-        (take(1)).subscribe((roleAssignments) => {
-          this.roleAssignments = roleAssignments;
-        });
-    });
-  }
-
-  private getSites(): void {
+  getSites(): void {
     this.siteService.getSites().pipe(first()).subscribe((sites) => {
       this.sites = sites;
     });
   }
 
-  private getRoles(): void {
+  getRoles(): void {
     this.roleService.getRoles().pipe(first()).subscribe((roles) => {
       this.roles = roles;
+    });
+  }
+
+  getRoleAssignments(): void {
+    this.profileService.getProfiles().pipe(first()).subscribe ((profiles: Profile[]) => {
+        for (const profile in profiles){
+        if ( profiles[profile].id ) {
+          this.roleAssignmentService.getRoleAssignments(profiles[profile].userAccountId).pipe(first()).subscribe((roleAssignments) => {
+            this.roleAssignments = roleAssignments;
+          });
+        }
+      }
     });
   }
 

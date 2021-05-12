@@ -7,6 +7,7 @@ import { AuthenticationService } from '../services/oauth2-authentication.service
 import { ProfileService } from '../services/profile.service';
 import { MockProfileService } from '../services/profile.service.mock';
 import { LandingPageComponent, State } from './landing-page.component';
+import {Site} from '../model/site';
 
 describe('LandingPageComponent', () => {
   let component: LandingPageComponent;
@@ -60,5 +61,18 @@ describe('LandingPageComponent', () => {
 
 
     expect(component.profilesState).toBe(State.success);
+  });
+
+  it('should fetch profiles', () => {
+    fixture = TestBed.createComponent(LandingPageComponent);
+    component = fixture.componentInstance;
+    const profile: Profile =
+      {id: '', givenName: '', familyName: '123', prefix: '456', userAccountId: 'parent'};
+    const profiles: Profile[] = [profile];
+
+    const profileSpy = spyOn(mockProfileService, 'getProfiles').and.returnValue(of(profiles));
+    component.showProfiles();
+
+    expect(profileSpy).toHaveBeenCalled();
   });
 });

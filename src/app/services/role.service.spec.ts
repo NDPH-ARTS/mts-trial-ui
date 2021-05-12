@@ -2,11 +2,12 @@ import { TestBed } from '@angular/core/testing';
 import {HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import { ProfileService } from './profile.service';
-import { Site } from '../model/site';
-import { SiteService } from './site.service';
+import {RoleService} from './role.service';
+import {Role} from '../model/role';
+import {Permission} from '../model/permission';
 
-describe('SiteService', () => {
-  let service: SiteService;
+describe('RoleService', () => {
+  let service: RoleService;
   let httpClient: HttpClient;
   let httpMock: HttpTestingController;
 
@@ -17,49 +18,43 @@ describe('SiteService', () => {
     });
     httpClient = TestBed.inject(HttpClient);
     httpMock = TestBed.inject(HttpTestingController);
-    service = TestBed.inject(SiteService);
+    service = TestBed.inject(RoleService);
   });
 
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
 
-  describe('#getSites', () => {
-    it('should return an Observable<Site[]>', () => {
-      const sites = [
+  describe('#getRoles', () => {
+    it('should return an Observable<Role[]>', () => {
+      const permission: Permission = {id: 'x'};
+      const permissions: Array<Permission> = [permission];
+      const roles = [
         {
-          name: 'name',
-          alias: 'alias',
-          siteId: 'siteId',
-          parentSiteId: 'parentSiteId',
-          parentSiteName: 'parentSiteName',
-          siteType: 'siteType'
-        } as Site,
+          id: 'id',
+          permissions
+        } as Role,
         {
-          name: 'another site',
-          alias: 'alias2',
-          siteId: 'siteId2',
-          parentSiteId: 'parentSiteId',
-          parentSiteName: 'parentSiteName',
-          siteType: 'anotherType'
-        } as Site,
+          id: 'another id',
+          permissions
+        } as Role,
       ];
 
-      service.getSites().subscribe(s => {
+      service.getRoles().subscribe(s => {
         console.log(s);
         expect(s.length).toBe(2);
-        expect(s).toEqual(sites);
+        expect(s).toEqual(roles);
       });
 
       const req = httpMock.expectOne(service.serviceUrl);
       expect(req.request.method).toBe('GET');
-      req.flush(sites);
+      req.flush(roles);
     });
 
     it('should handle errors calling the backend', () => {
       const response = { status: 500, statusText: 'Server error' };
 
-      service.getSites().subscribe(() => {}, (e) => {
+      service.getRoles().subscribe(() => {}, (e) => {
         expect(e).toBe('Error getting profile data.');
       });
 
@@ -71,7 +66,7 @@ describe('SiteService', () => {
     it('should handle error events calling the backend', () => {
       const response = { status: 500, statusText: 'Server error' };
 
-      service.getSites().subscribe(() => {}, (e) => {
+      service.getRoles().subscribe(() => {}, (e) => {
         expect(e).toBe('Error getting profile data.');
       });
 
