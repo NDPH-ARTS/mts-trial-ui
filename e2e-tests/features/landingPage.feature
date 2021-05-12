@@ -15,7 +15,7 @@ Feature: As a user
 
     Scenario:  Welcome Page displays the user’s Staff name
         When a user is authenticated
-        Then user navigates to the landing or welcome page
+        And user navigates to the landing or welcome page
         And the welcome page message is displayed
         Then the welcome page message displays staffs information
 

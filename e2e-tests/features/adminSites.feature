@@ -14,7 +14,7 @@ Feature: As a trial administrator user
         And User chooses to view the Trial Sites Administration list
         Then The list view displays the following data "<SiteName>", "<SiteType>", "<ParentSite>"
         And I can see the last updated date
-        Then I click on the first row to trigger a modal popup
+        Then I click on the modal popup
         And I can view the site description field
         Then I will check for the presence of site status
         Examples:

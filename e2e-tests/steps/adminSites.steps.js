@@ -24,7 +24,7 @@ defineStep('I can see the last updated date', function () {
 
 });
 
-defineStep('I click on the first row to trigger a modal popup', function () {
+defineStep('I click on the modal popup', function () {
     adminSitesPage.popUp()
 });
 

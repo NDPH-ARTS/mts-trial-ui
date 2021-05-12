@@ -11,6 +11,7 @@ class authenticationPage {
     get selectAccountTologoutFrom() { return $('//small[text()="Signed in"]') }
 
 
+
     get landingPageWelcomeMessage() { return $('//h1[@id="welcomeMessage"]') }
     get logOutButton() { return $('//button[@id="logout"]') }
     get logOutButtonWithLocaleText() { return $('//button[text()="xLogoutx"]') }
