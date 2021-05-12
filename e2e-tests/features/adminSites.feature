@@ -12,7 +12,7 @@ Feature: As a trial administrator user
     Scenario Outline: System displays only the trial sites I am assigned to with a role that includes the View Trial Sites permission and their child trial sites if applicable
         When an LCC user logs in to a specific trial
         And User chooses to view the Trial Sites Administration list
-        Then The list view displays the following columns "<SiteName>", "<SiteType>", "<ParentSite>"
+        Then The list view displays the following data "<SiteName>", "<SiteType>", "<ParentSite>"
         And I can see the last updated date
         Then I click on the modal popup
         And I can view the site description field
