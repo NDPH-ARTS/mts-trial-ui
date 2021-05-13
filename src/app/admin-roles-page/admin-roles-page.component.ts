@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {first, take} from 'rxjs/operators';
+import {first, mergeAll, mergeMap, share, switchMap, tap, concatMap, map, take} from 'rxjs/operators';
+import {forkJoin, from, Observable} from 'rxjs';
 import { RoleService } from '../services/role.service';
 import { SiteService } from '../services/site.service';
 import {Role} from '../model/role';
@@ -39,15 +40,11 @@ export class AdminRolesPageComponent implements OnInit {
   }
 
   getRoleAssignments(): void {
-    this.profileService.getProfiles().pipe(first()).subscribe ((profiles: Profile[]) => {
-        for (const profile in profiles){
-        if ( profiles[profile].id ) {
-          this.roleAssignmentService.getRoleAssignments(profiles[profile].userAccountId).pipe(first()).subscribe((roleAssignments) => {
-            this.roleAssignments = roleAssignments;
-          });
-        }
-      }
-    });
+    this.profileService.getProfiles().pipe(map(
+      res => this.roleAssignmentService.getRoleAssignments(res[0].userAccountId).pipe(take(1)).subscribe((roleAssignments) => {
+        this.roleAssignments = roleAssignments;
+      }))).subscribe(
+    );
   }
 
   getSiteName(id: string): string {
