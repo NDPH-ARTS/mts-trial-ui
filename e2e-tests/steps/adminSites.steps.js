@@ -2,14 +2,13 @@
 
 const { defineStep } = require('cucumber')
 const adminSitesPage = require('../pages/adminSitesPage.page.js')
-const assert = require("assert");
 
 
 defineStep('User chooses to view the Trial Sites Administration list', function () {
     adminSitesPage.adminSitesTab()
 });
 
-defineStep('The list view displays the following data {string}, {string}, {string}', function (SiteName, SiteType, ParentSite) {
+defineStep('The list view displays the following columns {string}, {string}, {string}', function (SiteName, SiteType, ParentSite) {
     const siteNameData = $('//table//tr//td[text()="' + SiteName + '"]')
     const siteTypeData = $('//table//tr//td[text()="' + SiteType + '"]')
     const parentSiteData = $('//table//tr//td[text()="' + ParentSite + '"]')
@@ -19,8 +18,8 @@ defineStep('The list view displays the following data {string}, {string}, {strin
 });
 
 defineStep('I can see the last updated date', function () {
-    let lastUpdatedHeader = adminSitesPage.lastUpdatedHeader
-    expect(lastUpdatedHeader).toBeDisplayed()
+  let lastUpdatedElem = adminSitesPage.lastUpdated
+  expect(lastUpdatedElem).toBeDisplayed()
 
 });
 

@@ -4,8 +4,8 @@ const landingPage = require('../pages/landingPage.page.js')
 const authenticationPage = require('../pages/authenticationPage.page.js')
 
 defineStep('the landing page displays the name of the trial', function () {
-    let trialNameElem = landingPage.titleElement
-    expect(trialNameElem).toBeDisplayed()
+    let titleElement = landingPage.titleBar
+    expect(titleElement).toBeDisplayed()
 });
 
 defineStep('the landing page provides an option to initiate login', function () {
@@ -19,9 +19,9 @@ defineStep('the welcome page message displays staffs information', function () {
 });
 
 defineStep('a default locale is set for the trial', function () {
-    let localeEng = landingPage.defaultLocale
-    expect(localeEng).toBeDisplayed()
-    expect(localeEng).toBeSelected()
+    let locale = landingPage.defaultLocale
+    expect(locale).toBeDisplayed()
+    expect(locale).toBeSelected()
 });
 
 defineStep('user can reset to default locale', function () {

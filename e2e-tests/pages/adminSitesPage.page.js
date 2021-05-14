@@ -3,7 +3,7 @@
 class adminSitesPage {
 
     get myadminSites() { return $('//a[@href="/admin-sites"]') }
-    get lastUpdatedHeader() { return $('//th[@id="siteLastUpdatedHeader"]') }
+    get lastUpdated() { return $('//th[@id="siteLastUpdatedHeader"]') }
     get modal() { return $('//tr//td') }
 
     get siteDescription() { return $('//span[@id="siteDescriptionLabel"]') }

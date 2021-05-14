@@ -33,7 +33,7 @@ defineStep('navigates to assigned sites tab from welcome page', function () {
 });
 
 defineStep('the user lands on the assigned sites page', function () {
-    let title = assignedSitesPage.pagehHeader
+    let title = assignedSitesPage.pageHeader
     expect(title).toBeDisplayed();
 });
 

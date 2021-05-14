@@ -3,7 +3,7 @@
 class assignedSitesPage {
 
     get assignedSites() { return $('//a[@href="/assigned-sites"]') }
-    get pagehHeader() { return $('//h2[@id="assignedSitesHeader"]') }
+    get pageHeader() { return $('//h2[@id="assignedSitesHeader"]') }
 
     assignedSitesTab() {
         browser.pause(3000)
