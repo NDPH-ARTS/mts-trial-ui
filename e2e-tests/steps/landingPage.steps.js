@@ -33,7 +33,7 @@ defineStep('user can change the locale from the preferences', function () {
 });
 
 defineStep('the settings is confirmed by checking the button text {string} update', function (string) {
-    let localeLogOut = authenticationPage.logOutButtonWithLocaleText
+    let localeLogOut = authenticationPage.localeLogOutButton
     expect(localeLogOut.getText()).toEqual("xLogoutx")
 });
 

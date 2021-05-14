@@ -10,7 +10,7 @@ defineStep('a user is authenticated', function () {
 });
 
 defineStep('user navigates to the landing or welcome page', function () {
-    let titleElement = landingPage.titleElement
+    let titleElement = landingPage.titleBar
     expect(titleElement).toBeDisplayed()
 });
 
