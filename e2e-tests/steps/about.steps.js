@@ -9,10 +9,13 @@ defineStep('User navigates to About screen', function () {
 });
 
 defineStep('I can view the version number against the service name {string}, {string}', function (service, version) {
-    const serviceColumn = $('//table/tr//td[text()=" ' + service + ' "]')
-    const versionColumn = $('//table/tr//td[contains(text(),"' + version + '")]')
-    expect(serviceColumn.getText()).toEqual(service)
-    expect(versionColumn.getText()).toContain(version)
+
+    let serviceData = $('//table/tr//td[contains(text(),"' + service + '")]')
+    let versionData = $('//table/tr//td[contains(text(),"' + version + '")]')
+
+    expect(serviceData).toBeDisplayed()
+    expect(versionData).toBeDisplayed()
+
 });
 
 defineStep('I can view the time stamp of the build deployed', function () {

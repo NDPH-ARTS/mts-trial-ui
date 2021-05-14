@@ -3,10 +3,11 @@
 class adminSitesPage {
 
     get myadminSites() { return $('//a[@href="/admin-sites"]') }
-    get lastUpdated() { return $('//div//table//tr//th[4]') }
+    get lastUpdated() { return $('//th[@id="siteLastUpdatedHeader"]') }
     get modal() { return $('//tr//td') }
-    get siteDescription() { return $('//div//span[text()="Description"]') }
-    get siteStatus() { return $('//div//span[text()="Status"]') }
+
+    get siteDescription() { return $('//span[@id="siteDescriptionLabel"]') }
+    get siteStatus() { return $('//span[@id="siteStatusLabel"]') }
 
     adminSitesTab() {
         browser.pause(3000)
