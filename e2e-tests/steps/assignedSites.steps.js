@@ -33,7 +33,7 @@ defineStep('navigates to assigned sites tab from welcome page', function () {
 });
 
 defineStep('the user lands on the assigned sites page', function () {
-    let title = assignedSitesPage.title
+    let title = assignedSitesPage.pagehHeader
     expect(title).toBeDisplayed();
 });
 
@@ -45,7 +45,7 @@ defineStep('the user should be able to view all the {string}', function (assigne
     });
 });
 
-defineStep('the user should be able to view all sites within that region', function () { // this step is not called? The expected data does not exist in main.
+defineStep('the user should be able to view all sites within that region', function () {
     let sitespath = '//div//div[@class="title"]/parent::div/app-sites-view/table//tr';
     let pageColumns = utils.presenceOfData(sitespath)
 
@@ -57,7 +57,7 @@ defineStep('the user should be able to view all sites within that region', funct
     assert.equal(pageColumns.length, sites["regional"])
 });
 
-defineStep('the user should only be able to view two sites within that country', function () { // as above
+defineStep('the user should only be able to view two sites within that country', function () {
     let sitespath = '//div//div[@class="title"]/parent::div/app-sites-view/table//tr';
     let pageColumns = utils.presenceOfData(sitespath)
 

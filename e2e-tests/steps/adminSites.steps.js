@@ -10,9 +10,9 @@ defineStep('User chooses to view the Trial Sites Administration list', function 
 });
 
 defineStep('The list view displays the following data {string}, {string}, {string}', function (SiteName, SiteType, ParentSite) {
-    const siteNameData = $('//td[text()="' + SiteName + '"]')
-    const siteTypeData = $('//td[text()="' + SiteType + '"]')
-    const parentSiteData = $('//td[text()="' + ParentSite + '"]')
+    const siteNameData = $('//table//tr//td[text()="' + SiteName + '"]')
+    const siteTypeData = $('//table//tr//td[text()="' + SiteType + '"]')
+    const parentSiteData = $('//table//tr//td[text()="' + ParentSite + '"]')
     expect(siteNameData).toBeDisplayed()
     expect(siteTypeData).toBeDisplayed()
     expect(parentSiteData).toBeDisplayed()

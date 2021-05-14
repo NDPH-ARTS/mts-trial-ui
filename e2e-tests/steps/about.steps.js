@@ -10,8 +10,8 @@ defineStep('User navigates to About screen', function () {
 
 defineStep('I can view the version number against the service name {string}, {string}', function (service, version) {
 
-    let serviceData = $('//td[contains(text(),"' + service + '")]')
-    let versionData = $('//td[contains(text(),"' + version + '")]')
+    let serviceData = $('//table/tr//td[contains(text(),"' + service + '")]')
+    let versionData = $('//table/tr//td[contains(text(),"' + version + '")]')
 
     expect(serviceData).toBeDisplayed()
     expect(versionData).toBeDisplayed()
