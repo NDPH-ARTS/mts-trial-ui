@@ -18,8 +18,8 @@ defineStep('The list view displays the following columns {string}, {string}, {st
 });
 
 defineStep('I can see the last updated date', function () {
-  let lastUpdatedElem = adminSitesPage.lastUpdated
-  expect(lastUpdatedElem).toBeDisplayed()
+    let lastUpdatedElem = adminSitesPage.lastUpdated
+    expect(lastUpdatedElem).toBeDisplayed()
 
 });
 

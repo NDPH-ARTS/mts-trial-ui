@@ -17,11 +17,11 @@ class authenticationPage {
     get localeLogOutButton() { return $('//button[text()="xLogoutx"]') }
 
     enterCredentials() {
-      this.userName.setValue(process.env.AUTOMATION_USER_NAME)
-      this.nextBtn.click()
-      this.password.setValue(process.env.AUTOMATION_USER_PASSWORD)
-      this.signIn.click()
-      this.selectYes.click()
+        this.userName.setValue(process.env.AUTOMATION_USER_NAME)
+        this.nextBtn.click()
+        this.password.setValue(process.env.AUTOMATION_USER_PASSWORD)
+        this.signIn.click()
+        this.selectYes.click()
     }
 
     bootstrapUserCredentials() {
