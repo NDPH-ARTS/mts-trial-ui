@@ -11,8 +11,9 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "test": "ng test",
-    "test-ci": "ng test --karmaConfig=karma.conf.ci.js"
-  },
+    "test-ci": "ng test --karmaConfig=karma.conf.ci.js" ,
+    "cypress": "./node_modules/.bin/cypress run"
+   },
   "private": true,
   "dependencies": {
     "@angular/animations": "~11.0.5",

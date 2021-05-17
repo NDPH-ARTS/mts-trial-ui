@@ -10,6 +10,6 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 The following steps help in setting up and running tests using cypress on your local machine,
 1. npm install cypress
-2. Run `npx cypress open to execute tests on localhost:4200/
+2. Run 'npm run cypress' to execute tests on localhost:4200/
    
 For further information check the confluence pages in ARTS project.
