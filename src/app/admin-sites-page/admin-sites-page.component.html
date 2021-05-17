@@ -5,27 +5,27 @@
     <table class="table table-striped">
       <thead>
       <tr>
-        <th>
+        <th id="siteNameHeader">
           <span translate="SITE_NAME"></span>
         </th>
-        <th>
+        <th id="siteTypeHeader">
           <span translate="SITE_TYPE"></span>
         </th>
-        <th>
+        <th id="parentSiteNameHeader">
           <span translate="PARENT_SITE"></span>
         </th>
-        <th>
+        <th id="siteLastUpdatedHeader">
           <span translate="LAST_UPDATED"></span>
         </th>
       </tr>
       </thead>
 
       <tbody>
-      <tr *ngFor="let site of sites" (click)="openModal(site)">
-        <td id="siteName">{{site.name}}</td>
-        <td id="siteType">{{site.siteType}}</td>
-        <td id="siteParentName">{{site.parentSiteName}}</td>
-        <td id="siteLastUpdtd">{{site.lastUpdated | date:'medium'}}</td>
+      <tr *ngFor="let site of sites" (click)="openModal(site)" >
+        <td>{{site.name}}</td>
+        <td>{{site.siteType}}</td>
+        <td>{{site.parentSiteName}}</td>
+        <td>{{site.lastUpdated | date:'medium'}}</td>
       </tr>
       </tbody>
     </table>
@@ -46,7 +46,7 @@
                 <span STYLE="font-weight:bold" translate="SITE_TYPE"></span>
               </div>
               <div class="col">
-                <span STYLE="font-weight:bold" translate="STATUS"></span>
+                <span id="siteStatusLabel" STYLE="font-weight:bold" translate="STATUS"></span>
               </div>
               <div class="col">
                 <span STYLE="font-weight:bold" translate="LAST_UPDATED"></span>
@@ -91,7 +91,7 @@
 
               <div class="row mt-3">
                 <div class="col">
-                  <span STYLE="font-weight:bold" translate="DESCRIPTION"></span>
+                  <span id="siteDescriptionLabel" STYLE="font-weight:bold" translate="DESCRIPTION"></span>
                 </div>
               </div>
 

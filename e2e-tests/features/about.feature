@@ -13,6 +13,6 @@ Feature: As a user
         And I can view the time stamp of the build deployed
         Examples:
             | Service       | Version       |
-            | dummy service | dummy service |
+            | dummy service | dummy version |
 
 

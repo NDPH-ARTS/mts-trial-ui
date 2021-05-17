@@ -2,11 +2,11 @@
 
 class landingPage {
 
-    get titleBar() { return $('.page-header') }
-    get staffsName() { return $('//h2[text()]') }
-    get loginButton() { return $('//button[@id="login_button"]') }
-    get defaultLocale() { return $('//span//div//select[@name="currentLocale"]//option[text()="English (UK)"]') }
-    get preferredLocale() { return $('//span//div//select[@name="currentLocale"]//option[@value="1: en-xx"]') }
+    get titleBar() { return $('//h1[@id="title"]') }
+    get staffsName() { return $('//h2[@id="staffsName"]') }
+    get loginButton() { return $('//button[@id="login"]') }
+    get defaultLocale() { return $('//select[@id="currentLocale"]//option[@id="en-gb"]') }
+    get preferredLocale() { return $('//select[@id="currentLocale"]//option[@id="en-xx"]') }
 
 
     login() {

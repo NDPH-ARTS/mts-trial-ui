@@ -3,8 +3,7 @@
 class assignedSitesPage {
 
     get assignedSites() { return $('//a[@href="/assigned-sites"]') }
-    get pagehHeader() { return $('//app-assigned-sites//div//div//h2') }
-    get region() { return $('//div//table//tr//td[text()="CCO"]') }
+    get pageHeader() { return $('//h2[@id="assignedSitesHeader"]') }
 
     assignedSitesTab() {
         browser.pause(3000)

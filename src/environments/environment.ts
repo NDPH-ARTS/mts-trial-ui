@@ -11,7 +11,8 @@ export const environment = {
   //  This URL is used during the PR UI test run; ensure that it points to
   //  a working environment during the PR process.
   //  This URL is overridden in the Azure deployment process
-  gatewayUrl: 'https://as-arts930a-sc-gateway-dev.azurewebsites.net/api',
+  gatewayUrl: 'https://as-mainnightly-sc-gateway-dev.azurewebsites.net/api',
+
 };
 /*
  * For easier debugging in development mode, you can import the following file
