@@ -11,8 +11,9 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "test": "ng test",
-    "test-ci": "ng test --karmaConfig=karma.conf.ci.js"
-  },
+    "test-ci": "ng test --karmaConfig=karma.conf.ci.js" ,
+    "cypress": "./node_modules/.bin/cypress run"
+   },
   "private": true,
   "dependencies": {
     "@angular/animations": "~11.0.5",
@@ -65,6 +66,7 @@
     "codelyzer": "^6.0.0",
     "concurrently": "^5.3.0",
     "cucumber-html-reporter": "^5.3.0",
+    "cypress": "^7.3.0",
     "eslint": "^7.6.0",
     "eslint-plugin-import": "2.22.1",
     "eslint-plugin-jsdoc": "30.7.6",
