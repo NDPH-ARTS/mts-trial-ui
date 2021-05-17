@@ -1,0 +1,4 @@
+{
+"testFiles": "**/**/integration/cypressTest.js",
+   "chromeWebSecurity" : false
+}
