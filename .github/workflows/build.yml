@@ -16,6 +16,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - name: Add path to node_modules install of chromedriver
+        run: |
+          echo "PATH=./node_modules/.bin:$PATH" >> $GITHUB_ENV        
       - name: Build & test
         env:
           AUTOMATION_USER_PASSWORD: ${{ secrets.AUTOMATION_USER_PASSWORD }}
