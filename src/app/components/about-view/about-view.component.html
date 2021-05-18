@@ -1,0 +1,31 @@
+<div class="page-content">
+  <h1>Microservice versions in this deployment</h1>
+  <table>
+    <tr>
+      <th id="serviceHeader">
+        Service
+      </th>
+      <th id="versionHeader">
+        Version
+      </th>
+      <th id="timestampHeader">
+        Timestamp
+      </th>
+    </tr>
+
+
+    <tr *ngFor = "let serviceVersion of versions">
+      <td>
+        {{serviceVersion.service}}
+      </td>
+      <td>
+        {{serviceVersion.version}}
+      </td>
+      <td>
+        {{serviceVersion.timestamp * 1000 | date:'MMMM d, y, h:mm:ss a z'}}
+      </td>
+    </tr>
+
+
+  </table>
+</div>

@@ -6,13 +6,14 @@
     "start": "ng serve",
     "start-background": "ng serve &",
     "build": "ng build",
-    "ui-test": "npx wdio  --timeout 10000 ./ui-tests/conf/wdio.conf.js",
-    "ui-test-ci": "npx wdio --timeout 10000 ./ui-tests/conf/wdio.conf.ci.js",
+    "e2e-tests": "npx wdio  --timeout 10000 ./e2e-tests/conf/wdio.conf.js",
+    "e2e-tests-ci": "npx wdio --timeout 10000 ./e2e-tests/conf/wdio.conf.ci.js",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "test": "ng test",
-    "test-ci": "ng test --karmaConfig=karma.conf.ci.js"
-  },
+    "test-ci": "ng test --karmaConfig=karma.conf.ci.js" ,
+    "cypress": "./node_modules/.bin/cypress run"
+   },
   "private": true,
   "dependencies": {
     "@angular/animations": "~11.0.5",
@@ -38,6 +39,7 @@
     "allure-commandline": "^2.13.8",
     "angular-oauth2-oidc": "^10.0.3",
     "bootstrap": "^4.5.3",
+    "ng-material-multilevel-menu": "^5.5.3",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
@@ -64,6 +66,7 @@
     "codelyzer": "^6.0.0",
     "concurrently": "^5.3.0",
     "cucumber-html-reporter": "^5.3.0",
+    "cypress": "^7.3.0",
     "eslint": "^7.6.0",
     "eslint-plugin-import": "2.22.1",
     "eslint-plugin-jsdoc": "30.7.6",

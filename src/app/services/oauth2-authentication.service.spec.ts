@@ -17,7 +17,7 @@ describe('OAuth2AuthenticationService', () => {
     initCodeFlow: () => {},
     logOut: () => {},
     hasValidIdToken: () => false,
-    getIdToken: () => ''
+    getAccessToken: () => ''
   };
 
   beforeEach(() => {
@@ -69,9 +69,9 @@ describe('OAuth2AuthenticationService', () => {
   });
 
   it('fetch the id token from the backend', () => {
-    spyOn(mockBackend, 'getIdToken');
-    service.getIDToken();
+    spyOn(mockBackend, 'getAccessToken');
+    service.getAccessToken();
 
-    expect(mockBackend.getIdToken).toHaveBeenCalled();
+    expect(mockBackend.getAccessToken).toHaveBeenCalled();
   });
 });

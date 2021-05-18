@@ -7,7 +7,16 @@
     "LANDING": "xLanding page Landing pagex",
     "HOME_LINK_TEXT": "xHomex",
     "ASSIGNED_SITES_LINK": "xAssigned Sitesx",
+    "ADMIN_SITES_LINK": "xMy Admin Sitesx",
+    "ABOUT_LINK": "xAboutx",
     "LOGOUT": "xLogoutx",
     "LOGIN": "xLoginx",
-    "ASSIGNED_SITES_TITLE": "xAssigned Sitesx"
+    "ASSIGNED_SITES_TITLE": "xAssigned Sitesx",
+    "ADMIN_SITES_TITLE": "xAdmin Sitesx",
+    "SITE_NAME": "xSite Namex",
+    "SITE_TYPE": "xSiteTypex",
+    "PARENT_SITE": "xParent Sitex",
+    "LAST_UPDATED": "xLast Updatedx",
+    "STATUS": "xStatusx",
+    "DESCRIPTION": "xDescriptionx"
 }

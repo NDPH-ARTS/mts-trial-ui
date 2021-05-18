@@ -12,9 +12,12 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenSenderInterceptor } from './interceptors/TokenSenderInterceptor';
 import { SitesViewComponent } from './components/sites-view/sites-view.component';
 import { AssignedSitesPageComponent } from './assigned-sites-page/assigned-sites-page.component';
+import { AdminSitesPageComponent } from './admin-sites-page/admin-sites-page.component';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { FormsModule } from '@angular/forms';
+import { AboutViewComponent } from './components/about-view/about-view.component';
+import { NgMaterialMultilevelMenuModule, MultilevelMenuService } from 'ng-material-multilevel-menu';
 
 export const httpLoaderFactory = (http: HttpClient) => new TranslateHttpLoader(http);
 export const storageFactory = () => localStorage;
@@ -23,7 +26,9 @@ export const storageFactory = () => localStorage;
     AppComponent,
     LandingPageComponent,
     AssignedSitesPageComponent,
+    AdminSitesPageComponent,
     SitesViewComponent,
+    AboutViewComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,11 +50,13 @@ export const storageFactory = () => localStorage;
     }),
     NgbModule,
     BrowserAnimationsModule,
+    NgMaterialMultilevelMenuModule,
   ],
   providers: [
     { provide: OAuthStorage, useFactory: storageFactory },
     { provide: AuthenticationService, useClass: OAuth2AuthenticationService },
-    { provide: HTTP_INTERCEPTORS, useClass: TokenSenderInterceptor, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: TokenSenderInterceptor, multi: true },
+    { provide: MultilevelMenuService }
   ],
   bootstrap: [AppComponent]
 })

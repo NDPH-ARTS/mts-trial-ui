@@ -10,7 +10,7 @@ export class MockAuthenticationService implements AuthenticationService {
   isAuthenticated(): boolean {
     return true;
   }
-  getIDToken(): string {
+  getAccessToken(): string {
     return '';
   }
 }

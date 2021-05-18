@@ -9,8 +9,8 @@ defineStep('the landing page displays the name of the trial', function () {
 });
 
 defineStep('the landing page provides an option to initiate login', function () {
-    let loginButtonText = landingPage.loginButton
-    expect(loginButtonText.getText()).toEqual("Login")
+    let loginButton = landingPage.loginButton
+    expect(loginButton).toBeDisplayed()
 });
 
 defineStep('the welcome page message displays staffs information', function () {
@@ -21,6 +21,7 @@ defineStep('the welcome page message displays staffs information', function () {
 defineStep('a default locale is set for the trial', function () {
     let locale = landingPage.defaultLocale
     expect(locale).toBeDisplayed()
+    expect(locale).toBeSelected()
 });
 
 defineStep('user can reset to default locale', function () {

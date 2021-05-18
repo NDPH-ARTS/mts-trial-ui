@@ -19,7 +19,7 @@ defineStep('a bootstrap user login to a specific trial', function () {
 defineStep('a regional user login to a specific trial', function () {
     browser.deleteCookies()
     landingPage.login();
-    authenticationPage.enterCredentials();
+    authenticationPage.qaWithCreateUserCredentials();
 });
 
 defineStep('an LCC user logs in to a specific trial', function () {
@@ -37,16 +37,12 @@ defineStep('the user lands on the assigned sites page', function () {
     expect(title).toBeDisplayed();
 });
 
-defineStep('the user should be able to view all the assigned sites', function () {
-    let sitespath = '//div//div[@class="title"]/parent::div/app-sites-view/table//tr';
-    let pageColumns = utils.presenceOfData(sitespath)
-
-    // get how much the length of the columns should be for the logged in user
-    const pageData = yaml.safeLoad(
-        fs.readFileSync(path.join(__dirname, 'data.yaml')),
-    )
-    const sites = pageData.sites;
-    assert.equal(pageColumns.length, sites["bootstrap"])
+defineStep('the user should be able to view all the {string}', function (assignedSites) {
+    let siteArray = assignedSites.split(",");
+    siteArray.forEach(function (sitesName) {
+        const sitesList = $('//table/tr//td[text()="' + sitesName + '"]')
+        expect(sitesList.getText()).toEqual(sitesName)
+    });
 });
 
 defineStep('the user should be able to view all sites within that region', function () {
